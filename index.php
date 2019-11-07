@@ -6,5 +6,4 @@ $stylesheet = 'landing';
 
 require 'views/head.view.php';
 require 'views/index.view.php';
-require 'views/footer.view.php';
 ?>

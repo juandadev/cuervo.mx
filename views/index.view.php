@@ -3,7 +3,7 @@
         <header>
             <img src="img/FULL-CUERVO-WHITE-NOBG.png" alt="Cuervo Nutrition" class="logo">
 
-           <a href="https://www.instagram.com/cuervo.mx/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/cuervo.mx/" target="_blank"><i class="fab fa-instagram"></i></a>
         </header>
 
         <div class="container">
@@ -13,3 +13,11 @@
 
             <button class="roundBtn btn01">Empieza ahora</button>
         </div>
+
+        <footer>
+            <p>&copy 2019 <a href="https://www.juandamartinez.com/" target="_blank">Juan Daniel Martínez</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>
