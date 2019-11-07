@@ -1,0 +1,139 @@
+* {
+    font-family: 'Open Sans', 'Roboto', sans-serif;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0px 100px;
+    margin-top: 20px;
+    width: 100%;
+    height: 100px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: center;
+    position: absolute;
+}
+
+header .logo {
+    height: 100%;
+}
+
+header a {
+    font-size: 32px;
+    color: #FFFFFF;
+    text-decoration: none;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.wrapped-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.container {
+    width: 25%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.container {
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-position: center center;
+    background-size: cover;
+}
+
+.titleCont {
+    height: 117px;
+    width: 245px;
+    margin-bottom: 115px;
+}
+
+.titleCont h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.c01 {
+    background-image: url(../img/car1.png);
+}
+
+.c02 {
+    background-image: url(../img/car3.png);
+}
+
+.c03 {
+    background-image: url(../img/car2.png);
+}
+
+.c04 {
+    background-image: url(../img/car4.png);
+}
+
+.roundBtn {
+    font-size: 20px;
+    font-weight: 300;
+    padding: 6px 29px 10px 29px;
+    border: none;
+    border-radius: 100px;
+    -webkit-box-shadow: 0px 3px 6px;
+    box-shadow: 0px 3px 6px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.btn01,
+.btn03 {
+    color: #402E31;
+    background-color: #FFFFFF;
+}
+
+.btn02,
+.btn04 {
+    color: #A63C3C;
+    background-color: #FFFFFF;
+}
+
+.roundBtn:hover,
+header a:hover,
+footer a:hover {
+    opacity: 0.8;
+}
+
+footer {
+    color: #FFFFFF;
+    margin: -50px 0px 0px 100px;
+}
+
+footer a {
+    color: #FFFFFF;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
