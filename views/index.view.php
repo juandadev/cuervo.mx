@@ -11,13 +11,15 @@
 
             <P class="slogan">Estamos creando nuevos hábitos para mejorar los tuyos</P>
 
-            <button class="roundBtn btn01">Empieza ahora</button>
+            <button class="roundBtn btn01" id="btn01">Empieza ahora</button>
         </div>
 
         <footer>
             <p>&copy 2019 <a href="https://www.juandamartinez.com/" target="_blank">Juan Daniel Martínez</a></p>
         </footer>
     </div>
+    
+    <script src="js/index.js"></script>
 </body>
 
 </html>
