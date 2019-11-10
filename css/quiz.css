@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+/* HEADER */
+
 header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -33,6 +35,10 @@ header a {
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+
+
+
+/* QUIZ MENU */
 
 .wrapped-content {
     display: -webkit-box;
@@ -66,7 +72,6 @@ header a {
     background-size: cover;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    position: fixed;
     z-index: 0;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -89,26 +94,27 @@ header a {
     color: #FFFFFF;
 }
 
+/* CONTAINER IMAGE AND POSITION */
+
 .c01 {
     background-image: url(../img/car4.png);
 }
 
 .c02 {
     background-image: url(../img/car5.png);
-    background-position: left;
-    margin-left: 25%;
+    background-position: 10%;
 }
 
 .c03 {
     background-image: url(../img/car6.png);
-    background-position: center;
-    margin-left: 50%;
+    background-position: 35%;
 }
 
 .c04 {
     background-image: url(../img/car7.png);
-    margin-left: 75%;
 }
+
+/* CONTAINER TRANSITION (WIDTH AND MARGIN) */
 
 .c01:hover {
     z-index: 1;
@@ -117,21 +123,26 @@ header a {
 
 .c02:hover {
     z-index: 1;
-    margin-left: 23%;
     width: 29%;
 }
 
 .c03:hover {
     z-index: 1;
-    margin-left: 48%;
     width: 29%;
 }
 
 .c04:hover {
     z-index: 1;
-    margin-left: 71%;
     width: 29%;
 }
+
+/* QUIZ CONTENT */
+
+.c05 {
+    display: none;
+}
+
+/* GENERAL BUTTON STYLE */
 
 .roundBtn {
     font-size: 20px;
@@ -146,6 +157,8 @@ header a {
     transition: all 0.5s ease;
 }
 
+/* SPECIFIC BUTTON COLORS */
+
 .btn01,
 .btn03 {
     color: #402E31;
@@ -158,15 +171,21 @@ header a {
     background-color: #FFFFFF;
 }
 
+/* GENERAL HOVERS (OPACITY) */
+
 .roundBtn:hover,
 header a:hover,
 footer a:hover {
     opacity: 0.8;
 }
 
+/* FOOTER */
+
 footer {
+    position: absolute;
     color: #FFFFFF;
     margin: -50px 0px 0px 100px;
+    z-index: 2;
 }
 
 footer a {
