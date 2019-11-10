@@ -1,6 +1,6 @@
 <body>
     <header>
-        <img src="img/FULL-CUERVO-WHITE-NOBG.png" alt="Cuervo Nutrition" class="logo">
+        <img src="img/FULL-CUERVO-BLACK-NOBG.png" alt="Cuervo Nutrition" class="logo">
 
         <a href="https://www.instagram.com/cuervo.mx/" target="_blank"><i class="fab fa-instagram"></i></a>
     </header>

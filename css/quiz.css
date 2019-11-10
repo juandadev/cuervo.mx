@@ -61,8 +61,10 @@ header a {
     background-color: #000000;
     background-repeat: no-repeat;
     background-attachment: inherit;
-    background-position: center center;
+    background-position: center;
     background-size: cover;
+    -webkit-transition: width 0.3s ease;
+    transition: width 0.3s ease;
 }
 
 .titleCont {
@@ -81,19 +83,48 @@ header a {
 }
 
 .c01 {
-    background-image: url(../img/car1.png);
+    background-image: url(../img/car4.png);
 }
 
 .c02 {
-    background-image: url(../img/car3.png);
+    background-image: url(../img/car5.png);
+    background-position: left;
 }
 
 .c03 {
-    background-image: url(../img/car2.png);
+    background-image: url(../img/car6.png);
+    background-position: center;
 }
 
 .c04 {
-    background-image: url(../img/car4.png);
+    background-image: url(../img/car7.png);
+}
+
+.c01:hover,
+.c02:hover,
+.c03:hover,
+.c04:hover {
+    -webkit-animation-name: contHover;
+    animation-name: contHover;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    width: 30%;
+}
+
+@-webkit-keyframes contHover {
+    from {
+        width: 25%;
+    } to {
+        width: 30%;
+    }
+}
+
+@keyframes contHover {
+    from {
+        width: 25%;
+    } to {
+        width: 30%;
+    }
 }
 
 .roundBtn {
@@ -103,7 +134,7 @@ header a {
     border: none;
     border-radius: 100px;
     -webkit-box-shadow: 0px 3px 6px;
-    box-shadow: 0px 3px 6px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
     cursor: pointer;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
