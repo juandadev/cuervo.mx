@@ -19,6 +19,7 @@ header {
     -ms-flex-align: baseline;
     align-items: center;
     position: absolute;
+    z-index: 2;
 }
 
 header .logo {
@@ -63,8 +64,14 @@ header a {
     background-attachment: inherit;
     background-position: center;
     background-size: cover;
-    -webkit-transition: width 0.3s ease;
-    transition: width 0.3s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    position: fixed;
+    z-index: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .titleCont {
@@ -89,42 +96,41 @@ header a {
 .c02 {
     background-image: url(../img/car5.png);
     background-position: left;
+    margin-left: 25%;
 }
 
 .c03 {
     background-image: url(../img/car6.png);
     background-position: center;
+    margin-left: 50%;
 }
 
 .c04 {
     background-image: url(../img/car7.png);
+    margin-left: 75%;
 }
 
-.c01:hover,
-.c02:hover,
-.c03:hover,
+.c01:hover {
+    z-index: 1;
+    width: 29%;
+}
+
+.c02:hover {
+    z-index: 1;
+    margin-left: 23%;
+    width: 29%;
+}
+
+.c03:hover {
+    z-index: 1;
+    margin-left: 48%;
+    width: 29%;
+}
+
 .c04:hover {
-    -webkit-animation-name: contHover;
-    animation-name: contHover;
-    -webkit-animation-duration: 0.5s;
-    animation-duration: 0.5s;
-    width: 30%;
-}
-
-@-webkit-keyframes contHover {
-    from {
-        width: 25%;
-    } to {
-        width: 30%;
-    }
-}
-
-@keyframes contHover {
-    from {
-        width: 25%;
-    } to {
-        width: 30%;
-    }
+    z-index: 1;
+    margin-left: 71%;
+    width: 29%;
 }
 
 .roundBtn {
