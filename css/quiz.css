@@ -22,6 +22,10 @@ header {
     align-items: center;
     position: absolute;
     z-index: 2;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 header .logo {
@@ -40,7 +44,7 @@ header a {
 
 /* QUIZ MENU */
 
-.wrapped-content {
+.wrapped-content01 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -114,6 +118,14 @@ header a {
     background-image: url(../img/car7.png);
 }
 
+/* CONTAINER CONTENT VIEW */
+
+.ccontent01 {
+    background-image: url(../img/car4.png);
+    width: 37%;
+    z-index: 1;
+}
+
 /* CONTAINER TRANSITION (WIDTH AND MARGIN) */
 
 .c01:hover {
@@ -136,10 +148,106 @@ header a {
     width: 29%;
 }
 
+.show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden01 {
+    margin-left: -25%;
+}
+
+.hidden02 {
+    margin-left: -25%;
+}
+
+.hidden03 {
+    margin-left: -50%;
+}
+
+.hidden04 {
+    margin-left: -75%;
+}
+
+.hideContent {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.current {
+    z-index: 1;
+}
+
 /* QUIZ CONTENT */
 
 .c05 {
-    display: none;
+    width: 63%;
+    padding: 0px 100px 0px 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.c05 .quizNav {
+    margin-top: 45px;
+}
+
+.c05 .quizNav ul {
+    width: 100%;
+    padding: 0px 0px 20px 66px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: 3px solid #F2F2F2;
+}
+
+.c05 .quizNav ul li {
+    list-style: none;
+    font-size: 16px;
+    font-weight: 200;
+    width: 130px;
+    cursor: pointer;
+    z-index: 2;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* CHEVRON ARROW BUTTONS */
+
+.controls {
+    width: 51px;
+    height: 51px;
+    background-color: #FFFFFF;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 100px;
+    font-size: 36px;
+    padding-bottom: 10px;
+    margin-left: -17px;
+    z-index: 2;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* GENERAL BUTTON STYLE */
@@ -150,11 +258,16 @@ header a {
     padding: 6px 29px 10px 29px;
     border: none;
     border-radius: 100px;
-    -webkit-box-shadow: 0px 3px 6px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
     cursor: pointer;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
+}
+
+/* GENERAL BOX SHADOW */
+
+.shadow {
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
 }
 
 /* SPECIFIC BUTTON COLORS */
@@ -175,7 +288,8 @@ header a {
 
 .roundBtn:hover,
 header a:hover,
-footer a:hover {
+footer a:hover,
+.controls:hover {
     opacity: 0.8;
 }
 
@@ -186,6 +300,10 @@ footer {
     color: #FFFFFF;
     margin: -50px 0px 0px 100px;
     z-index: 2;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 footer a {
@@ -193,3 +311,5 @@ footer a {
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+
+/* ANIMATIONS */
