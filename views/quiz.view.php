@@ -50,7 +50,7 @@
 
         <div class="c05 hidden" id="c05">
             <nav id="quizNav" class="quizNav show">
-                <div id="btn05" class="controls btn05 shadow show">
+                <div id="btn05" class="controls btn05 shadow show" onclick="backMenu(this)">
                     <i class="fas fa-chevron-up"></i>
                 </div>
 

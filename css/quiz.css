@@ -126,6 +126,24 @@ header a {
     z-index: 1;
 }
 
+.ccontent02 {
+    background-image: url(../img/car5.png);
+    width: 37%;
+    z-index: 1;
+}
+
+.ccontent03 {
+    background-image: url(../img/car6.png);
+    width: 37%;
+    z-index: 1;
+}
+
+.ccontent04 {
+    background-image: url(../img/car7.png);
+    width: 37%;
+    z-index: 1;
+}
+
 /* CONTAINER TRANSITION (WIDTH AND MARGIN) */
 
 .c01:hover {
@@ -160,18 +178,22 @@ header a {
 
 .hidden01 {
     margin-left: -25%;
+    z-index: 0;
 }
 
 .hidden02 {
     margin-left: -25%;
+    z-index: 0;
 }
 
 .hidden03 {
     margin-left: -50%;
+    z-index: 0;
 }
 
 .hidden04 {
     margin-left: -75%;
+    z-index: 0;
 }
 
 .hideContent {
