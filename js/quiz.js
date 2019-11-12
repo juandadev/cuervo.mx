@@ -7,20 +7,27 @@ var btn = [document.getElementById('btn01'),
 
 //Quiz containers
 var cont = [document.getElementById('c01'),
-           document.getElementById('c02'),
-           document.getElementById('c03'),
-           document.getElementById('c04'),
-           document.getElementById('c05')];
+            document.getElementById('c02'),
+            document.getElementById('c03'),
+            document.getElementById('c04'),
+            document.getElementById('c05')];
+
+//Submenu items
+var item = [document.getElementById('item01'),
+            document.getElementById('item02'),
+            document.getElementById('item03'),
+            document.getElementById('item04')];
 
 var titles = document.getElementsByClassName('titleCont');
 var quizNav = document.getElementById('quizNav');
+var logo = document.getElementById('logo');
 
 btn[0].addEventListener('click', function () {
     cont[0].classList.add('current');
     cont[1].classList.remove('current');
     cont[2].classList.remove('current');
     cont[3].classList.remove('current');
-    
+
     cont[1].classList.add('hidden02');
     setTimeout(function () {
         cont[1].classList.add('hidden');
@@ -48,6 +55,14 @@ btn[0].addEventListener('click', function () {
     }, 500);
 
     quizNav.dataset.cont = '1';
+    item[0].classList.add('selected-menu01');
+    item[1].classList.remove('selected-menu02');
+    item[2].classList.remove('selected-menu01');
+    item[3].classList.remove('selected-menu02');
+    
+    setTimeout(function () {
+        logo.setAttribute('src', 'img/FULL-CUERVO-BLACK-NOBG.png');
+    }, 200);
 });
 
 btn[1].addEventListener('click', function () {
@@ -55,7 +70,7 @@ btn[1].addEventListener('click', function () {
     cont[1].classList.add('current');
     cont[2].classList.remove('current');
     cont[3].classList.remove('current');
-    
+
     setTimeout(function () {
         cont[1].classList.add('ccontent02');
         cont[1].classList.remove('c02');
@@ -84,6 +99,14 @@ btn[1].addEventListener('click', function () {
     }, 500);
 
     quizNav.dataset.cont = '2';
+    item[0].classList.remove('selected-menu01');
+    item[1].classList.add('selected-menu02');
+    item[2].classList.remove('selected-menu01');
+    item[3].classList.remove('selected-menu02');
+    
+    setTimeout(function () {
+        logo.setAttribute('src', 'img/FULL-CUERVO-WHITE-NOBG.png');
+    }, 200);
 });
 
 btn[2].addEventListener('click', function () {
@@ -91,7 +114,7 @@ btn[2].addEventListener('click', function () {
     cont[1].classList.remove('current');
     cont[2].classList.add('current');
     cont[3].classList.remove('current');
-    
+
     setTimeout(function () {
         cont[2].classList.add('ccontent03');
         cont[2].classList.remove('c03');
@@ -120,6 +143,14 @@ btn[2].addEventListener('click', function () {
     }, 500);
 
     quizNav.dataset.cont = '3';
+    item[0].classList.remove('selected-menu01');
+    item[1].classList.remove('selected-menu02');
+    item[2].classList.add('selected-menu01');
+    item[3].classList.remove('selected-menu02');
+    
+    setTimeout(function () {
+        logo.setAttribute('src', 'img/FULL-CUERVO-WHITE-NOBG.png');
+    }, 200);
 });
 
 btn[3].addEventListener('click', function () {
@@ -127,7 +158,7 @@ btn[3].addEventListener('click', function () {
     cont[1].classList.remove('current');
     cont[2].classList.remove('current');
     cont[3].classList.add('current');
-    
+
     setTimeout(function () {
         cont[0].classList.add('hidden');
     }, 500);
@@ -154,6 +185,14 @@ btn[3].addEventListener('click', function () {
     }, 500);
 
     quizNav.dataset.cont = '4';
+    item[0].classList.remove('selected-menu01');
+    item[1].classList.remove('selected-menu02');
+    item[2].classList.remove('selected-menu01');
+    item[3].classList.add('selected-menu02');
+    
+    setTimeout(function () {
+        logo.setAttribute('src', 'img/FULL-CUERVO-WHITE-NOBG.png');
+    }, 200);
 });
 
 function backMenu(container) {
@@ -188,9 +227,9 @@ function backMenu(container) {
             setTimeout(function () {
                 cont[3].classList.remove('hidden04');
             }, 500);
-            
+
             break;
-        
+
         case 1:
             cont[0].classList.remove('hidden');
             cont[0].classList.remove('current');
@@ -207,9 +246,9 @@ function backMenu(container) {
             setTimeout(function () {
                 cont[3].classList.remove('hidden04');
             }, 500);
-            
+
             break;
-            
+
         case 2:
             cont[0].classList.remove('hidden');
             cont[0].classList.remove('current');
@@ -226,9 +265,9 @@ function backMenu(container) {
             setTimeout(function () {
                 cont[3].classList.remove('hidden04');
             }, 500);
-            
+
             break;
-            
+
         case 3:
             cont[0].classList.remove('hidden');
             cont[0].classList.remove('current');
@@ -245,7 +284,11 @@ function backMenu(container) {
             setTimeout(function () {
                 cont[2].classList.remove('hidden03');
             }, 500);
-            
+
             break;
     }
+
+    setTimeout(function () {
+        logo.setAttribute('src', 'img/FULL-CUERVO-BLACK-NOBG.png');
+    }, 700);
 }

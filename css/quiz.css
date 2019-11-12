@@ -231,12 +231,12 @@ header a {
     -ms-flex-align: center;
     align-items: center;
     border-bottom: 3px solid #F2F2F2;
-}
-
-.c05 .quizNav ul li {
     list-style: none;
     font-size: 16px;
     font-weight: 200;
+}
+
+.c05 .quizNav ul li {
     width: 130px;
     cursor: pointer;
     z-index: 2;
@@ -244,6 +244,18 @@ header a {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+/* SELECTED SUBMENU */
+
+.selected-menu01 {
+    color: #402E31;
+    font-weight: 700;
+}
+
+.selected-menu02 {
+    color: #A63C3C;
+    font-weight: 700;
 }
 
 /* CHEVRON ARROW BUTTONS */

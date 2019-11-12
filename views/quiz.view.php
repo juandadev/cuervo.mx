@@ -1,6 +1,6 @@
 <body>
     <header>
-        <img src="img/FULL-CUERVO-BLACK-NOBG.png" alt="Cuervo Nutrition" class="logo">
+        <img src="img/FULL-CUERVO-BLACK-NOBG.png" alt="Cuervo Nutrition" class="logo" id="logo">
     </header>
 
     <div class="wrapped-content01">
