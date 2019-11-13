@@ -172,6 +172,13 @@ header a {
     display: flex;
 }
 
+.opacity {
+    -webkit-animation-name: cOpacity;
+    animation-name: cOpacity;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+}
+
 .hidden {
     display: none;
 }
@@ -254,6 +261,16 @@ header a {
 }
 
 .selected-menu02 {
+    color: #A63C3C;
+    font-weight: 700;
+}
+
+.selected-menu03 {
+    color: #402E31;
+    font-weight: 700;
+}
+
+.selected-menu04 {
     color: #A63C3C;
     font-weight: 700;
 }
@@ -347,3 +364,19 @@ footer a {
 }
 
 /* ANIMATIONS */
+
+@-webkit-keyframes cOpacity {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+
+@keyframes cOpacity {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}

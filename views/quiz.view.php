@@ -55,10 +55,10 @@
                 </div>
 
                 <ul class="show">
-                    <li id="item01">Datos personales</li>
-                    <li id="item02">Antecedentes de salud</li>
-                    <li id="item03">Antecedentes familiares</li>
-                    <li id="item04">Alimentos y deportes</li>
+                    <li id="item01" onclick="subMenu(this)">Datos personales</li>
+                    <li id="item02" onclick="subMenu(this)">Antecedentes de salud</li>
+                    <li id="item03" onclick="subMenu(this)">Antecedentes familiares</li>
+                    <li id="item04" onclick="subMenu(this)">Alimentos y deportes</li>
                 </ul>
             </nav>
 
