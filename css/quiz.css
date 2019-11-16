@@ -20,7 +20,7 @@ header {
     -webkit-box-align: baseline;
     -ms-flex-align: baseline;
     align-items: center;
-    position: absolute;
+    position: fixed;
     z-index: 2;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -31,16 +31,6 @@ header {
 header .logo {
     height: 100%;
 }
-
-header a {
-    font-size: 32px;
-    color: #FFFFFF;
-    text-decoration: none;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-
 
 /* QUIZ MENU */
 
@@ -124,24 +114,28 @@ header a {
     background-image: url(../img/car4.png);
     width: 37%;
     z-index: 1;
+    position: fixed;
 }
 
 .ccontent02 {
     background-image: url(../img/car5.png);
     width: 37%;
     z-index: 1;
+    position: fixed;
 }
 
 .ccontent03 {
     background-image: url(../img/car6.png);
     width: 37%;
     z-index: 1;
+    position: fixed;
 }
 
 .ccontent04 {
     background-image: url(../img/car7.png);
     width: 37%;
     z-index: 1;
+    position: fixed;
 }
 
 /* CONTAINER TRANSITION (WIDTH AND MARGIN) */
@@ -217,6 +211,7 @@ header a {
 
 .c05 {
     width: 63%;
+    margin: 0 0 0 37%;
     padding: 0px 100px 0px 0px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -225,7 +220,11 @@ header a {
 }
 
 .c05 .quizNav {
-    margin-top: 45px;
+    width: 60%;
+    height: 136px;
+    margin-top: -16px;
+    position: fixed;
+    z-index: 2;
 }
 
 .c05 .quizNav ul {
@@ -241,6 +240,7 @@ header a {
     list-style: none;
     font-size: 16px;
     font-weight: 200;
+    background-color: #FFFFFF;
 }
 
 .c05 .quizNav ul li {
@@ -280,6 +280,7 @@ header a {
 .controls {
     width: 51px;
     height: 51px;
+    margin-top: 50px;
     background-color: #FFFFFF;
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -299,6 +300,271 @@ header a {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+/* FORMS */
+
+.c05 .wrapped-content02 {
+    width: 100%;
+    padding-left: 100px;
+    margin-top: 167px;
+}
+
+.c05 form {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.quizForm01 {
+    color: #402E31;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.quizForm02 {
+    color: #A63C3C;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.c05 form .name {
+    font-family: 'Lato', 'Opem Sans', 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 27px;
+    color: #402E31;
+    border: none;
+}
+
+.c05 form .label {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.c05 form .input {
+    font-family: 'Open Sans', 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #707070;
+    margin-bottom: 27px;
+}
+
+.c05 form input[type="number"],
+.c05 form input[type="date"],
+.c05 form input[type="text"],
+.c05 form select,
+.c05 form textarea {
+    border: none;
+    border-bottom: 1px solid;
+    border-bottom-color: #707070;
+    padding: 5px;
+    background-color: #F2F2F2;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.c05 form input[type="number"]::-webkit-inner-spin-button,
+.c05 form input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.c05 form input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.c05 form input[type=date]::-webkit-clear-button,
+.c05 form input[type=date]::-webkit-inner-spin-button,
+.c05 form input[type=date]::-webkit-outer-spin-button,
+.c05 form input[type=date]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.c05 form textarea {
+    height: 40px;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 500px;
+    min-height: 30px;
+}
+
+.c05 form select {
+    width: 200px;
+}
+
+.c05 form #age {
+    width: 80px;
+}
+
+.c05 form #birth {
+    width: 150px;
+}
+
+.c05 form #phone {
+    width: 180px;
+}
+
+.c05 form #q_02_01,
+.c05 form #q_03_01,
+.c05 form #q_04_01,
+.c05 form #q_04_02,
+.c05 form #q_05_01,
+.c05 form #q_11_01,
+.c05 form #q_12_01,
+.c05 form #q_12_02,
+.c05 form #q_12_03,
+.c05 form #q_13_01,
+.c05 form #q_13_02,
+.c05 form #q_14_01 {
+    width: 300px;
+}
+
+.c05 form #q_06_01 {
+    width: 400px;
+}
+
+.c05 form #q_08,
+.c05 form #q_09,
+.c05 form #q_10 {
+    width: 500px;
+}
+
+.c05 form #q_07 {
+    height: 60px;
+}
+
+.hiddenOpt {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+}
+
+.showOpt {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+    width: auto;
+    height: auto;
+}
+
+.optional {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+/* CUSTOM RADIO AND CHECKBOX BUTTONS */
+
+.radioOptions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.checkOptions {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.radioOptions .lblContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-left: 20px;
+    margin-top: 6px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.radioOptions .lblContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.r01 {
+    border: 3px solid #402E31;
+}
+
+.r02 {
+    border: 3px solid #A63C3C;
+}
+
+.radioOptions .lblContainer:hover input ~ .radio {
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+}
+
+.radioOptions .lblContainer:hover input ~ .checkmark {
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+}
+
+.radioOptions .lblContainer input:checked ~ .r01 {
+    background-color: #402E31;
+}
+
+.radioOptions .lblContainer input:checked ~ .r02 {
+    background-color: #A63C3C;
+}
+
+.c05 form .btn06 {
+    margin-top: 43px;
+    margin-bottom: 50px;
+    color: #FFFFFF;
+    width: 215px;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+
+.c05 form .b06-01 {
+    background-color: #402E31;
+}
+
+.c05 form .b06-02 {
+    background-color: #A63C3C;
 }
 
 /* GENERAL BUTTON STYLE */
@@ -368,7 +634,9 @@ footer a {
 @-webkit-keyframes cOpacity {
     from {
         opacity: 1;
-    } to {
+    }
+
+    to {
         opacity: 0;
     }
 }
@@ -376,7 +644,9 @@ footer a {
 @keyframes cOpacity {
     from {
         opacity: 0;
-    } to {
+    }
+
+    to {
         opacity: 1;
     }
 }
