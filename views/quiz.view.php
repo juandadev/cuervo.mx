@@ -70,6 +70,7 @@
         <p>&copy 2019 <a href="https://www.juandamartinez.com/" target="_blank">Juan Daniel Martínez</a></p>
     </footer>
 
+    <script src="private/config.js"></script>
     <script src="js/quiz.js"></script>
 </body>
 

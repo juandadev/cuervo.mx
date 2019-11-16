@@ -338,7 +338,7 @@ function subMenu(menu) {
 function AJAXpetition(url) {
     http_request = new XMLHttpRequest();
     http_request.onreadystatechange = changeStateRequest;
-    http_request.open('POST', 'http://localhost/cuervo-nut/views/' + url);
+    http_request.open('POST', urlDir + 'views/' + url);
     http_request.send();
 }
 
@@ -397,4 +397,30 @@ function subNavigation(c01, c02, c03, c04, color) {
     cont[c04].classList.add('c0' + (c04 + 1));
     titles[c04].classList.remove('hidden');
     btn[c04].classList.remove('hidden');
+}
+
+function toogleOptionOn(radio, i) {
+    var nameR = radio.childNodes[1].getAttribute('id');
+    var selected = document.querySelector('input[id=' + nameR + ']:checked');
+    var opt = document.querySelector('#op_0' + i);
+
+    opt.classList.remove('hiddenOpt');
+    opt.classList.add('showOpt');
+
+    var required = document.querySelectorAll('#op_0' + i + ' input');
+    required[0].setAttribute('required', '');
+    required[1] ? required[1].setAttribute('required', '') : console.log();
+    required[2] ? required[2].setAttribute('required', '') : console.log();
+}
+
+function toogleOptionOff(radio, i) {
+    var nameR = radio.childNodes[1].getAttribute('id');
+    var selected = document.querySelector('input[id=' + nameR + ']:checked');
+    var opt = document.querySelector('#op_0' + i);
+
+    opt.classList.add('hiddenOpt');
+    opt.classList.remove('showOpt');
+
+    var required = document.querySelector('#op_0' + i + ' input');
+    required.removeAttribute('required');
 }
