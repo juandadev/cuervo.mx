@@ -4,6 +4,52 @@
     box-sizing: border-box;
 }
 
+/* MODAL */
+
+
+.modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal .mailForm {
+    width: 400px;
+    height: 200px;
+    margin: 200px auto 0px auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-top: 8px solid #A63C3C;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #FFFFFF;
+    padding: 20px;
+}
+
+#mail {
+    width: 300px;
+}
+
+#btn07 {
+    width: 140px;
+    background-color: #A63C3C;
+    color: #FFFFFF;
+}
+
+.animate {
+  -webkit-animation: animatezoom 0.5s;
+  animation: animatezoom 0.5s
+}
+
 /* HEADER */
 
 header {
@@ -30,6 +76,7 @@ header {
 
 header .logo {
     height: 100%;
+    cursor: pointer;
 }
 
 /* QUIZ MENU */
@@ -347,13 +394,13 @@ header .logo {
     border: none;
 }
 
-.c05 form .label {
+.label {
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 5px;
 }
 
-.c05 form .input {
+.input {
     font-family: 'Open Sans', 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: 300;
@@ -361,11 +408,12 @@ header .logo {
     margin-bottom: 27px;
 }
 
-.c05 form input[type="number"],
-.c05 form input[type="date"],
-.c05 form input[type="text"],
-.c05 form select,
-.c05 form textarea {
+input[type="number"],
+input[type="date"],
+input[type="text"],
+input[type="email"],
+select,
+textarea {
     border: none;
     border-bottom: 1px solid;
     border-bottom-color: #707070;
@@ -402,8 +450,10 @@ header .logo {
     width: 200px;
 }
 
-.c05 form #age {
-    width: 80px;
+.c05 form #weight,
+.c05 form #age,
+.c05 form #height {
+    width: 100px;
 }
 
 .c05 form #birth {
@@ -412,6 +462,11 @@ header .logo {
 
 .c05 form #phone {
     width: 180px;
+}
+
+.c05 form #ocupation {
+    width: 250px;
+    text-transform: capitalize;
 }
 
 .c05 form #q_02_01,
@@ -613,6 +668,10 @@ footer a:hover,
 /* FOOTER */
 
 footer {
+    width: 86%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     position: absolute;
     color: #FFFFFF;
     margin: -50px 0px 0px 100px;
@@ -621,6 +680,14 @@ footer {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+#btn08 {
+    font-size: 16px;
+    height: 30px;
+    padding: 0px 20px;
+    background-color: #707070;
+    color: #FFFFFF;
 }
 
 footer a {
@@ -649,4 +716,14 @@ footer a {
     to {
         opacity: 1;
     }
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0);transform: scale(0)}
+  to {-webkit-transform: scale(1);transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {-webkit-transform: scale(0);transform: scale(0)}
+  to {-webkit-transform: scale(1);transform: scale(1)}
 }

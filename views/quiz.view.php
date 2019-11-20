@@ -3,6 +3,15 @@
         <img src="img/FULL-CUERVO-BLACK-NOBG.png" alt="Cuervo Nutrition" class="logo" id="logo">
     </header>
 
+    <div class="modal show" id="modal">
+        <form action="php/insertMail.php" method="POST" id="mailForm" class="mailForm show animate">
+            <label for="mail" class="label">Correo:</label>
+            <input type="email" name="mail" placeholder="Ingresa tu correo" autofocus required id="mail" class="input">
+
+            <button type="submit" id="btn07" class="roundBtn">Ingresar</button>
+        </form>
+    </div>
+
     <div class="wrapped-content01">
         <div class="container c01" id="c01">
             <div class="titleCont">
@@ -66,10 +75,13 @@
         </div>
     </div>
 
-    <footer>
+    <footer class="show">
         <p>&copy 2019 <a href="https://www.juandamartinez.com/" target="_blank">Juan Daniel Martínez</a></p>
+        
+        <button id="btn08" class="roundBtn">Cerrar sesión</button>
     </footer>
 
+    <script src="js/cookies.js"></script>
     <script src="private/config.js"></script>
     <script src="js/quiz.js"></script>
 </body>

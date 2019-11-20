@@ -44,6 +44,12 @@
                 <input type="checkbox" name="q_06" id="ch_06_07" value="hipotiroidismo">
                 <span class="checkmark r01"></span>
             </label>
+            
+            <label for="ch_06_08" class="input lblContainer">
+                Ninguna
+                <input type="checkbox" name="q_06" id="ch_06_08" value="ninguna">
+                <span class="checkmark r01"></span>
+            </label>
         </div>
     </div>
 

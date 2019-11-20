@@ -3,7 +3,9 @@ var btn = [document.getElementById('btn01'),
            document.getElementById('btn02'),
            document.getElementById('btn03'),
            document.getElementById('btn04'),
-           document.getElementById('btn05')];
+           document.getElementById('btn05'),
+           document.getElementById('btn07'),
+           document.getElementById('btn08')];
 
 //Quiz containers
 var cont = [document.getElementById('c01'),
@@ -18,11 +20,30 @@ var item = [document.getElementById('item01'),
             document.getElementById('item03'),
             document.getElementById('item04')];
 
+var modal = document.getElementById('modal');
 var titles = document.getElementsByClassName('titleCont');
 var quizNav = document.getElementById('quizNav');
 var logo = document.getElementById('logo');
 var wrapped = document.getElementById('wrapped-content02');
 var http_request;
+
+//Link to index
+logo.addEventListener('click', function () {
+    window.location = 'index.php';
+});
+
+//Logout
+btn[6].addEventListener('click', function () {
+    deleteCookie('client');
+    window.location = urlDir1 + 'quiz.php';
+});
+
+//Email modal
+if (checkCookie('client') == true) {
+    modal.classList.remove('show');
+    modal.classList.add('hidden');
+}
+
 
 btn[0].addEventListener('click', function () {
     setTimeout(function () {
@@ -338,7 +359,7 @@ function subMenu(menu) {
 function AJAXpetition(url1, url2) {
     http_request = new XMLHttpRequest();
     http_request.onreadystatechange = changeStateRequest;
-    
+
     http_request.open('POST', url1 + 'views/' + url2);
     http_request.send();
 }
