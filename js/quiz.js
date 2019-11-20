@@ -26,7 +26,7 @@ var http_request;
 
 btn[0].addEventListener('click', function () {
     setTimeout(function () {
-        AJAXpetition('datos-personales.view.php');
+        AJAXpetition(urlDir1, 'datos-personales.view.php');
     }, 500);
 
     cont[0].classList.add('current');
@@ -73,7 +73,7 @@ btn[0].addEventListener('click', function () {
 
 btn[1].addEventListener('click', function () {
     setTimeout(function () {
-        AJAXpetition('antecedentes-salud.view.php');
+        AJAXpetition(urlDir1, 'antecedentes-salud.view.php');
     }, 500);
 
     cont[0].classList.remove('current');
@@ -121,7 +121,7 @@ btn[1].addEventListener('click', function () {
 
 btn[2].addEventListener('click', function () {
     setTimeout(function () {
-        AJAXpetition('antecedentes-familiares.view.php');
+        AJAXpetition(urlDir1, 'antecedentes-familiares.view.php');
     }, 500);
 
     cont[0].classList.remove('current');
@@ -169,7 +169,7 @@ btn[2].addEventListener('click', function () {
 
 btn[3].addEventListener('click', function () {
     setTimeout(function () {
-        AJAXpetition('alimentos-deportes.view.php');
+        AJAXpetition(urlDir1, 'alimentos-deportes.view.php');
     }, 500);
 
     cont[0].classList.remove('current');
@@ -310,35 +310,36 @@ function backMenu(container) {
 function subMenu(menu) {
     switch (menu.getAttribute('id')) {
         case 'item01':
-            AJAXpetition('datos-personales.view.php');
+            AJAXpetition(urlDir1, 'datos-personales.view.php');
 
             subNavigation(0, 1, 2, 3, 'BLACK');
             break;
 
         case 'item02':
-            AJAXpetition('antecedentes-salud.view.php');
+            AJAXpetition(urlDir1, 'antecedentes-salud.view.php');
 
             subNavigation(1, 0, 2, 3, 'WHITE');
             break;
 
         case 'item03':
-            AJAXpetition('antecedentes-familiares.view.php');
+            AJAXpetition(urlDir1, 'antecedentes-familiares.view.php');
 
             subNavigation(2, 1, 0, 3, 'WHITE');
             break;
 
         case 'item04':
-            AJAXpetition('alimentos-deportes.view.php');
+            AJAXpetition(urlDir1, 'alimentos-deportes.view.php');
 
             subNavigation(3, 2, 1, 0, 'WHITE');
             break;
     }
 }
 
-function AJAXpetition(url) {
+function AJAXpetition(url1, url2) {
     http_request = new XMLHttpRequest();
     http_request.onreadystatechange = changeStateRequest;
-    http_request.open('POST', urlDir + 'views/' + url);
+    
+    http_request.open('POST', url1 + 'views/' + url2);
     http_request.send();
 }
 
