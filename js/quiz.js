@@ -5,7 +5,9 @@ var btn = [document.getElementById('btn01'),
            document.getElementById('btn04'),
            document.getElementById('btn05'),
            document.getElementById('btn07'),
-           document.getElementById('btn08')];
+           document.getElementById('btn08'),
+           document.getElementById('btn09'),
+           document.getElementById('btn10')];
 
 //Quiz containers
 var cont = [document.getElementById('c01'),
@@ -34,16 +36,31 @@ logo.addEventListener('click', function () {
 
 //Logout
 btn[6].addEventListener('click', function () {
-    deleteCookie('client');
-    window.location = urlDir1 + 'quiz.php';
+    modal.classList.remove('hidden');
+    modal.classList.add('show');
+
+    var mailForm = document.querySelector('#mailForm');
+    mailForm.style.display = 'none';
+
+    btn[7].addEventListener('click', function () {
+        deleteCookie('client');
+        window.location = urlDir1 + 'index.php';
+    });
+
+    btn[8].addEventListener('click', function () {
+        modal.classList.remove('show');
+        modal.classList.add('hidden');
+    });
 });
 
 //Email modal
 if (checkCookie('client') == true) {
     modal.classList.remove('show');
     modal.classList.add('hidden');
+} else {
+    var logout = document.querySelector('#logout');
+    logout.style.display = 'none';
 }
-
 
 btn[0].addEventListener('click', function () {
     setTimeout(function () {
@@ -445,4 +462,203 @@ function toogleOptionOff(radio, i) {
 
     var required = document.querySelector('#op_0' + i + ' input');
     required.removeAttribute('required');
+}
+
+function insertClientData(evt, form, i) {
+    evt.preventDefault();
+
+    http_request = new XMLHttpRequest();
+    http_request.open('POST', urlDir1 + 'php/insertData.php');
+
+    var name = form.name.value.trim();
+    var age = parseInt(form.age.value.trim());
+    var weight = parseInt(form.weight.value.trim());
+    var height = parseInt(form.height.value.trim());
+    var gender = form.gender.value;
+    var birth = form.birth.value;
+    var civil = form.civil.value;
+    var ocupation = form.ocupation.value.trim();
+    var phone = parseInt(form.phone.value.trim());
+    var q_01 = form.q_01.value.trim();
+
+    var params = 'name=' + name +
+        '&age=' + age +
+        '&weight=' + weight +
+        '&height=' + height +
+        '&gender=' + gender +
+        '&birth=' + birth +
+        '&civil=' + civil +
+        '&ocupation=' + ocupation +
+        '&phone=' + phone +
+        '&q_01=' + q_01;
+
+    http_request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    http_request.onreadystatechange = function () {
+        if (http_request.readyState == XMLHttpRequest.DONE) {
+            if (http_request.status == 200) {
+                changeCompleted(i);
+            } else {
+                console.log('Hubo un error');
+            }
+        }
+    }
+
+    http_request.send(params);
+}
+
+function insertForm2(evt, form, i) {
+    evt.preventDefault();
+
+    http_request = new XMLHttpRequest();
+    http_request.open('POST', urlDir1 + 'php/insertData.php');
+
+    var q_02 = parseInt(form.q_02.value);
+    var q_02_01 = form.q_02_01.value.trim();
+    var q_03 = parseInt(form.q_03.value);
+    var q_03_01 = form.q_03_01.value.trim();
+    var q_04 = parseInt(form.q_04.value);
+    var q_04_01 = form.q_04_01.value.trim();
+    var q_04_02 = form.q_04_02.value.trim();
+    var q_05 = parseInt(form.q_05.value);
+    var q_05_01 = form.q_05_01.value.trim();
+
+    var params = 'q_02=' + q_02 +
+        '&q_02_01=' + q_02_01 +
+        '&q_03=' + q_03 +
+        '&q_03_01=' + q_03_01 +
+        '&q_04=' + q_04 +
+        '&q_04_01=' + q_04_01 +
+        '&q_04_02=' + q_04_02 +
+        '&q_05=' + q_05 +
+        '&q_05_01=' + q_05_01;
+    console.log(params);
+
+    http_request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    http_request.onreadystatechange = function () {
+        if (http_request.readyState == XMLHttpRequest.DONE) {
+            if (http_request.status == 200) {
+                changeCompleted(i);
+            } else {
+                console.log('Hubo un error');
+            }
+        }
+    }
+
+    http_request.send(params);
+}
+
+function insertForm3(evt, form, i) {
+    evt.preventDefault();
+
+    http_request = new XMLHttpRequest();
+    http_request.open('POST', urlDir1 + 'php/insertData.php');
+
+    var q_0601 = form.q_06[0].checked == true ? form.q_06[0].value : '';
+    var q_0602 = form.q_06[1].checked == true ? form.q_06[1].value : '';
+    var q_0603 = form.q_06[2].checked == true ? form.q_06[2].value : '';
+    var q_0604 = form.q_06[3].checked == true ? form.q_06[3].value : '';
+    var q_0605 = form.q_06[4].checked == true ? form.q_06[4].value : '';
+    var q_0606 = form.q_06[5].checked == true ? form.q_06[5].value : '';
+    var q_0607 = form.q_06[6].checked == true ? form.q_06[6].value : '';
+    var q_0608 = form.q_06[7].checked == true ? form.q_06[7].value : '';
+    var q_06_01 = form.q_06_01.value.trim();
+
+    var params = 'q_0601=' + q_0601 +
+        '&q_0602=' + q_0602 +
+        '&q_0603=' + q_0603 +
+        '&q_0604=' + q_0604 +
+        '&q_0605=' + q_0605 +
+        '&q_0606=' + q_0606 +
+        '&q_0607=' + q_0607 +
+        '&q_0608=' + q_0608 +
+        '&q_06_01=' + q_06_01;
+    console.log(params);
+
+    http_request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    http_request.onreadystatechange = function () {
+        if (http_request.readyState == XMLHttpRequest.DONE) {
+            if (http_request.status == 200) {
+                changeCompleted(i);
+            } else {
+                console.log('Hubo un error');
+            }
+        }
+    }
+
+    http_request.send(params);
+}
+
+function insertForm4(evt, form, i) {
+    evt.preventDefault();
+
+    http_request = new XMLHttpRequest();
+    http_request.open('POST', urlDir1 + 'php/insertData.php');
+
+    var q_07 = form.q_07.value.trim();
+    var q_08 = form.q_08.value.trim();
+    var q_09 = form.q_09.value.trim();
+    var q_010 = form.q_010.value.trim();
+    var q_011 = parseInt(form.q_011.value);
+    var q_011_01 = form.q_011_01.value.trim();
+    var q_012 = parseInt(form.q_012.value);
+    var q_012_01 = form.q_012_01.value.trim();
+    var q_012_02 = form.q_012_02.value.trim();
+    var q_012_03 = form.q_012_03.value.trim();
+    var q_013 = parseInt(form.q_013.value);
+    var q_013_01 = form.q_013_01.value.trim();
+    var q_013_02 = form.q_013_02.value.trim();
+    var q_014 = parseInt(form.q_014.value);
+    var q_014_01 = form.q_014_01.value.trim();
+
+    var params = 'q_07=' + q_07 +
+        '&q_08=' + q_08 +
+        '&q_09=' + q_09 +
+        '&q_010=' + q_010 +
+        '&q_011=' + q_011 +
+        '&q_011_01=' + q_011_01 +
+        '&q_012=' + q_012 +
+        '&q_012_01=' + q_012_01 +
+        '&q_012_02=' + q_012_02 +
+        '&q_012_03=' + q_012_03 +
+        '&q_013=' + q_013 +
+        '&q_013_01=' + q_013_01 +
+        '&q_013_02=' + q_013_02 +
+        '&q_014=' + q_014 +
+        '&q_014_01=' + q_014_01;
+    console.log(params);
+
+    http_request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    http_request.onreadystatechange = function () {
+        if (http_request.readyState == XMLHttpRequest.DONE) {
+            if (http_request.status == 200) {
+                changeCompleted(i);
+            } else {
+                console.log('Hubo un error');
+            }
+        }
+    }
+
+    http_request.send(params);
+}
+
+function changeCompleted(i) {
+    item[i].classList.add('completed');
+    btn[i].classList.add('completedBtn');
+    btn[i].classList.remove('btn01');
+    btn[i].classList.remove('btn02');
+    btn[i].classList.remove('btn03');
+    btn[i].classList.remove('btn04');
+    btn[i].innerHTML = 'Completado';
+
+    if (item[i].childElementCount == 0) {
+        var check = document.createElement('i');
+        check.classList.add('fas');
+        check.classList.add('fa-check-circle');
+
+        item[i].appendChild(check);
+    }
 }

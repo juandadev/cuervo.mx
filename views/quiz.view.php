@@ -10,6 +10,16 @@
 
             <button type="submit" id="btn07" class="roundBtn">Ingresar</button>
         </form>
+
+        <div id="logout" class="mailForm hidden animate">
+            <p class="label">Estás seguro que deseas salir?</p>
+
+            <div class="logoutOptions">
+                <button id="btn09" class="roundBtn">Sí</button>
+
+                <button id="btn10" class="roundBtn">No</button>
+            </div>
+        </div>
     </div>
 
     <div class="wrapped-content01">
@@ -77,7 +87,7 @@
 
     <footer class="show">
         <p>&copy 2019 <a href="https://www.juandamartinez.com/" target="_blank">Juan Daniel Martínez</a></p>
-        
+
         <button id="btn08" class="roundBtn">Cerrar sesión</button>
     </footer>
 

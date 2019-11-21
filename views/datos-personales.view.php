@@ -6,6 +6,7 @@ $con = connection($db_config);
 $email = $_COOKIE['client'];
 
 $client = searchClientInfo($con, $email);
+$quiz = searchClientQuiz($con, $email);
 
 $name = $client[0]['name_client'];
 $age = $client[0]['age_client'];
@@ -16,9 +17,10 @@ $birth = $client[0]['birth_client'];
 $civil = $client[0]['civil_client'];
 $ocupation = $client[0]['ocupation_client'];
 $phone = $client[0]['phone_client'];
+$q_01 = $quiz[0]['q_01'];
 ?>
 
-<form action="#" method="post" id="quizForm01" class="quizForm01">
+<form action="" method="" id="quizForm01" class="quizForm01" onsubmit="insertClientData(event, this, 0)">
     <label for="name" class="label">Nombre:</label>
     <input type="text" id="name" class="name" placeholder="Nombre completo" autofocus required value="<?php echo $name == "" ? "" : $name; ?>">
 
@@ -29,7 +31,7 @@ $phone = $client[0]['phone_client'];
     <input type="number" id="weight" class="input" min="0" max="200" placeholder="p. ej. 80" required value="<?php echo $weight == 0 ? "" : (int) $weight; ?>">
 
     <label for="height" class="label">Estatura (cm):</label>
-    <input type="number" id="height" class="input" min="0" max="3" placeholder="p. ej. 170" required value="<?php echo $height == 0 ? "" : (int) $height; ?>">
+    <input type="number" id="height" class="input" min="0" max="300" placeholder="p. ej. 170" required value="<?php echo $height == 0 ? "" : (int) $height; ?>">
 
     <div class="radioContainer">
         <label for="gender" class="label">Género:</label>
@@ -44,7 +46,7 @@ $phone = $client[0]['phone_client'];
             <label for="female" class="input lblContainer">
                 Mujer
                 <input type="radio" name="gender" id="female" value="mujer" <?php echo $gender == 'mujer' ? 'checked' : ''; ?>>
-                <span class="radio r01" ></span>
+                <span class="radio r01"></span>
             </label>
 
             <label for="other" class="input lblContainer">
@@ -55,7 +57,7 @@ $phone = $client[0]['phone_client'];
         </div>
     </div>
 
-    <label for="birth" class="label" >Fecha de nacimiento:</label>
+    <label for="birth" class="label">Fecha de nacimiento:</label>
     <input type="date" id="birth" class="input" required value="<?php echo $birth == "" ? '' : $birth; ?>">
 
     <div class="radioContainer">
@@ -101,7 +103,7 @@ $phone = $client[0]['phone_client'];
     <input type="number" id="phone" class="input" min="0" max="9999999999" placeholder="p. ej. 6271234567" required value="<?php echo $phone == 0 ? "" : (double) $phone; ?>">
 
     <label for="q_01" class="label">Motivo de la consulta:</label>
-    <textarea name="q_01" id="q_01" class="input" cols="30" rows="10" placeholder="Especifique" required></textarea>
+    <textarea name="q_01" id="q_01" class="input" cols="30" rows="10" placeholder="Especifique" required><?php echo $q_01 == "" ? "" : $q_01; ?></textarea>
 
     <button type="submit" class="roundBtn btn06 b06-01 shadow">Guardar cambios</button>
 </form>
