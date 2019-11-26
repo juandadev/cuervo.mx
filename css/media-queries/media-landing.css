@@ -1,0 +1,45 @@
+@media screen and (max-width: 1080px) {
+    .container h1 {
+        font-size: 100px;
+    }
+    
+    body {
+        background-size: auto;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .container h1 {
+        font-size: 80px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container h1 {
+        font-size: 50px;
+    }
+    
+    header {
+        margin: 20px 0px;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+
+    header .logo {
+        height: 80px;
+    }
+
+    header a {
+        font-size: 28px;
+    }
+    
+    .container,
+    footer {
+        margin: 0px 20px;
+    }
+    
+    .container .slogan {
+        width: 100%;
+        font-size: 26px;
+    }
+}

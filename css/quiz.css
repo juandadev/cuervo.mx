@@ -4,21 +4,26 @@
     box-sizing: border-box;
 }
 
-/* MODAL */
+body {
+    background-image: url(../img/trianglify-lowres.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
+/* MODAL */
 
 .modal {
     position: fixed;
     width: 100%;
     height: 100%;
     z-index: 3;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal .mailForm {
     width: 400px;
     height: 200px;
-    margin: 200px auto 0px auto;
+    margin: 10% auto 0px auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -46,8 +51,8 @@
 }
 
 .animate {
-  -webkit-animation: animatezoom 0.5s;
-  animation: animatezoom 0.5s
+    -webkit-animation: animatezoom 0.5s;
+    animation: animatezoom 0.5s
 }
 
 .logoutOptions {
@@ -286,6 +291,7 @@ header .logo {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    background-color: #FFFFFF;
 }
 
 .c05 .quizNav {
@@ -297,6 +303,13 @@ header .logo {
 }
 
 .c05 .quizNav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
     width: 100%;
     padding: 0px 0px 20px 66px;
     -webkit-box-pack: justify;
@@ -320,6 +333,10 @@ header .logo {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.c05 .quizNav .bars {
+    display: none;
 }
 
 /* SELECTED SUBMENU */
@@ -760,11 +777,25 @@ footer a {
 }
 
 @-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0);transform: scale(0)}
-  to {-webkit-transform: scale(1);transform: scale(1)}
+    from {
+        -webkit-transform: scale(0);
+        transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
 }
 
 @keyframes animatezoom {
-  from {-webkit-transform: scale(0);transform: scale(0)}
-  to {-webkit-transform: scale(1);transform: scale(1)}
+    from {
+        -webkit-transform: scale(0);
+        transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
 }

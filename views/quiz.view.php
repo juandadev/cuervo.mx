@@ -73,7 +73,11 @@
                     <i class="fas fa-chevron-up"></i>
                 </div>
 
-                <ul class="show">
+                <div class="bars" id="bars">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <ul>
                     <li id="item01" onclick="subMenu(this)">Datos personales</li>
                     <li id="item02" onclick="subMenu(this)">Antecedentes de salud</li>
                     <li id="item03" onclick="subMenu(this)">Antecedentes familiares</li>

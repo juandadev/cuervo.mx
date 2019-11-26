@@ -1,0 +1,276 @@
+@media screen and (max-width: 1080px) {
+    .titleCont {
+        width: 100%;
+    }
+
+    .titleCont h2 {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    header {
+        height: 15%;
+    }
+
+    .titleCont h2 {
+        font-size: 24px;
+    }
+    
+    .c05 {
+        padding-right: 20px;
+    }
+    
+    .c05 .wrapped-content02 {
+        padding-left: 20px;
+    }
+
+    .input {
+        width: 100%;
+    }
+
+    .radioOptions {
+        width: 100%;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .checkOptions {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+
+    .radioOptions .input {
+        width: auto;
+    }
+    
+    .input,
+    .c05 form .name {
+        font-size: 22px;
+    }
+    
+    .c05 .quizNav ul li {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .titleCont h2 {
+        font-size: 20px;
+    }
+
+    .container .roundBtn {
+        width: 135px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .wrapped-content01 {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    header {
+        width: auto;
+        margin: 20px 0px -100px 20px;
+        padding: 0;
+        height: 70px;
+    }
+
+    .container {
+        width: 100%;
+        height: 200px;
+        padding: 20px;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+
+    .titleCont {
+        width: auto;
+        height: auto;
+        margin: 0;
+    }
+
+    .titleCont h2 {
+        font-size: 28px;
+    }
+
+    .container .roundBtn {
+        width: 150px;
+    }
+
+    .c01:hover,
+    .c02:hover,
+    .c03:hover,
+    .c04:hover {
+        width: 100%;
+        z-index: 1;
+    }
+
+    .c01 {
+        background-size: cover;
+        background-position: 10% 40%;
+    }
+
+    .c02 {
+        background-position: 10% 30%;
+    }
+
+    .c03 {
+        background-position: 10% 30%;
+    }
+
+    .c04 {
+        background-position: 10% 40%;
+        height: 250px;
+        padding-bottom: 50px;
+    }
+
+    .ccontent01,
+    .ccontent02,
+    .ccontent03,
+    .ccontent04 {
+        width: 100%;
+        height: 120px;
+        position: fixed;
+    }
+
+    .ccontent01,
+    .ccontent04 {
+        background-position: 10% 40%;
+    }
+
+    .ccontent02,
+    .ccontent03 {
+        background-position: 10% 30%;
+    }
+
+    .hidden01,
+    .hidden02,
+    .hidden03,
+    .hidden04 {
+        margin-left: -100%;
+    }
+
+    .c05 {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .c05 form {
+        margin-top: 200px;
+    }
+
+    .controls {
+        margin: -70px 20px 0px 20px;
+    }
+
+    .c05 .quizNav {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 100%;
+        height: 80px;
+        margin: 0;
+        margin-top: 120px;
+        padding: 0;
+        position: fixed;
+        background-color: #FFFFFF;
+    }
+
+    .c05 .quizNav ul {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+    }
+
+    .c05 {
+        background-color: #FFFFFF;
+    }
+
+    .c05 .wrapped-content02 {
+        margin: 30px 0px;
+        padding: 0px 20px;
+    }
+
+    footer {
+        width: 100vw;
+        margin: -50px 0px 0px 0px;
+        padding: 0px 20px;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .c01 {
+        padding-top: 80px;
+        height: 280px;
+    }
+
+    .quizNav {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .c05 .quizNav ul {
+        display: none;
+        position: absolute;
+        width: 150px;
+        height: 250px;
+        right: 0;
+        margin-top: 150px;
+        border: none;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    .c05 .quizNav ul li {
+        padding: 10px;
+    }
+
+    .c05 .quizNav .bars {
+        display: block;
+        margin-right: 20px;
+        font-size: 40px;
+    }
+
+    .input,
+    .c05 form .name {
+        font-size: 16px;
+    }
+
+    #btn08 {
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 12px;
+        margin-top: -40px;
+    }
+}

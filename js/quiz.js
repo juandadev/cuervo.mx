@@ -25,9 +25,20 @@ var item = [document.getElementById('item01'),
 var modal = document.getElementById('modal');
 var titles = document.getElementsByClassName('titleCont');
 var quizNav = document.getElementById('quizNav');
+var bars = document.getElementById('bars');
+var sMenu = document.querySelector('.quizNav ul');
 var logo = document.getElementById('logo');
 var wrapped = document.getElementById('wrapped-content02');
 var http_request;
+
+//Phone menu event
+bars.addEventListener('click', function () {
+    if (sMenu.style.display == 'flex') {
+        sMenu.style.display = 'none';
+    } else {
+        sMenu.style.display = 'flex';
+    }
+});
 
 //Link to index
 logo.addEventListener('click', function () {
@@ -351,24 +362,56 @@ function subMenu(menu) {
             AJAXpetition(urlDir1, 'datos-personales.view.php');
 
             subNavigation(0, 1, 2, 3, 'BLACK');
+
+            if (screen.width <= 480) {
+                if (sMenu.style.display == 'flex') {
+                    sMenu.style.display = 'none';
+                } else {
+                    sMenu.style.display = 'flex';
+                }
+            }
             break;
 
         case 'item02':
             AJAXpetition(urlDir1, 'antecedentes-salud.view.php');
 
             subNavigation(1, 0, 2, 3, 'WHITE');
+
+            if (screen.width <= 480) {
+                if (sMenu.style.display == 'flex') {
+                    sMenu.style.display = 'none';
+                } else {
+                    sMenu.style.display = 'flex';
+                }
+            }
             break;
 
         case 'item03':
             AJAXpetition(urlDir1, 'antecedentes-familiares.view.php');
 
             subNavigation(2, 1, 0, 3, 'WHITE');
+
+            if (screen.width <= 480) {
+                if (sMenu.style.display == 'flex') {
+                    sMenu.style.display = 'none';
+                } else {
+                    sMenu.style.display = 'flex';
+                }
+            }
             break;
 
         case 'item04':
             AJAXpetition(urlDir1, 'alimentos-deportes.view.php');
 
             subNavigation(3, 2, 1, 0, 'WHITE');
+
+            if (screen.width <= 480) {
+                if (sMenu.style.display == 'flex') {
+                    sMenu.style.display = 'none';
+                } else {
+                    sMenu.style.display = 'flex';
+                }
+            }
             break;
     }
 }
