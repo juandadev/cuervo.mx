@@ -548,6 +548,7 @@ function insertClientData(evt, form, i) {
     }
 
     http_request.send(params);
+    checkCompleted(1, 2, 3);
 }
 
 function insertForm2(evt, form, i) {
@@ -590,6 +591,7 @@ function insertForm2(evt, form, i) {
     }
 
     http_request.send(params);
+    checkCompleted(0, 2, 3);
 }
 
 function insertForm3(evt, form, i) {
@@ -632,6 +634,7 @@ function insertForm3(evt, form, i) {
     }
 
     http_request.send(params);
+    checkCompleted(0, 1, 3);
 }
 
 function insertForm4(evt, form, i) {
@@ -686,6 +689,7 @@ function insertForm4(evt, form, i) {
     }
 
     http_request.send(params);
+    checkCompleted(0, 1, 2);
 }
 
 function changeCompleted(i) {
@@ -709,4 +713,10 @@ function changeCompleted(i) {
     success.innerHTML = 'Datos guardados exitosamente';
     success.style.padding = '10px';
     success.style.textAlign = 'center';
+}
+
+function checkCompleted(i1, i2, i3) {
+    if (item[i1].classList.contains('completed') && item[i2].classList.contains('completed') && item[i3].classList.contains('completed')) {
+        window.location = 'success.php';
+    }
 }

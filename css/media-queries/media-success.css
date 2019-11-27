@@ -1,0 +1,113 @@
+@media screen and (max-width: 1024px) {
+    body {
+        padding: 0px;
+    }
+
+    header nav p:hover {
+        opacity: 1;
+    }
+
+    header,
+    main h2,
+    main p {
+        padding: 0px 20px;
+    }
+
+    main h2,
+    main p {
+        text-align: center;
+    }
+
+    .contactOptions {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .contactOptions .whatsapp,
+    .contactOptions .facebook,
+    .contactOptions .gmail {
+        position: relative;
+        width: auto;
+        margin: 0px 0px 0px 0px;
+        padding: 80px 5% 7% 5%;
+    }
+
+    .contactOptions .gmail {
+        margin-bottom: 50px;
+    }
+
+    .contactOptions .whatsapp p,
+    .contactOptions .facebook p,
+    .contactOptions .gmail p {
+        padding: 0;
+    }
+
+    .contactOptions .whatsapp .addition p:hover {
+        opacity: 1;
+    }
+
+    .contactOptions .whatsapp:hover .textContact,
+    .contactOptions .facebook:hover .textContact,
+    .contactOptions .gmail:hover .textContact {
+        color: #707070;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header nav {
+        position: absolute;
+        right: 0;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 200px;
+        margin-top: 120px;
+        background-color: #402C31;
+        -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+        box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    header nav p {
+        text-align: center;
+        padding: 20px;
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .navBar {
+        display: block;
+    }
+
+    .addition p {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    main h2 {
+        font-size: 30px;
+    }
+
+    main p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .gmail .textContact {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    main h2 {
+        font-size: 26px;
+    }
+
+    .gmail .textContact {
+        font-size: 20px;
+    }
+}
