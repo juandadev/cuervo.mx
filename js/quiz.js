@@ -503,8 +503,12 @@ function toogleOptionOff(radio, i) {
     opt.classList.add('hiddenOpt');
     opt.classList.remove('showOpt');
 
-    var required = document.querySelector('#op_0' + i + ' input');
-    required.removeAttribute('required');
+    var required = document.querySelectorAll('#op_0' + i + ' .input');
+    required[0].removeAttribute('required');
+    if (required[1] != null && required[2] != null) {
+        required[1].removeAttribute('required');
+        required[2].removeAttribute('required');
+    }
 }
 
 function insertClientData(evt, form, i) {
