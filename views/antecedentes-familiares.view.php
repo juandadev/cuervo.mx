@@ -79,5 +79,7 @@ array_push($q_06_opt, $q_06);
     <label for="q_06_01" class="label">Otra:</label>
     <input type="text" id="q_06_01" class="input" placeholder="Especifique" value="<?php echo $q_06_01 == "" ? "" : $q_06_01; ?>">
 
+    <div class="success"></div>
+
     <button type="submit" class="roundBtn btn06 b06-01 shadow">Guardar cambios</button>
 </form>

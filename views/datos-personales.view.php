@@ -105,5 +105,7 @@ $q_01 = $quiz[0]['q_01'];
     <label for="q_01" class="label">Motivo de la consulta:</label>
     <textarea name="q_01" id="q_01" class="input" cols="30" rows="10" placeholder="Especifique" required><?php echo $q_01 == "" ? "" : $q_01; ?></textarea>
 
+    <div class="success"></div>
+
     <button type="submit" class="roundBtn btn06 b06-01 shadow">Guardar cambios</button>
 </form>

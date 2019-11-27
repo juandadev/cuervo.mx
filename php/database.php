@@ -11,7 +11,7 @@ function connection($db_config) {
 
 function insertMail($con, $mail) {
     $result = $con->query("INSERT INTO clients (mail_client) VALUES ('$mail')");
-    return true;
+    return $result;
 }
 
 function insertFk($con, $id) {

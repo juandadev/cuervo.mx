@@ -6,6 +6,12 @@
     .titleCont h2 {
         font-size: 28px;
     }
+    
+    .c05 form #q_08,
+    .c05 form #q_09,
+    .c05 form #q_010 {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 930px) {

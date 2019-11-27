@@ -139,5 +139,7 @@ $q_014_01 = $quiz[0]['q_014_01'];
         <input type="text" id="q_014_01" class="input" placeholder="Especifique" value="<?php echo $q_014_01 == "" ? "" : $q_014_01; ?>">
     </div>
 
+    <div class="success"></div>
+
     <button type="submit" class="roundBtn btn06 b06-02 shadow">Guardar cambios</button>
 </form>

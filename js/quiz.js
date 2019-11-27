@@ -704,4 +704,9 @@ function changeCompleted(i) {
 
         item[i].appendChild(check);
     }
+    
+    var success = document.querySelector('.success');
+    success.innerHTML = 'Datos guardados exitosamente';
+    success.style.padding = '10px';
+    success.style.textAlign = 'center';
 }

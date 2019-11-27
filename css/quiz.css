@@ -664,7 +664,7 @@ textarea {
 }
 
 .c05 form .btn06 {
-    margin-top: 43px;
+    margin-top: 160px;
     margin-bottom: 50px;
     color: #FFFFFF;
     width: 215px;
@@ -678,6 +678,15 @@ textarea {
 
 .c05 form .b06-02 {
     background-color: #A63C3C;
+}
+
+.success {
+    margin-bottom: -70px;
+    width: 100%;
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 /* GENERAL BUTTON STYLE */

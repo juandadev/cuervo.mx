@@ -16,6 +16,7 @@ if (mailExists($con, $mail) == true) {
     header("Location: $url/quiz.php");
 } else {
     echo 'el mail no existe';
+    
     insertMail($con, $mail);
     $id = searchId($con, $mail);
     $id = $id[0]['id_client'];
