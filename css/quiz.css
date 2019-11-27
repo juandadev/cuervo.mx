@@ -459,7 +459,6 @@ textarea {
     padding: 5px;
     background-color: #F2F2F2;
     border-radius: 5px 5px 0px 0px;
-    text-transform: capitalize;
 }
 
 .c05 form input[type="number"]::-webkit-inner-spin-button,
@@ -506,7 +505,6 @@ textarea {
 
 .c05 form #ocupation {
     width: 250px;
-    text-transform: capitalize;
 }
 
 .c05 form #q_02_01,
