@@ -537,16 +537,13 @@ textarea {
 }
 
 .hiddenOpt {
-    opacity: 0;
-    width: 0px;
-    height: 0px;
+    display: none;
 }
 
 .showOpt {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    opacity: 1;
     width: auto;
     height: auto;
 }
