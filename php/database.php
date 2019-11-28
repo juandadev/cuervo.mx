@@ -4,7 +4,7 @@ function connection($db_config) {
         $con = new PDO('mysql:host='.$db_config['host'].';dbname='.$db_config['database'].'', $db_config['user'], $db_config['pass']);
         return $con;
     } catch (PDOException $e) {
-        echo "Error: ". $e->getMessage();
+        //echo "Error: ". $e->getMessage();
         return false;
     }
 }
@@ -27,6 +27,18 @@ function searchId($con, $mail) {
 
 function searchClientInfo($con, $mail) {
     $result = $con->query("SELECT * FROM clients WHERE mail_client = '$mail'");
+    $result->execute();
+    return $result->fetchAll();
+}
+
+function searchAllData($con, $id) {
+    $result = $con->query("SELECT clients.*, quiz.* FROM clients INNER JOIN quiz ON clients.id_client = quiz.fk_id_client WHERE clients.id_client = '$id'");
+    $result->execute();
+    return $result->fetchAll();
+}
+
+function searchClientAll($con) {
+    $result = $con->query("SELECT clients.id_client, clients.name_client, clients.age_client, clients.gender_client, clients.phone_client, quiz.date_quiz FROM clients INNER JOIN quiz ON clients.id_client = quiz.fk_id_client");
     $result->execute();
     return $result->fetchAll();
 }
