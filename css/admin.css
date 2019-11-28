@@ -1,0 +1,64 @@
+* {
+    font-family: 'Open Sans';
+}
+
+body {
+    padding: 0px 20px;
+}
+
+.show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
+
+.containerList table {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 200;
+    margin-bottom: 100px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.containerList table tr {
+    background-color: #F2F2F2;
+}
+
+.containerList table th {
+    background-color: #707070;
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+.containerList table td {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.containerList table .rUserInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.containerList .userPic {
+    width: 30px;
+    height: 30px;
+}
+
+@media screen and (max-width: 425px) {
+}

@@ -28,6 +28,12 @@
             <input type="text" id="search" placeholder="Buscar contacto">
         </div>
 
+        <button id="update" class="update">Actualizar</button>
+
+        <div id="errors" class="errors hidden">
+            <p>Se ha producido un error</p>
+        </div>
+
         <div class="container">
             <div class="containerHead">
                 <div class="h01">
@@ -79,46 +85,13 @@
                         <th>Fecha registro</th>
                         <th></th>
                     </tr>
-
-                    <tr id="1">
-                        <td>
-                            <input type="check" id="rCheck">
-                        </td>
-
-                        <td>
-                            <img src="" alt="" class="userPic">
-
-                            <div class="rinfo">
-                                <p id="rUser"></p>
-
-                                <p id="rMail"></p>
-                            </div>
-                        </td>
-
-                        <td id="rAge">
-                            <p id="rAge"></p>
-                        </td>
-
-                        <td>
-                            <p id="rGender"></p>
-                        </td>
-
-                        <td>
-                            <p id="rPhone"></p>
-                        </td>
-
-                        <td>
-                            <p id="rDate"></p>
-                        </td>
-
-                        <td id="rMore">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </td>
-                    </tr>
                 </table>
             </div>
         </div>
     </div>
+
+    <script src="private/config.js"></script>
+    <script src="js/admin.js"></script>
 </body>
 
 </html>
