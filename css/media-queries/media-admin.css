@@ -1,0 +1,96 @@
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0px 20px;
+    font-size: 14px;
+  }
+
+  header {
+    padding: 20px 0px;
+  }
+
+  .h01 h1,
+  .h01 p {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .h01 p,
+  .h02 p,
+  .h02 select,
+  .h03 button,
+  #containerList .th {
+    font-size: 14px;
+  }
+
+  #containerList .clientRow .rUserInfo img {
+    width: 40px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  body {
+    padding: 0;
+    padding-top: 20px;
+  }
+
+  header {
+    padding: 0 10px;
+  }
+
+  header .logo img {
+    width: 100px;
+  }
+
+  .search {
+    padding: 0 10px;
+  }
+
+  .update {
+    margin-left: 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .h03 #addUser i {
+    margin: 0;
+  }
+
+  #containerList #rAge,
+  #containerList #thAge,
+  #containerList #rGender,
+  #containerList #thGender,
+  #containerList #rPhone,
+  #containerList #thPhone,
+  #containerList #rDate,
+  #containerList #thDate,
+  #containerList #thInfo,
+  .h02 p,
+  .h03 #addUser p {
+    display: none;
+  }
+
+  #containerList #rCheck01,
+  #containerList #thCheck,
+  #containerList #rMore,
+  #containerList #thMore {
+    width: 10%;
+  }
+
+  #containerList #rUserInfo {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .h03 #addUser {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .h02 {
+    display: none;
+  }
+}

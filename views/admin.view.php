@@ -65,7 +65,8 @@
 
                 <div class="h03">
                     <button id="addUser">
-                        <i class="fas fa-user-plus"></i>Agregar Contacto
+                        <i class="fas fa-user-plus"></i>
+                        <p>Agregar Contacto</p>
                     </button>
 
                     <button id="more">

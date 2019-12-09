@@ -191,6 +191,10 @@ header .adminControl .controls ul li:hover {
 }
 
 .h03 #addUser {
+    display: flex;
+}
+
+.h03 #addUser {
     margin-right: 10px;
     background-color: #A63C3C;
     color: #FFE5E5;
