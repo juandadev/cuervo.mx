@@ -1,49 +1,45 @@
 * {
-    font-family: 'Open Sans';
+    padding: 0px;
+    margin: 0px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-    padding: 0px 20px;
-}
-
-.show {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.hidden {
-    display: none;
-}
-
-.containerList table {
-    width: 100%;
+    padding: 0px 100px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
     font-size: 16px;
-    font-weight: 200;
-    margin-bottom: 100px;
+    line-height: 1.7;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
 
-.containerList table tr {
-    background-color: #F2F2F2;
+/* HIDDEN ELEMENT */
+.hidden {
+    display: none;
 }
 
-.containerList table th {
-    background-color: #707070;
-    padding: 10px;
-    color: #FFFFFF;
+/* HEADER */
+header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 50px;
+    padding-bottom: 20px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
-.containerList table td {
-    padding: 10px;
-    text-align: center;
+header .logo {
+    width: 100px;
     cursor: pointer;
 }
 
-.containerList table .rUserInfo {
+header .adminControl {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -53,12 +49,246 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.containerList .userPic {
-    width: 30px;
-    height: 30px;
+header .adminControl .adminPic,
+header .adminControl .adminName {
+    padding-right: 10px;
 }
 
-@media screen and (max-width: 425px) {
+header .adminControl .controls {
+    position: absolute;
+    background-color: #ffffff;
+    -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(180px);
+    -webkit-transform: translateY(180px);
+    -moz-transform: translateY(180px);
+    -ms-transform: translateY(180px);
+    -o-transform: translateY(180px);
+}
+
+header .adminControl .controls ul li {
+    padding: 10px 20px;
+    list-style: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+header .adminControl .controls ul li:hover {
+    background-color: #f2f2f2;
+}
+
+/* SEARCH SECTION */
+.search i {
+    font-size: 20px;
+    color: #707070;
+}
+
+.search input[type="text"] {
+    width: 90%;
+    font-size: 16px;
+    color: #707070;
+    border: none;
+    padding: 10px;
+}
+
+.update {
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    color: #ffffff;
+    background-color: #a63c3c;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+}
+
+.errors {
+    color: #d8000c;
+    background-color: #ffd2d2;
+    padding: 16px;
+}
+
+/* CONTACT CONTENT */
+.container {
+    background-color: #F2F2F2;
+    padding: 20px 30px;
+}
+
+.containerHead {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.h01,
+.h02,
+.h03 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 50px;
+}
+
+.h01 h1,
+.h01 p {
+    font-size: 28px;
+    color: #A63C3C;
+    font-weight: 200;
+    margin-right: 15px;
+}
+
+.h01 p {
+    font-size: 16px;
+    color: #707070;
+}
+
+.h02 p {
+    font-size: 16px;
+    font-weight: 200;
+    color: #707070;
+    margin-right: 15px;
+}
+
+.h02 select {
+    font-size: 16px;
+    font-weight: 200;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.h03 button {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.h03 #addUser {
+    margin-right: 10px;
+    background-color: #A63C3C;
+    color: #FFE5E5;
+}
+
+.h03 #addUser i {
+    margin-right: 10px;
+}
+
+.h03 #more {
+    background-color: #FFE5E5;
+    color: #A63C3C;
+}
+
+/* TABLE FORMAT */
+#containerList {
+    width: 100%;
+}
+
+#containerList .th {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 16px;
+    font-weight: 600;
+    color: #402E31;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+#containerList #rCheck01,
+#containerList #rUserInfo,
+#containerList #rAge,
+#containerList #rGender,
+#containerList #rPhone,
+#containerList #rDate,
+#containerList #rMore {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-transform: capitalize;
+}
+
+#containerList #thCheck,
+#containerList #thMore,
+#containerList #rCheck01,
+#containerList #rMore {
+    width: 5%;
+}
+
+#containerList #thAge,
+#containerList #thGender,
+#containerList #rAge,
+#containerList #rGender {
+    width: 10%;
+}
+
+#containerList #rGender {
+    padding-left: 3%;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+#containerList #thPhone,
+#containerList #thDate,
+#containerList #rPhone,
+#containerList #rDate {
+    width: 20%;
+}
+
+#containerList #thInfo,
+#containerList #rUserInfo {
+    width: 30%;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+#containerList .clientRow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #FFFFFF;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    padding: 5px 0px;
+    cursor: pointer;
+}
+
+#containerList .clientRow .rUserInfo img {
+    margin-right: 20px;
 }
