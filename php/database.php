@@ -43,6 +43,12 @@ function searchClientAll($con) {
     return $result->fetchAll();
 }
 
+function searchClientCustom($con, $w) {
+    $result = $con->query("SELECT clients.id_client, clients.name_client, clients.age_client, clients.gender_client, clients.phone_client, quiz.date_quiz FROM clients INNER JOIN quiz ON clients.id_client = quiz.fk_id_client WHERE clients.name_client LIKE '%$w%'");
+    $result->execute();
+    return $result->fetchAll();
+}
+
 function searchClientQuiz($con, $mail) {
     $result = $con->query("SELECT quiz.*, clients.mail_client FROM quiz INNER JOIN clients ON quiz.fk_id_client = clients.id_client WHERE clients.mail_client = '$mail'");
     $result->execute();

@@ -10,7 +10,6 @@
 
     <link rel="stylesheet" href="css/<?php echo $stylesheet; ?>.css">
     <link rel="stylesheet" href="css/media-queries/<?php echo $media; ?>.css">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:700|Open+Sans:300,400,600&display=swap" rel="stylesheet">
     <link rel="icon" href="img/favicon/64px.ico" sizes="64x64">
