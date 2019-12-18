@@ -44,7 +44,9 @@ function searchClientAll($con) {
 }
 
 function searchClientCustom($con, $w) {
-    $result = $con->query("SELECT clients.id_client, clients.name_client, clients.age_client, clients.gender_client, clients.phone_client, quiz.date_quiz FROM clients INNER JOIN quiz ON clients.id_client = quiz.fk_id_client WHERE clients.name_client LIKE '%$w%'");
+    $w = strtolower($w);
+    $wU = strtoupper($w);
+    $result = $con->query("SELECT clients.id_client, clients.name_client, clients.age_client, clients.gender_client, clients.phone_client, quiz.date_quiz FROM clients INNER JOIN quiz ON clients.id_client = quiz.fk_id_client WHERE clients.name_client LIKE '%$w%' OR clients.name_client LIKE '%$wU%'");
     $result->execute();
     return $result->fetchAll();
 }

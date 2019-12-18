@@ -246,6 +246,7 @@ function searchClient(word) {
 
     http_request.onload = function () {
         var client = JSON.parse(http_request.responseText);
+        console.log(http_request.responseText);
 
         if (client.error) {
             errors.classList.remove('hidden');
