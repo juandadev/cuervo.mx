@@ -1,26 +1,26 @@
 //Quiz container buttons
 var btn = [document.getElementById('btn01'),
-           document.getElementById('btn02'),
-           document.getElementById('btn03'),
-           document.getElementById('btn04'),
-           document.getElementById('btn05'),
-           document.getElementById('btn07'),
-           document.getElementById('btn08'),
-           document.getElementById('btn09'),
-           document.getElementById('btn10')];
+document.getElementById('btn02'),
+document.getElementById('btn03'),
+document.getElementById('btn04'),
+document.getElementById('btn05'),
+document.getElementById('btn07'),
+document.getElementById('btn08'),
+document.getElementById('btn09'),
+document.getElementById('btn10')];
 
 //Quiz containers
 var cont = [document.getElementById('c01'),
-            document.getElementById('c02'),
-            document.getElementById('c03'),
-            document.getElementById('c04'),
-            document.getElementById('c05')];
+document.getElementById('c02'),
+document.getElementById('c03'),
+document.getElementById('c04'),
+document.getElementById('c05')];
 
 //Submenu items
 var item = [document.getElementById('item01'),
-            document.getElementById('item02'),
-            document.getElementById('item03'),
-            document.getElementById('item04')];
+document.getElementById('item02'),
+document.getElementById('item03'),
+document.getElementById('item04')];
 
 var modal = document.getElementById('modal');
 var titles = document.getElementsByClassName('titleCont');
@@ -712,7 +712,7 @@ function changeCompleted(i) {
 
         item[i].appendChild(check);
     }
-    
+
     var success = document.querySelector('.success');
     success.innerHTML = 'Datos guardados exitosamente';
     success.style.padding = '10px';
@@ -721,6 +721,8 @@ function changeCompleted(i) {
 
 function checkCompleted(i1, i2, i3) {
     if (item[i1].classList.contains('completed') && item[i2].classList.contains('completed') && item[i3].classList.contains('completed')) {
-        window.location = 'success.php';
+        setTimeout(function () {
+            window.location = 'success.php';
+        }, 2000);
     }
 }

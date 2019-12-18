@@ -114,6 +114,25 @@ footer a:hover {
     background-color: #FFFFFF;
 }
 
+.adminLink {
+    color: #FFFFFF;
+    user-select: none;
+}
+
+#adminLink {
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+#adminLink:hover {
+    opacity: 0.5;
+}
+
 footer {
     color: #FFFFFF;
 }

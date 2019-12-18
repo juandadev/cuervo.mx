@@ -9,9 +9,11 @@
         <div class="container">
             <h1>Follow the V</h1>
 
-            <P class="slogan">Estamos creando nuevos hábitos para mejorar los tuyos</P>
+            <p class="slogan">Estamos creando nuevos hábitos para mejorar los tuyos</p>
 
             <button class="roundBtn btn01" id="btn01">Empieza ahora</button>
+
+            <p class="adminLink">¿Eres administrador? <span id="adminLink">Entra aquí.</span></p>
         </div>
 
         <footer>
