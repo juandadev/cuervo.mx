@@ -55,7 +55,6 @@ main .login button {
 
 main .login .error {
     margin-top: 20px;
-    display: none;
     padding: 10px;
     color: #D8000C;
     background-color: #FFD2D2;

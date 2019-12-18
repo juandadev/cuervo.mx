@@ -8,7 +8,7 @@ $id_client = mailExists($con, $email);
 $id_client = $id_client[0]['id_client'];
 
 if (isset($_POST['name'])) {
-    $name = strtolower($_POST['name']);
+    $name = $_POST['name'];
     $age = $_POST['age'];
     $weight = $_POST['weight'];
     $height = $_POST['height'];

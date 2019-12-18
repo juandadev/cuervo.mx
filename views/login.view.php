@@ -17,7 +17,13 @@
 
             <button type="submit">Ingresar</button>
 
-            <div class="error"></div>
+            <?php
+            if (isset($_GET['error'])) {
+            ?>
+                <div class="error">Correo o contraseña incorrectos</div>
+            <?php
+            }
+            ?>
         </form>
     </main>
 

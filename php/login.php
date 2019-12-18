@@ -16,7 +16,7 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     $userFinal = $result->fetchAll();
 
     if (empty($userFinal)) {
-        header('Location: ../login.php');
+        header('Location: ../login.php?error=1');
     } else {
         $_SESSION['admin'] = $user;
         header('Location: ../admin.php');
