@@ -517,7 +517,7 @@ function insertClientData(evt, form, i) {
     http_request = new XMLHttpRequest();
     http_request.open('POST', urlDir1 + 'php/insertData.php');
 
-    var name = form.name.value.trim();
+    var name = form.name.value.trim().toUpperCase();
     var age = parseInt(form.age.value.trim());
     var weight = parseInt(form.weight.value.trim());
     var height = parseInt(form.height.value.trim());

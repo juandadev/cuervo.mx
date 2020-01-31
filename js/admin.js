@@ -197,6 +197,7 @@ function changeTotal() {
 
 //Search feature
 function searchClient(word) {
+    word.toUpperCase();
     changeTotal();
     table.innerHTML = '';
 
@@ -246,7 +247,7 @@ function searchClient(word) {
 
     http_request.onload = function () {
         var client = JSON.parse(http_request.responseText);
-        console.log(http_request.responseText);
+        //console.log(http_request.responseText);
 
         if (client.error) {
             errors.classList.remove('hidden');
