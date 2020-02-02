@@ -263,6 +263,8 @@ btn[3].addEventListener('click', function () {
 });
 
 function backMenu(container) {
+    submitButtons();
+
     var c = container.parentNode;
     var noCont = c.dataset.cont;
 
@@ -357,6 +359,8 @@ function backMenu(container) {
 }
 
 function subMenu(menu) {
+    submitButtons();
+
     switch (menu.getAttribute('id')) {
         case 'item01':
             AJAXpetition(urlDir1, 'datos-personales.view.php');
@@ -413,6 +417,25 @@ function subMenu(menu) {
                 }
             }
             break;
+    }
+}
+
+function submitButtons() {
+    var qf01 = document.getElementById('quizForm01');
+    var qf02 = document.getElementById('quizForm02');
+    var qf03 = document.getElementById('quizForm03');
+    var qf04 = document.getElementById('quizForm04');
+    if (qf01) {
+        insertClientData(event, qf01, 0);
+    }
+    else if (qf02) {
+        insertForm2(event, qf02, 1);
+    }
+    else if (qf03) {
+        insertForm3(event, qf03, 2);
+    }
+    else if (qf04) {
+        insertForm4(event, qf04, 3);
     }
 }
 
@@ -580,7 +603,6 @@ function insertForm2(evt, form, i) {
         '&q_04_02=' + q_04_02 +
         '&q_05=' + q_05 +
         '&q_05_01=' + q_05_01;
-    console.log(params);
 
     http_request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
