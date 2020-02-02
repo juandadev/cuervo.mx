@@ -97,7 +97,12 @@
 
     <script src="js/cookies.js"></script>
     <script src="private/config.js"></script>
-    <script src="js/quiz.js"></script>
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getTime();
+        var quiz = document.createElement("script");
+
+        setScript(quiz, 'quiz');
+    </script>
 </body>
 
 </html>
