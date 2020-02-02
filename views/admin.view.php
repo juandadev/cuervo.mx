@@ -81,6 +81,12 @@
 
     <script src="private/config.js"></script>
     <script src="js/admin.js"></script>
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getTime();
+        var admin = document.createElement("script");
+
+        setScript(admin, 'admin');
+    </script>
 </body>
 
 </html>

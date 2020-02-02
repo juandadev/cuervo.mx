@@ -645,7 +645,6 @@ function insertForm3(evt, form, i) {
         '&q_0607=' + q_0607 +
         '&q_0608=' + q_0608 +
         '&q_06_01=' + q_06_01;
-    console.log(params);
 
     http_request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
@@ -700,7 +699,6 @@ function insertForm4(evt, form, i) {
         '&q_013_02=' + q_013_02 +
         '&q_014=' + q_014 +
         '&q_014_01=' + q_014_01;
-    console.log(params);
 
     http_request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
