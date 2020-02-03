@@ -43,6 +43,12 @@ function searchClientAll($con) {
     return $result->fetchAll();
 }
 
+function sortClient($con, $orderP, $orderM) {
+    $result = $con->query("SELECT clients.id_client, clients.name_client, clients.age_client, clients.gender_client, clients.phone_client, quiz.date_quiz FROM clients INNER JOIN quiz ON clients.id_client = quiz.fk_id_client ORDER BY " . $orderP . " " . $orderM);
+    $result->execute();
+    return $result->fetchAll();
+}
+
 function searchClientCustom($con, $w) {
     $w = strtolower($w);
     $wU = strtoupper($w);
