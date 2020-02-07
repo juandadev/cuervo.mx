@@ -1,4 +1,26 @@
 <body>
+    <div id="modal" class="modal hidden">
+        <div class="modalCont hidden" id="changePassModal">
+            <h2>Cambiar contraseña</h2>
+
+            <label for="newPass">Contraseña nueva</label>
+            <input type="password" name="newPass" id="newPass">
+
+            <label for="confirmPass">Confirmar contraseña</label>
+            <input type="password" name="confirmPass" id="confirmPass">
+
+            <button id="passBtn" data-admin="<?php echo $_SESSION['admin']; ?>">Cambiar</button>
+
+            <div class="errors hidden" id="passError">
+                <p></p>
+            </div>
+
+            <div class="success hidden" id="passSuccess">
+                <p>Contraseña cambiada con éxito</p>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="logo">
             <img src="img/FULL-CUERVO-BLACK-NOBG.png" alt="Cuervo Nutrition" id="logo">

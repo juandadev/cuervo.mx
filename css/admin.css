@@ -126,6 +126,17 @@ header .adminControl .controls ul li:hover {
     padding: 16px;
 }
 
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    padding: 16px;
+}
+
+#passError,
+#passSuccess {
+    margin-top: 10px;
+}
+
 /* CONTACT CONTENT */
 .container {
     background-color: #F2F2F2;
@@ -296,4 +307,69 @@ header .adminControl .controls ul li:hover {
 
 #containerList .clientRow .rUserInfo img {
     margin-right: 20px;
+}
+
+/** MODAL CONTAINERS **/
+.modal {
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateX(-100px);
+    -webkit-transform: translateX(-100px);
+    -moz-transform: translateX(-100px);
+    -ms-transform: translateX(-100px);
+    -o-transform: translateX(-100px);
+}
+
+.modalCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    width: 500px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px;
+    border-top: 10px solid #a63c3c;
+    border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    -ms-border-radius: 0 0 10px 10px;
+    -o-border-radius: 0 0 10px 10px;
+}
+
+.modalCont h2 {
+    margin-bottom: 20px;
+}
+
+.modalCont label,
+.modalCont input {
+    margin-bottom: 10px;
+}
+
+.modalCont button {
+    color: #fff;
+    background-color: #a63c3c;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+}
+
+.modalCont input[type=password] {
+    border: none;
+    border-bottom: 1px solid #000;
+    background-color: #f2f2f2;
+    padding: 8px;
+    border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -ms-border-radius: 5px 5px 0 0;
+    -o-border-radius: 5px 5px 0 0;
 }

@@ -2,7 +2,15 @@ var update = document.getElementById('update'),
     errors = document.getElementById('errors'),
     table = document.getElementById('containerList'),
     filter = document.getElementById('filter'),
-    logout = document.getElementById('logout');
+    logout = document.getElementById('logout'),
+    modal = document.getElementById('modal'),
+    changePassModal = document.getElementById('changePassModal'),
+    changePass = document.getElementById('changePass'),
+    passBtn = document.getElementById('passBtn'),
+    newPass = document.getElementById('newPass'),
+    confirmPass = document.getElementById('confirmPass'),
+    passError = document.getElementById('passError'),
+    passSuccess = document.getElementById('passSuccess');
 
 var id_client,
     name_client,
@@ -13,6 +21,70 @@ var id_client,
 
 loadClients();
 
+//Close modal when click ouside
+window.onclick = function (event) {
+    if (event.target == modal) {
+        if (changePassModal.classList.contains != 'hidden') {
+            changePassModal.classList.toggle('hidden');
+        }
+        modal.classList.toggle('hidden');
+    }
+}
+//Admin functions
+changePass.addEventListener('click', function () {
+    modal.classList.toggle('hidden');
+    changePassModal.classList.toggle('hidden');
+});
+
+passBtn.addEventListener('click', function () {
+    changePassConf();
+});
+
+function changePassConf() {
+    var newP = newPass.value;
+    var confirmP = confirmPass.value;
+    var admin = passBtn.dataset.admin;
+
+    var http_request = new XMLHttpRequest();
+
+    http_request.open('GET', urlDir1 + 'php/changePass.php?n=' + newP + '&c=' + confirmP + '&admin=' + admin);
+
+    http_request.onload = function () {
+
+    }
+
+    http_request.onreadystatechange = function () {
+        if (http_request.readyState == XMLHttpRequest.DONE) {
+            if (http_request.status == 200) {
+                console.log(http_request.responseText);
+
+                var serverResponse = JSON.parse(http_request.responseText);
+
+                if (serverResponse[0] == 'error') {
+                    passError.firstElementChild.innerHTML = serverResponse[1];
+                    passError.classList.toggle('hidden');
+
+                    setTimeout(function () {
+                        passError.classList.toggle('hidden');
+                    }, 4000);
+                } else {
+                    passSuccess.classList.toggle('hidden');
+
+                    setTimeout(function () {
+                        passSuccess.classList.toggle('hidden');
+                        changePassModal.classList.toggle('hidden');
+                        modal.classList.toggle('hidden');
+                    }, 2000);
+                }
+            } else {
+                console.log('Hubo un error');
+            }
+        }
+    }
+
+    http_request.send();
+}
+
 logout.addEventListener('click', function () {
     window.location = urlDir1 + 'php/logout.php';
 });
@@ -21,7 +93,7 @@ update.addEventListener('click', function () {
     loadClients();
 });
 
-filter.onchange = function() {
+filter.onchange = function () {
     orderClients(filter.value);
 }
 

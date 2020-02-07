@@ -25,6 +25,14 @@
   #containerList .clientRow .rUserInfo img {
     width: 40px;
   }
+
+  .modal {
+    transform: translateX(-20px);
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    -o-transform: translateX(-20px);
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -80,6 +88,19 @@
 
   #containerList #rUserInfo {
     width: 80%;
+  }
+
+  .modal {
+    transform: translate(0, -20px);
+    -webkit-transform: translate(0, -20px);
+    -moz-transform: translate(0, -20px);
+    -ms-transform: translate(0, -20px);
+    -o-transform: translate(0, -20px);
+  }
+
+  .modalCont {
+    margin-top: 50px;
+    width: 300px;
   }
 }
 
