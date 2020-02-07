@@ -60,6 +60,7 @@ header .adminControl {
 header .adminControl .adminPic,
 header .adminControl .adminName {
     padding-right: 10px;
+    text-transform: capitalize;
 }
 
 header .adminControl .controls {

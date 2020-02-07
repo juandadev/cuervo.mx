@@ -9,7 +9,7 @@
                 <img src="img/cuervo-logo-min.png" alt="Pic Profile" id="adminPic">
             </div>
 
-            <p class="adminName">Luis Carlos</p>
+            <p class="adminName"><?php echo $_SESSION['admin']; ?></p>
 
             <i class="fas fa-chevron-down"></i>
 

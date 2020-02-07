@@ -1,7 +1,8 @@
 var update = document.getElementById('update'),
     errors = document.getElementById('errors'),
     table = document.getElementById('containerList'),
-    filter = document.getElementById('filter');
+    filter = document.getElementById('filter'),
+    logout = document.getElementById('logout');
 
 var id_client,
     name_client,
@@ -11,6 +12,10 @@ var id_client,
     date_quiz;
 
 loadClients();
+
+logout.addEventListener('click', function () {
+    window.location = urlDir1 + 'php/logout.php';
+});
 
 update.addEventListener('click', function () {
     loadClients();
