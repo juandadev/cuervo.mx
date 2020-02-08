@@ -22,6 +22,10 @@ body {
     display: none;
 }
 
+.show {
+    display: flex;
+}
+
 /* HEADER */
 header {
     display: -webkit-box;
@@ -40,6 +44,7 @@ header .logo {
 }
 
 header .adminControl {
+    width: 170px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -61,6 +66,20 @@ header .adminControl .adminPic,
 header .adminControl .adminName {
     padding-right: 10px;
     text-transform: capitalize;
+}
+
+header .adminControl .adminPic {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+}
+
+header .adminControl .adminPic img {
+    width: 100%;
 }
 
 header .adminControl .controls {
@@ -324,7 +343,6 @@ header .adminControl .controls ul li:hover {
 }
 
 .modalCont {
-    display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #fff;
@@ -372,4 +390,32 @@ header .adminControl .controls ul li:hover {
     -moz-border-radius: 5px 5px 0 0;
     -ms-border-radius: 5px 5px 0 0;
     -o-border-radius: 5px 5px 0 0;
+}
+
+#changePicModal form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.currentPic {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+}
+
+.errorPic {
+    position: absolute;
+    width: 300px;
+    margin-left: 30vw;
+    text-align: center;
+    color: #d8000c;
+    background-color: #ffd2d2;
+    padding: 16px;
+    z-index: 2;
 }

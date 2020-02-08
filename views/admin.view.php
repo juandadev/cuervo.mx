@@ -19,17 +19,31 @@
                 <p>Contraseña cambiada con éxito</p>
             </div>
         </div>
+
+        <div class="modalCont hidden" id="changePicModal">
+            <div class="currentPic" id="currentPic"></div>
+
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
+                <input type="file" name="selectPic" id="selectPic">
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
     </div>
 
     <header>
+        <?php if (!empty($error)) : ?>
+            <div class="errorPic" id="errorPic">
+                <p><?php echo $error; ?></p>
+            </div>
+        <?php endif; ?>
+
         <div class="logo">
             <img src="img/FULL-CUERVO-BLACK-NOBG.png" alt="Cuervo Nutrition" id="logo">
         </div>
 
         <div id="adminControl" class="adminControl">
-            <div class="adminPic">
-                <img src="img/cuervo-logo-min.png" alt="Pic Profile" id="adminPic">
-            </div>
+            <div class="adminPic" id="adminPic"></div>
 
             <p class="adminName"><?php echo $_SESSION['admin']; ?></p>
 
@@ -107,6 +121,9 @@
         var admin = document.createElement("script");
 
         setScript(admin, 'admin');
+    </script>
+    <script type="text/javascript">
+        var adminSession = '<?php echo $_SESSION['admin']; ?>';
     </script>
 </body>
 

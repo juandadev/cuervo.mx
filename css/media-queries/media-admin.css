@@ -102,6 +102,10 @@
     margin-top: 50px;
     width: 300px;
   }
+
+  .errorPic {
+    margin-left: 0;
+  }
 }
 
 @media screen and (max-width: 375px) {

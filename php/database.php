@@ -93,4 +93,8 @@ function insertForm4($con, $q_07, $q_08, $q_09, $q_010, $q_011, $q_011_01, $q_01
     $result = $con->query("UPDATE quiz SET q_07 = '$q_07', q_08 = '$q_08', q_09 = '$q_09', q_010 = '$q_010', q_011 = '$q_011', q_011_01 = '$q_011_01', q_012 = '$q_012', q_012_01 = '$q_012_01', q_012_02 = '$q_012_02', q_012_03 = '$q_012_03', q_013 = '$q_013', q_013_01 = '$q_013_01', q_013_02 = '$q_013_02', q_014 = '$q_014', q_014_01 = '$q_014_01' WHERE fk_id_client = '$id'");
     return true;
 }
-?>
+
+function loadImageProfile($con, $image, $admin) {
+    $result = $con->query("UPDATE users SET photo = '$image' WHERE name_user = '$admin'");
+    return true;
+}

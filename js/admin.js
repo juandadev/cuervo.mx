@@ -10,7 +10,12 @@ var update = document.getElementById('update'),
     newPass = document.getElementById('newPass'),
     confirmPass = document.getElementById('confirmPass'),
     passError = document.getElementById('passError'),
-    passSuccess = document.getElementById('passSuccess');
+    passSuccess = document.getElementById('passSuccess'),
+    changePic = document.getElementById('changePic'),
+    changePicModal = document.getElementById('changePicModal'),
+    errorPic = document.getElementById('errorPic'),
+    adminPic = document.getElementById('adminPic'),
+    currentPic = document.getElementById('currentPic');
 
 var id_client,
     name_client,
@@ -20,25 +25,71 @@ var id_client,
     date_quiz;
 
 loadClients();
+getPic();
+
+if (errorPic) {
+    setTimeout(function () {
+        errorPic.classList.toggle('hidden');
+    }, 4000);
+}
 
 //Close modal when click ouside
 window.onclick = function (event) {
     if (event.target == modal) {
-        if (changePassModal.classList.contains != 'hidden') {
+        if (changePassModal.classList.contains('show')) {
+            changePassModal.classList.toggle('show');
             changePassModal.classList.toggle('hidden');
+        } else if (changePicModal.classList.contains('show')) {
+            changePicModal.classList.toggle('show');
+            changePicModal.classList.toggle('hidden');
         }
         modal.classList.toggle('hidden');
     }
 }
+
 //Admin functions
+changePic.addEventListener('click', function () {
+    modal.classList.toggle('hidden');
+    changePicModal.classList.toggle('hidden');
+    changePicModal.classList.toggle('show');
+});
+
 changePass.addEventListener('click', function () {
     modal.classList.toggle('hidden');
     changePassModal.classList.toggle('hidden');
+    changePassModal.classList.toggle('show');
 });
 
 passBtn.addEventListener('click', function () {
     changePassConf();
 });
+
+function getPic() {
+    var http_request = new XMLHttpRequest();
+
+    http_request.open('GET', urlDir1 + 'php/getPhoto.php?admin=' + adminSession);
+
+    http_request.onreadystatechange = function () {
+        if (http_request.readyState == XMLHttpRequest.DONE) {
+            if (http_request.status == 200) {
+                var pic = http_request.responseText;
+
+                adminPic.style.backgroundImage = "url('img/users/" + pic + "')";
+                adminPic.style.backgroundSize = 'cover';
+                adminPic.style.backgroundPosition = 'center center';
+
+                currentPic.style.backgroundImage = "url('img/users/" + pic + "')";
+                currentPic.style.backgroundSize = 'cover';
+                currentPic.style.backgroundPosition = 'center center';
+
+            } else {
+                console.log('Hubo un error');
+            }
+        }
+    }
+
+    http_request.send();
+}
 
 function changePassConf() {
     var newP = newPass.value;
@@ -409,6 +460,7 @@ var adminMenu = document.getElementById('controls'),
 
 adminBtn.addEventListener('click', function () {
     adminMenu.classList.toggle('hidden');
+    adminMenu.classList.toggle('show');
 });
 
 //Logo redirect to index
