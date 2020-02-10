@@ -380,7 +380,8 @@ header .adminControl .controls ul li:hover {
     cursor: pointer;
 }
 
-.modalCont input[type=password] {
+.modalCont input[type=password],
+.modalCont input[type=text] {
     border: none;
     border-bottom: 1px solid #000;
     background-color: #f2f2f2;

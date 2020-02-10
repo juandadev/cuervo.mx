@@ -29,6 +29,15 @@
                 <button type="submit">Guardar</button>
             </form>
         </div>
+
+        <div class="modalCont hidden" id="changeNameModal">
+            <h2>Cambiar nombre de usuario</h2>
+
+            <label for="newName">Nuevo nombre</label>
+            <input type="text" name="newName" id="newName">
+            
+            <button id="nameBtn" data-admin="<?php  echo $_SESSION['admin']; ?>">Cambiar</button>
+        </div>
     </div>
 
     <header>
@@ -52,9 +61,9 @@
             <div id="controls" class="controls hidden">
                 <ul>
                     <li id="addAdmin">Agregar Usuario</li>
-                    <li id="modifyAdmin">Modificar Usuario</li>
+                    <li id="modifyAdmin">Cambiar Nombre</li>
                     <li id="changePic">Cambiar Foto</li>
-                    <li id="changePass">Cambiar contraseña</li>
+                    <li id="changePass">Cambiar Contraseña</li>
                     <li id="logout">Cerrar Sesión</li>
                 </ul>
             </div>

@@ -15,7 +15,11 @@ var update = document.getElementById('update'),
     changePicModal = document.getElementById('changePicModal'),
     errorPic = document.getElementById('errorPic'),
     adminPic = document.getElementById('adminPic'),
-    currentPic = document.getElementById('currentPic');
+    currentPic = document.getElementById('currentPic'),
+    modifyAdmin = document.getElementById('modifyAdmin'),
+    changeNameModal = document.getElementById('changeNameModal'),
+    nameBtn = document.getElementById('nameBtn'),
+    newName = document.getElementById('newName');
 
 var id_client,
     name_client,
@@ -42,12 +46,25 @@ window.onclick = function (event) {
         } else if (changePicModal.classList.contains('show')) {
             changePicModal.classList.toggle('show');
             changePicModal.classList.toggle('hidden');
+        } else if (changeNameModal.classList.contains('show')) {
+            changeNameModal.classList.toggle('show');
+            changeNameModal.classList.toggle('hidden');
         }
         modal.classList.toggle('hidden');
     }
 }
 
 //Admin functions
+modifyAdmin.addEventListener('click', function () {
+    modal.classList.toggle('hidden');
+    changeNameModal.classList.toggle('hidden');
+    changeNameModal.classList.toggle('show');
+});
+
+nameBtn.addEventListener('click', function () {
+    changeName();
+});
+
 changePic.addEventListener('click', function () {
     modal.classList.toggle('hidden');
     changePicModal.classList.toggle('hidden');
@@ -91,6 +108,31 @@ function getPic() {
     http_request.send();
 }
 
+function changeName() {
+    var newN = newName.value;
+    var admin = nameBtn.dataset.admin;
+
+    var http_request = new XMLHttpRequest();
+
+    http_request.open('GET', urlDir1 + 'php/changeName.php?n=' + newN + '&admin=' + admin);
+
+    http_request.onload = function () {
+
+    }
+
+    http_request.onreadystatechange = function () {
+        if (http_request.readyState == XMLHttpRequest.DONE) {
+            if (http_request.status == 200) {
+                window.location = 'admin.php';
+            } else {
+                console.log('Hubo un error');
+            }
+        }
+    }
+
+    http_request.send();
+}
+
 function changePassConf() {
     var newP = newPass.value;
     var confirmP = confirmPass.value;
@@ -107,8 +149,6 @@ function changePassConf() {
     http_request.onreadystatechange = function () {
         if (http_request.readyState == XMLHttpRequest.DONE) {
             if (http_request.status == 200) {
-                console.log(http_request.responseText);
-
                 var serverResponse = JSON.parse(http_request.responseText);
 
                 if (serverResponse[0] == 'error') {
