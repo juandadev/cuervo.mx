@@ -38,6 +38,22 @@
             
             <button id="nameBtn" data-admin="<?php  echo $_SESSION['admin']; ?>">Cambiar</button>
         </div>
+
+        <div class="modalCont hidden" id="addUserModal">
+            <h2>Agregar usuario administrador</h2>
+
+            <label for="newUser">Nombre de usuario</label>
+            <input type="text" name="newUser" id="newUser">
+
+            <label for="newUsPass">Contraseña</label>
+            <input type="password" name="newUsPass" id="newUsPass">
+
+            <button id="newUserBtn" data-admin="<?php echo $_SESSION['admin']; ?>">Agregar</button>
+
+            <div class="success hidden" id="userSuccess">
+                <p></p>
+            </div>
+        </div>
     </div>
 
     <header>

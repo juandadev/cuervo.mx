@@ -17,9 +17,15 @@ var update = document.getElementById('update'),
     adminPic = document.getElementById('adminPic'),
     currentPic = document.getElementById('currentPic'),
     modifyAdmin = document.getElementById('modifyAdmin'),
+    addAdmin = document.getElementById('addAdmin'),
     changeNameModal = document.getElementById('changeNameModal'),
     nameBtn = document.getElementById('nameBtn'),
-    newName = document.getElementById('newName');
+    newName = document.getElementById('newName'),
+    addUserModal = document.getElementById('addUserModal'),
+    newUser = document.getElementById('newUser'),
+    newUsPass = document.getElementById('newUsPass'),
+    newUserBtn = document.getElementById('newUserBtn'),
+    userSuccess = document.getElementById('userSuccess');
 
 var id_client,
     name_client,
@@ -49,12 +55,25 @@ window.onclick = function (event) {
         } else if (changeNameModal.classList.contains('show')) {
             changeNameModal.classList.toggle('show');
             changeNameModal.classList.toggle('hidden');
+        } else if (addUserModal.classList.contains('show')) {
+            addUserModal.classList.toggle('show');
+            addUserModal.classList.toggle('hidden');
         }
         modal.classList.toggle('hidden');
     }
 }
 
 //Admin functions
+addAdmin.addEventListener('click', function () {
+    modal.classList.toggle('hidden');
+    addUserModal.classList.toggle('hidden');
+    addUserModal.classList.toggle('show');
+});
+
+newUserBtn.addEventListener('click', function () {
+    addUserAdmin();
+});
+
 modifyAdmin.addEventListener('click', function () {
     modal.classList.toggle('hidden');
     changeNameModal.classList.toggle('hidden');
@@ -99,6 +118,44 @@ function getPic() {
                 currentPic.style.backgroundSize = 'cover';
                 currentPic.style.backgroundPosition = 'center center';
 
+            } else {
+                console.log('Hubo un error');
+            }
+        }
+    }
+
+    http_request.send();
+}
+
+function addUserAdmin() {
+    var newU = newUser.value;
+    var newP = newUsPass.value;
+    var admin = newUserBtn.dataset.admin;
+
+    var http_request = new XMLHttpRequest();
+
+    http_request.open('GET', urlDir1 + 'php/addUser.php?n=' + newU + '&pass=' + newP + '&admin=' + admin);
+
+    http_request.onload = function () {
+
+    }
+
+    http_request.onreadystatechange = function () {
+        if (http_request.readyState == XMLHttpRequest.DONE) {
+            if (http_request.status == 200) {
+                var serverResponse = JSON.parse(http_request.responseText);
+
+                if (userSuccess.classList.contains('hidden')) {
+                    userSuccess.classList.toggle('hidden');
+                    userSuccess.firstElementChild.innerHTML = serverResponse[0];
+                }
+
+                setTimeout(function () {
+                    userSuccess.classList.toggle('hidden');
+                    addUserModal.classList.toggle('show');
+                    addUserModal.classList.toggle('hidden');
+                    modal.classList.toggle('hidden');
+                }, 3000);
             } else {
                 console.log('Hubo un error');
             }
