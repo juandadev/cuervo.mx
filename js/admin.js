@@ -302,9 +302,8 @@ function loadClients() {
             for (var i = 0; i < client.length; i++) {
                 //Table row
                 var row = document.createElement('div');
-                row.classList.add('clientRow');
                 row.setAttribute('id', client[i].id);
-                row.setAttribute('onclick', 'showClient(this)');
+                row.classList.add('clientRow');
                 table.appendChild(row);
 
                 //Checkbox
@@ -320,7 +319,9 @@ function loadClients() {
                 //User
                 var userField = document.createElement('div');
                 userField.classList.add('rUserInfo');
+                userField.dataset.id = client[i].id;
                 userField.setAttribute('id', 'rUserInfo');
+                userField.setAttribute('onclick', 'showClient(this)');
                 row.appendChild(userField);
 
                 var image = document.createElement('img');
@@ -546,7 +547,7 @@ function orderClients(param) {
 }
 
 function showClient(row) {
-    var id = row.getAttribute('id');
+    var id = row.dataset.id;
 
     window.location = 'client.php?id=' + id;
 }
