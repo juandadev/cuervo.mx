@@ -25,7 +25,13 @@ var update = document.getElementById('update'),
     newUser = document.getElementById('newUser'),
     newUsPass = document.getElementById('newUsPass'),
     newUserBtn = document.getElementById('newUserBtn'),
-    userSuccess = document.getElementById('userSuccess');
+    userSuccess = document.getElementById('userSuccess'),
+    moreBtn = document.getElementById('more'),
+    moreOptions = document.getElementById('moreOptions'),
+    deleteClient = document.getElementById('deleteClient'),
+    deleteConfirm = document.getElementById('deleteConfirm'),
+    deleteYes = document.getElementById('deleteYes'),
+    deleteNo = document.getElementById('deleteNo');
 
 var id_client,
     name_client,
@@ -58,10 +64,39 @@ window.onclick = function (event) {
         } else if (addUserModal.classList.contains('show')) {
             addUserModal.classList.toggle('show');
             addUserModal.classList.toggle('hidden');
+        } else if (deleteConfirm.classList.contains('show')) {
+            deleteConfirm.classList.toggle('show');
+            deleteConfirm.classList.toggle('hidden');
         }
         modal.classList.toggle('hidden');
     }
 }
+
+moreBtn.addEventListener('click', function () {
+    moreOptions.classList.toggle('hidden');
+});
+
+deleteClient.addEventListener('click', function () {
+    var clientCount = table.childElementCount - 1;
+    var rows = document.getElementsByClassName('clientRow');
+
+    for (let i = 0; i < clientCount; i++) {
+        if (rows[i].firstElementChild.firstElementChild.checked) {
+            modal.classList.toggle('hidden');
+            deleteConfirm.classList.toggle('hidden');
+            deleteConfirm.classList.toggle('show');
+            deleteYes.setAttribute('onclick', 'deleteClients()');
+            break;
+        }
+    }
+});
+
+deleteNo.addEventListener('click', function () {
+    deleteConfirm.classList.toggle('show');
+    deleteConfirm.classList.toggle('hidden');
+    modal.classList.toggle('hidden');
+    moreOptions.classList.toggle('hidden');
+});
 
 //Admin functions
 addAdmin.addEventListener('click', function () {
@@ -99,6 +134,39 @@ changePass.addEventListener('click', function () {
 passBtn.addEventListener('click', function () {
     changePassConf();
 });
+
+function deleteClients() {
+    var clientCount = table.childElementCount - 1;
+    var rows = document.getElementsByClassName('clientRow');
+
+    for (let i = 0; i < clientCount; i++) {
+        if (rows[i].firstElementChild.firstElementChild.checked) {
+            var http_request = new XMLHttpRequest();
+
+            http_request.open('GET', urlDir1 + 'php/deleteClient.php?id=' + rows[i].firstElementChild.firstElementChild.dataset.idClient);
+
+            http_request.onreadystatechange = function () {
+                if (http_request.readyState == XMLHttpRequest.DONE) {
+                    if (http_request.status == 200) {
+                        loadClients();
+                        setTimeout(function () {
+                            deleteConfirm.classList.toggle('show');
+                            deleteConfirm.classList.toggle('hidden');
+                            modal.classList.toggle('hidden');
+                        }, 1000);
+
+                        moreOptions.classList.toggle('hidden');
+                        console.log('caca');
+                    } else {
+                        console.log('Hubo un error');
+                    }
+                }
+            }
+
+            http_request.send();
+        }
+    }
+}
 
 function getPic() {
     var http_request = new XMLHttpRequest();
@@ -307,14 +375,21 @@ function loadClients() {
                 table.appendChild(row);
 
                 //Checkbox
-                var checkField = document.createElement('div');
+                var checkField = document.createElement('label');
                 checkField.setAttribute('id', 'rCheck01');
+                checkField.setAttribute('for', 'rCheck' + client[i].id);
+                checkField.classList = 'rCheck';
                 row.appendChild(checkField);
 
                 var checkbox = document.createElement('INPUT');
                 checkbox.setAttribute('type', 'checkbox');
-                checkbox.setAttribute('id', 'rCheck02');
+                checkbox.setAttribute('id', 'rCheck' + client[i].id);
+                checkbox.dataset.idClient = client[i].id;
                 checkField.appendChild(checkbox);
+
+                var spanCheck = document.createElement('span');
+                spanCheck.classList = 'checkmark';
+                checkField.appendChild(spanCheck);
 
                 //User
                 var userField = document.createElement('div');

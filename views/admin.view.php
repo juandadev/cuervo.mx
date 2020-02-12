@@ -35,8 +35,8 @@
 
             <label for="newName">Nuevo nombre</label>
             <input type="text" name="newName" id="newName">
-            
-            <button id="nameBtn" data-admin="<?php  echo $_SESSION['admin']; ?>">Cambiar</button>
+
+            <button id="nameBtn" data-admin="<?php echo $_SESSION['admin']; ?>">Cambiar</button>
         </div>
 
         <div class="modalCont hidden" id="addUserModal">
@@ -52,6 +52,16 @@
 
             <div class="success hidden" id="userSuccess">
                 <p></p>
+            </div>
+        </div>
+
+        <div class="modalCont hidden" id="deleteConfirm">
+            <h2>¿Seguro que desea eliminar los registros?</h2>
+
+            <div class="deleteOptions">
+                <button id="deleteYes">Sí</button>
+
+                <button id="deleteNo">No</button>
             </div>
         </div>
     </div>
@@ -133,6 +143,12 @@
                     <button id="more">
                         <i class="fas fa-ellipsis-h"></i>
                     </button>
+
+                    <div class="moreOptions hidden" id="moreOptions">
+                        <ul>
+                            <li id="deleteClient">Eliminar</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
