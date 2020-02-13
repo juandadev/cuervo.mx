@@ -156,7 +156,6 @@ function deleteClients() {
                         }, 1000);
 
                         moreOptions.classList.toggle('hidden');
-                        console.log('caca');
                     } else {
                         console.log('Hubo un error');
                     }
@@ -448,12 +447,25 @@ function loadClients() {
                 //More
                 var moreField = document.createElement('div');
                 moreField.setAttribute('id', 'rMore');
+                moreField.setAttribute('onclick', 'showOptions(' + i + ')');
                 row.appendChild(moreField);
 
                 var more = document.createElement('i');
                 more.classList.add('fas');
                 more.classList.add('fa-ellipsis-h');
                 moreField.appendChild(more);
+
+                var moreOptions02 = document.createElement('div');
+                moreOptions02.setAttribute('id', 'moreOptions' + i);
+                moreOptions02.classList = 'moreOptions hidden';
+                moreField.appendChild(moreOptions02);
+
+                var moreUl = document.createElement('ul');
+                moreOptions02.appendChild(moreUl);
+                var moreLi = document.createElement('li');
+                moreLi.innerHTML = 'Eliminar';
+                moreLi.setAttribute('onclick', 'showConfirm(' + client[i].id + ')');
+                moreUl.appendChild(moreLi);
             }
         }
     }
@@ -462,6 +474,42 @@ function loadClients() {
         if (http_request.readyState == XMLHttpRequest.DONE) {
             if (http_request.status == 200) {
                 //Quitar rueda cargando
+            } else {
+                console.log('Hubo un error');
+            }
+        }
+    }
+
+    http_request.send();
+}
+
+function showOptions(count) {
+    var moreOpt = document.querySelector('#moreOptions' + count);
+
+    moreOpt.classList.toggle('hidden');
+}
+
+function showConfirm(id) {
+    modal.classList.toggle('hidden');
+    deleteConfirm.classList.toggle('hidden');
+    deleteConfirm.classList.toggle('show');
+    deleteYes.setAttribute('onclick', 'deleteClientsIndividual(' + id + ')');
+}
+
+function deleteClientsIndividual(id) {
+    var http_request = new XMLHttpRequest();
+
+    http_request.open('GET', urlDir1 + 'php/deleteClient.php?id=' + id);
+
+    http_request.onreadystatechange = function () {
+        if (http_request.readyState == XMLHttpRequest.DONE) {
+            if (http_request.status == 200) {
+                loadClients();
+                setTimeout(function () {
+                    deleteConfirm.classList.toggle('show');
+                    deleteConfirm.classList.toggle('hidden');
+                    modal.classList.toggle('hidden');
+                }, 1000);
             } else {
                 console.log('Hubo un error');
             }

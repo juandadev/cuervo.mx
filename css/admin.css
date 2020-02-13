@@ -322,6 +322,14 @@ header .adminControl .controls ul li:hover {
     background-color: #a1a1a1;
 }
 
+#rMore .moreOptions {
+    transform: translate(-30px, 40px);
+    -webkit-transform: translate(-30px, 40px);
+    -moz-transform: translate(-30px, 40px);
+    -ms-transform: translate(-30px, 40px);
+    -o-transform: translate(-30px, 40px);
+}
+
 .moreOptions {
     width: 100px;
     position: absolute;
