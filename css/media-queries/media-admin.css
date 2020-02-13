@@ -25,6 +25,22 @@
   #containerList .clientRow .rUserInfo img {
     width: 40px;
   }
+
+  .modal {
+    transform: translateX(-20px);
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    -o-transform: translateX(-20px);
+  }
+
+  .moreOptions {
+    transform: translate(110px, 50px);
+    -webkit-transform: translate(110px, 50px);
+    -moz-transform: translate(110px, 50px);
+    -ms-transform: translate(110px, 50px);
+    -o-transform: translate(110px, 50px);
+}
 }
 
 @media screen and (max-width: 425px) {
@@ -81,12 +97,45 @@
   #containerList #rUserInfo {
     width: 80%;
   }
+
+  .modal {
+    transform: translate(0, -20px);
+    -webkit-transform: translate(0, -20px);
+    -moz-transform: translate(0, -20px);
+    -ms-transform: translate(0, -20px);
+    -o-transform: translate(0, -20px);
+  }
+
+  .modalCont {
+    margin-top: 50px;
+    width: 300px;
+  }
+
+  .errorPic {
+    margin-left: 0;
+  }
+
+  .moreOptions {
+    transform: translate(-20px, 50px);
+    -webkit-transform: translate(-20px, 50px);
+    -moz-transform: translate(-20px, 50px);
+    -ms-transform: translate(-20px, 50px);
+    -o-transform: translate(-20px, 50px);
+}
 }
 
 @media screen and (max-width: 375px) {
   .h03 #addUser {
     display: none;
   }
+
+  .moreOptions {
+    transform: translate(-50px, 50px);
+    -webkit-transform: translate(-70px, 50px);
+    -moz-transform: translate(-50px, 50px);
+    -ms-transform: translate(-50px, 50px);
+    -o-transform: translate(-50px, 50px);
+}
 }
 
 @media screen and (max-width: 320px) {

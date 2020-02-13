@@ -1,24 +1,95 @@
 <body>
+    <div id="modal" class="modal hidden">
+        <div class="modalCont hidden" id="changePassModal">
+            <h2>Cambiar contraseña</h2>
+
+            <label for="newPass">Contraseña nueva</label>
+            <input type="password" name="newPass" id="newPass">
+
+            <label for="confirmPass">Confirmar contraseña</label>
+            <input type="password" name="confirmPass" id="confirmPass">
+
+            <button id="passBtn" data-admin="<?php echo $_SESSION['admin']; ?>">Cambiar</button>
+
+            <div class="errors hidden" id="passError">
+                <p></p>
+            </div>
+
+            <div class="success hidden" id="passSuccess">
+                <p>Contraseña cambiada con éxito</p>
+            </div>
+        </div>
+
+        <div class="modalCont hidden" id="changePicModal">
+            <div class="currentPic" id="currentPic"></div>
+
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
+                <input type="file" name="selectPic" id="selectPic">
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+
+        <div class="modalCont hidden" id="changeNameModal">
+            <h2>Cambiar nombre de usuario</h2>
+
+            <label for="newName">Nuevo nombre</label>
+            <input type="text" name="newName" id="newName">
+
+            <button id="nameBtn" data-admin="<?php echo $_SESSION['admin']; ?>">Cambiar</button>
+        </div>
+
+        <div class="modalCont hidden" id="addUserModal">
+            <h2>Agregar usuario administrador</h2>
+
+            <label for="newUser">Nombre de usuario</label>
+            <input type="text" name="newUser" id="newUser">
+
+            <label for="newUsPass">Contraseña</label>
+            <input type="password" name="newUsPass" id="newUsPass">
+
+            <button id="newUserBtn" data-admin="<?php echo $_SESSION['admin']; ?>">Agregar</button>
+
+            <div class="success hidden" id="userSuccess">
+                <p></p>
+            </div>
+        </div>
+
+        <div class="modalCont hidden" id="deleteConfirm">
+            <h2>¿Seguro que desea eliminar los registros?</h2>
+
+            <div class="deleteOptions">
+                <button id="deleteYes">Sí</button>
+
+                <button id="deleteNo">No</button>
+            </div>
+        </div>
+    </div>
+
     <header>
+        <?php if (!empty($error)) : ?>
+            <div class="errorPic" id="errorPic">
+                <p><?php echo $error; ?></p>
+            </div>
+        <?php endif; ?>
+
         <div class="logo">
             <img src="img/FULL-CUERVO-BLACK-NOBG.png" alt="Cuervo Nutrition" id="logo">
         </div>
 
         <div id="adminControl" class="adminControl">
-            <div class="adminPic">
-                <img src="img/cuervo-logo-min.png" alt="Pic Profile" id="adminPic">
-            </div>
+            <div class="adminPic" id="adminPic"></div>
 
-            <p class="adminName">Luis Carlos</p>
+            <p class="adminName"><?php echo $_SESSION['admin']; ?></p>
 
             <i class="fas fa-chevron-down"></i>
 
             <div id="controls" class="controls hidden">
                 <ul>
                     <li id="addAdmin">Agregar Usuario</li>
-                    <li id="modifyAdmin">Modificar Usuario</li>
+                    <li id="modifyAdmin">Cambiar Nombre</li>
                     <li id="changePic">Cambiar Foto</li>
-                    <li id="changePass">Cambiar contraseña</li>
+                    <li id="changePass">Cambiar Contraseña</li>
                     <li id="logout">Cerrar Sesión</li>
                 </ul>
             </div>
@@ -72,6 +143,12 @@
                     <button id="more">
                         <i class="fas fa-ellipsis-h"></i>
                     </button>
+
+                    <div class="moreOptions hidden" id="moreOptions">
+                        <ul>
+                            <li id="deleteClient">Eliminar</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -85,6 +162,9 @@
         var admin = document.createElement("script");
 
         setScript(admin, 'admin');
+    </script>
+    <script type="text/javascript">
+        var adminSession = '<?php echo $_SESSION['admin']; ?>';
     </script>
 </body>
 
