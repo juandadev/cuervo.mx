@@ -1,12 +1,34 @@
 var h = [document.getElementById('h01'),
-         document.getElementById('h02'),
-         document.getElementById('h03'),
-         document.getElementById('h04')];
+document.getElementById('h02'),
+document.getElementById('h03'),
+document.getElementById('h04')];
 
 var container = [document.getElementById('form01'),
-                 document.getElementById('form02'),
-                 document.getElementById('form03'),
-                 document.getElementById('form04')];
+document.getElementById('form02'),
+document.getElementById('form03'),
+document.getElementById('form04')];
+
+var logo = document.getElementById('logo'),
+    mail = document.getElementById('mail'),
+    wp = document.getElementById('wp'),
+    back = document.getElementById('back');
+
+back.addEventListener('click', function () {
+    window.location = 'admin.php';
+});
+
+logo.addEventListener('click', function () {
+    window.location = 'index.php';
+});
+
+mail.addEventListener('click', function () {
+    //mailto:elcorreoquequieres@correo.com
+    window.open('mailto:' + clientMail, '_blank');
+});
+
+wp.addEventListener('click', function () {
+    window.open('https://wa.me/521' + clientPhone, '_blank');
+});
 
 h[0].addEventListener('click', function () {
     container[0].classList.toggle('hidden');
