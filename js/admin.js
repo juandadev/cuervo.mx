@@ -398,8 +398,14 @@ function loadClients() {
                 userField.setAttribute('onclick', 'showClient(this)');
                 row.appendChild(userField);
 
+                var pos = client[i].name.search(' ');
+                var firstN = client[i].name.substr(0, pos);
+                var secondN = client[i].name.substr(pos + 1, client[i].name.length);
+                pos = secondN.search(' ');
+                secondN = secondN.substr(0, pos);
+
                 var image = document.createElement('img');
-                image.setAttribute('src', 'img/cuervo-logo-min.png');
+                image.setAttribute('src', 'https://ui-avatars.com/api/?name=' + firstN + '+' + secondN + '&size=40&background=a1a1a1&color=fff');
                 image.classList.add('userPic');
                 userField.appendChild(image);
 

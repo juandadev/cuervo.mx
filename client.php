@@ -50,7 +50,7 @@ require 'views/head.view.php';
 
         <h1 id="h01">DATOS PERSONALES <i class="fas fa-plus"></i></h1>
 
-        <div id="form01" class="container">
+        <div id="form01" class="container hidden">
             <p class="question">Edad:</p>
             <p><?php echo $data[0][2] ?></p>
             <p class="question">Peso:</p>
@@ -100,7 +100,8 @@ require 'views/head.view.php';
 
         <div id="form03" class="container hidden">
             <p class="question">Enfermedades de antecedentes familiares:</p>
-            <p><?php echo ucfirst($data[0][24])  == '' ? '-' : ucfirst($data[0][24]) ?></p>
+            <p><?php    $format = str_replace(',', '<br> ', $data[0][24]);
+                        echo ucwords($format); ?></p>
             <p class="question">Otra enfermedad no enlistada:</p>
             <p><?php echo $data[0][25]  == '' ? '-' : $data[0][25] ?></p>
         </div>
