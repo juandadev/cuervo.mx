@@ -418,6 +418,11 @@ function createClientRow(i, client) {
     moreLi.innerHTML = 'Eliminar';
     moreLi.setAttribute('onclick', 'showConfirm(' + client[i].id + ')');
     moreUl.appendChild(moreLi);
+
+    var moreLi02 = document.createElement('li');
+    moreLi02.innerHTML = 'Modificar';
+    moreLi02.setAttribute('onclick', 'modifyClient(' + client[i].id + ')');
+    moreUl.appendChild(moreLi02);
 }
 
 function loadClients() {
@@ -504,6 +509,10 @@ function showConfirm(id) {
     deleteConfirm.classList.toggle('hidden');
     deleteConfirm.classList.toggle('show');
     deleteYes.setAttribute('onclick', 'deleteClientsIndividual(' + id + ')');
+}
+
+function modifyClient(id) {
+    window.location = 'client.php?id=' + id + '&edit';
 }
 
 function deleteClientsIndividual(id) {

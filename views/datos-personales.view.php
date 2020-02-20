@@ -1,9 +1,17 @@
 <?php
-require '../private/config.php';
-require '../php/database.php';
-
-$con = connection($db_config);
-$email = $_COOKIE['client'];
+if (isset($_GET['id']) || isset($_GET['edit'])) {
+    $con = connection($db_config);
+    $idMail = $_GET['id'];
+    $statement = $con->query("SELECT mail_client FROM clients WHERE id_client = '$idMail'");
+    $statement->execute();
+    $email = $statement->fetchAll();
+    $email = $email[0][0];
+} else {
+    require '../private/config.php';
+    require '../php/database.php';
+    $email = $_COOKIE['client'];
+    $con = connection($db_config);
+}
 
 $client = searchClientInfo($con, $email);
 $quiz = searchClientQuiz($con, $email);
@@ -100,7 +108,7 @@ $q_01 = $quiz[0]['q_01'];
     <input type="text" id="ocupation" class="input" placeholder="Especifique" required value="<?php echo $ocupation == "" ? '' : $ocupation; ?>">
 
     <label for="phone" class="label">Teléfono:</label>
-    <input type="number" id="phone" class="input" min="0" max="9999999999" placeholder="p. ej. 6271234567" required value="<?php echo $phone == 0 ? "" : (double) $phone; ?>">
+    <input type="number" id="phone" class="input" min="0" max="9999999999" placeholder="p. ej. 6271234567" required value="<?php echo $phone == 0 ? "" : (float) $phone; ?>">
 
     <label for="q_01" class="label">Motivo de la consulta:</label>
     <textarea name="q_01" id="q_01" class="input" cols="30" rows="10" placeholder="Especifique" required><?php echo $q_01 == "" ? "" : $q_01; ?></textarea>

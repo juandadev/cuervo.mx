@@ -146,7 +146,7 @@
 
                     <div class="moreOptions hidden" id="moreOptions">
                         <ul>
-                            <li id="deleteClient">Eliminar</li>
+                            <li id="deleteClient">Eliminar selección</li>
                         </ul>
                     </div>
                 </div>
