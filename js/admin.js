@@ -32,7 +32,8 @@ var update = document.getElementById('update'),
     deleteConfirm = document.getElementById('deleteConfirm'),
     deleteYes = document.getElementById('deleteYes'),
     deleteNo = document.getElementById('deleteNo'),
-    addUserB = document.getElementById('addUser');
+    addUserB = document.getElementById('addUser'),
+    incomplete = document.getElementById('incomplete');
 
 var id_client,
     name_client,
@@ -41,7 +42,7 @@ var id_client,
     phone_client,
     date_quiz;
 
-loadClients();
+loadClients('complete', 'rUser');
 getPic();
 
 if (errorPic) {
@@ -72,6 +73,10 @@ window.onclick = function (event) {
         modal.classList.toggle('hidden');
     }
 }
+
+incomplete.addEventListener('click', function () {
+    loadClients('incomplete', 'rUserLow');
+});
 
 addUserB.addEventListener('click', function () {
     http_request = new XMLHttpRequest();
@@ -166,7 +171,7 @@ function deleteClients() {
             http_request.onreadystatechange = function () {
                 if (http_request.readyState == XMLHttpRequest.DONE) {
                     if (http_request.status == 200) {
-                        loadClients();
+                        loadClients('complete', 'rUser');
                         setTimeout(function () {
                             deleteConfirm.classList.toggle('show');
                             deleteConfirm.classList.toggle('hidden');
@@ -323,14 +328,14 @@ logout.addEventListener('click', function () {
 });
 
 update.addEventListener('click', function () {
-    loadClients();
+    loadClients('complete', 'rUser');
 });
 
 filter.onchange = function () {
     orderClients(filter.value);
 }
 
-function createClientRow(i, client) {
+function createClientRow(i, client, caps) {
     //Table row
     var row = document.createElement('div');
     row.setAttribute('id', client[i].id);
@@ -374,7 +379,7 @@ function createClientRow(i, client) {
     userField.appendChild(image);
 
     var name = document.createElement('p');
-    name.setAttribute('id', 'rUser');
+    name.setAttribute('id', caps);
     name.innerHTML = client[i].name;
     userField.appendChild(name);
 
@@ -443,7 +448,7 @@ function createClientRow(i, client) {
     moreUl.appendChild(moreLi02);
 }
 
-function loadClients() {
+function loadClients(stat, caps) {
     changeTotal();
     table.innerHTML = '';
 
@@ -487,7 +492,7 @@ function loadClients() {
 
     var http_request = new XMLHttpRequest();
 
-    http_request.open('POST', urlDir1 + 'php/readData.php');
+    http_request.open('GET', urlDir1 + 'php/readData.php?' + stat);
 
     //Ejecutar rueda de cargando
 
@@ -498,7 +503,7 @@ function loadClients() {
             errors.classList.remove('hidden');
         } else {
             for (var i = 0; i < client.length; i++) {
-                createClientRow(i, client);
+                createClientRow(i, client, caps);
             }
         }
     }
@@ -541,7 +546,7 @@ function deleteClientsIndividual(id) {
     http_request.onreadystatechange = function () {
         if (http_request.readyState == XMLHttpRequest.DONE) {
             if (http_request.status == 200) {
-                loadClients();
+                loadClients('complete', 'rUser');
                 setTimeout(function () {
                     deleteConfirm.classList.toggle('show');
                     deleteConfirm.classList.toggle('hidden');

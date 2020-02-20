@@ -38,7 +38,7 @@ function searchAllData($con, $id) {
 }
 
 function searchClientAll($con) {
-    $result = $con->query("SELECT clients.id_client, clients.name_client, clients.age_client, clients.gender_client, clients.phone_client, quiz.date_quiz FROM clients INNER JOIN quiz ON clients.id_client = quiz.fk_id_client");
+    $result = $con->query("SELECT clients.id_client, clients.name_client, clients.age_client, clients.gender_client, clients.phone_client, clients.mail_client, quiz.date_quiz FROM clients INNER JOIN quiz ON clients.id_client = quiz.fk_id_client");
     $result->execute();
     return $result->fetchAll();
 }

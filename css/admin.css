@@ -275,6 +275,10 @@ header .adminControl .controls ul li:hover {
     text-transform: capitalize;
 }
 
+#rUserLow {
+    text-transform: lowercase;
+}
+
 #containerList #rMore {
     cursor: pointer;
 }

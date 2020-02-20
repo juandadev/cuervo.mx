@@ -107,6 +107,8 @@
 
         <button id="update" class="update">Actualizar</button>
 
+        <button id="incomplete" class="update">Clientes incompletos</button>
+
         <div id="errors" class="errors hidden">
             <p>Se ha producido un error</p>
         </div>
