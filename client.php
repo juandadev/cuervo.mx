@@ -15,11 +15,20 @@ $con = connection($db_config);
 $id = $_GET['id'];
 
 $data = searchAllData($con, $id);
-$position = strpos($data[0][1], ' ');
-$firstN = substr($data[0][1], 0, $position);
-$secondN = substr($data[0][1], $position + 1, strlen($data[0][1]));
-$secondN = strpos($secondN, ' ');
-$secondN = substr($data[0][1], $position + 1, $secondN);
+$isEmpty = empty($data);
+
+if ($isEmpty != 1) {
+    $position = strpos($data[0][1], ' ');
+    $firstN = substr($data[0][1], 0, $position);
+    $secondN = substr($data[0][1], $position + 1, strlen($data[0][1]));
+    $secondN = strpos($secondN, ' ');
+    $secondN = substr($data[0][1], $position + 1, $secondN);
+} else if ($isEmpty == 1) {
+    $statement = $con->query("SELECT mail_client FROM clients WHERE id_client = '$id'");
+    $statement->execute();
+    $mailClient = $statement->fetchAll();
+    $mailClient = $mailClient[0][0];
+}
 
 require 'views/head.view.php';
 ?>
@@ -36,10 +45,27 @@ require 'views/head.view.php';
     <main>
         <div class="profile">
             <div class="picProfile" id="picProfile">
-                <img src="https://ui-avatars.com/api/?name=<?php echo $firstN . '+' . $secondN; ?>&size=255&background=a1a1a1&color=fff" alt="<?php echo $data[0][1]; ?>">
+                <img src="https://ui-avatars.com/api/?name=
+                <?php
+                if ($isEmpty != 1) {
+                    echo $firstN . '+' . $secondN;
+                }
+                ?>
+                &size=255&background=a1a1a1&color=fff" alt="
+                <?php
+                if ($isEmpty != 1) {
+                    echo $data[0][1];
+                }
+                ?>">
             </div>
 
-            <h1 id="clientName"><?php echo $data[0][1]; ?></h1>
+            <h1 id="clientName">
+                <?php
+                if ($isEmpty != 1) {
+                    echo $data[0][1];
+                }
+                ?>
+            </h1>
 
             <div class="contactClient">
                 <i class="far fa-envelope" id="mail"></i>
@@ -54,7 +80,7 @@ require 'views/head.view.php';
                     echo 'fas fa-edit';
                 }
                 ?>
-                " ></i>
+                "></i>
             </div>
         </div>
 
@@ -173,12 +199,17 @@ require 'views/head.view.php';
     </main>
 
     <script>
-        var clientPhone = '<?php echo $data[0][9]; ?>';
-        var clientMail = '<?php echo $data[0][10]; ?>';
+        var clientPhone = '<?php if ($isEmpty != 1) {echo $data[0][9];} ?>';
+        var clientMail = '<?php if ($isEmpty != 1) {echo $data[0][10];} else if ($isEmpty == 1) {echo $mailClient;} ?>';
         var clientId = '<?php echo $_GET['id']; ?>';
     </script>
     <script src="private/config.js"></script>
-    <script src="js/client.js"></script>
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getTime();
+        var admin = document.createElement("script");
+
+        setScript(admin, 'client');
+    </script>
 </body>
 
 </html>

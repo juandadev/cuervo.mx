@@ -31,7 +31,8 @@ var update = document.getElementById('update'),
     deleteClient = document.getElementById('deleteClient'),
     deleteConfirm = document.getElementById('deleteConfirm'),
     deleteYes = document.getElementById('deleteYes'),
-    deleteNo = document.getElementById('deleteNo');
+    deleteNo = document.getElementById('deleteNo'),
+    addUserB = document.getElementById('addUser');
 
 var id_client,
     name_client,
@@ -71,6 +72,23 @@ window.onclick = function (event) {
         modal.classList.toggle('hidden');
     }
 }
+
+addUserB.addEventListener('click', function () {
+    http_request = new XMLHttpRequest();
+    http_request.open('POST', urlDir1 + 'php/addClient.php');
+
+    http_request.onreadystatechange = function () {
+        if (http_request.readyState == XMLHttpRequest.DONE) {
+            if (http_request.status == 200) {
+                window.location = 'client.php?id=' + http_request.responseText + '&edit';
+            } else {
+                console.log('Hubo un error');
+            }
+        }
+    }
+
+    http_request.send(true);
+});
 
 moreBtn.addEventListener('click', function () {
     moreOptions.classList.toggle('hidden');

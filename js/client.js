@@ -25,7 +25,6 @@ logo.addEventListener('click', function () {
 });
 
 mail.addEventListener('click', function () {
-    //mailto:elcorreoquequieres@correo.com
     window.open('mailto:' + clientMail, '_blank');
 });
 

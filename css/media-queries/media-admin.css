@@ -40,7 +40,7 @@
     -moz-transform: translate(110px, 50px);
     -ms-transform: translate(110px, 50px);
     -o-transform: translate(110px, 50px);
-}
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -82,8 +82,11 @@
   #containerList #rDate,
   #containerList #thDate,
   #containerList #thInfo,
-  .h02 p,
   .h03 #addUser p {
+    display: none;
+  }
+
+  .h02 {
     display: none;
   }
 
@@ -121,21 +124,17 @@
     -moz-transform: translate(-20px, 50px);
     -ms-transform: translate(-20px, 50px);
     -o-transform: translate(-20px, 50px);
-}
+  }
 }
 
 @media screen and (max-width: 375px) {
-  .h03 #addUser {
-    display: none;
-  }
-
   .moreOptions {
     transform: translate(-50px, 50px);
     -webkit-transform: translate(-70px, 50px);
     -moz-transform: translate(-50px, 50px);
     -ms-transform: translate(-50px, 50px);
     -o-transform: translate(-50px, 50px);
-}
+  }
 }
 
 @media screen and (max-width: 320px) {
