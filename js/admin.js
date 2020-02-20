@@ -312,6 +312,114 @@ filter.onchange = function () {
     orderClients(filter.value);
 }
 
+function createClientRow(i, client) {
+    //Table row
+    var row = document.createElement('div');
+    row.setAttribute('id', client[i].id);
+    row.classList.add('clientRow');
+    table.appendChild(row);
+
+    //Checkbox
+    var checkField = document.createElement('label');
+    checkField.setAttribute('id', 'rCheck01');
+    checkField.setAttribute('for', 'rCheck' + client[i].id);
+    checkField.classList = 'rCheck';
+    row.appendChild(checkField);
+
+    var checkbox = document.createElement('INPUT');
+    checkbox.setAttribute('type', 'checkbox');
+    checkbox.setAttribute('id', 'rCheck' + client[i].id);
+    checkbox.dataset.idClient = client[i].id;
+    checkField.appendChild(checkbox);
+
+    var spanCheck = document.createElement('span');
+    spanCheck.classList = 'checkmark';
+    checkField.appendChild(spanCheck);
+
+    //User
+    var userField = document.createElement('div');
+    userField.classList.add('rUserInfo');
+    userField.dataset.id = client[i].id;
+    userField.setAttribute('id', 'rUserInfo');
+    userField.setAttribute('onclick', 'showClient(this)');
+    row.appendChild(userField);
+
+    var pos = client[i].name.search(' ');
+    var firstN = client[i].name.substr(0, pos);
+    var secondN = client[i].name.substr(pos + 1, client[i].name.length);
+    pos = secondN.search(' ');
+    secondN = secondN.substr(0, pos);
+
+    var image = document.createElement('img');
+    image.setAttribute('src', 'https://ui-avatars.com/api/?name=' + firstN + '+' + secondN + '&size=40&background=a1a1a1&color=fff');
+    image.classList.add('userPic');
+    userField.appendChild(image);
+
+    var name = document.createElement('p');
+    name.setAttribute('id', 'rUser');
+    name.innerHTML = client[i].name;
+    userField.appendChild(name);
+
+    //Age
+    var ageField = document.createElement('div');
+    ageField.setAttribute('id', 'rAge');
+    row.appendChild(ageField);
+
+    var age = document.createElement('p');
+    age.innerHTML = client[i].age;
+    ageField.appendChild(age);
+
+    //Gender
+    var genderField = document.createElement('div');
+    genderField.setAttribute('id', 'rGender');
+    row.appendChild(genderField);
+
+    var gender = document.createElement('p');
+    gender.innerHTML = client[i].gender;
+    genderField.appendChild(gender);
+
+    //Phone
+    var phoneField = document.createElement('div');
+    phoneField.setAttribute('id', 'rPhone');
+    row.appendChild(phoneField);
+
+    var phone = document.createElement('p');
+    phone.innerHTML = client[i].phone;
+    phoneField.appendChild(phone);
+
+    //Date
+    var dateField = document.createElement('div');
+    dateField.setAttribute('id', 'rDate');
+    row.appendChild(dateField);
+
+    var date = document.createElement('p');
+    date.innerHTML = client[i].date;
+    dateField.appendChild(date);
+
+    //More
+    var moreField = document.createElement('div');
+    moreField.setAttribute('id', 'rMore');
+    moreField.setAttribute('onclick', 'showOptions(' + i + ')');
+    row.appendChild(moreField);
+
+    var more = document.createElement('i');
+    more.classList.add('fas');
+    more.classList.add('fa-ellipsis-h');
+    moreField.appendChild(more);
+
+    var moreOptions02 = document.createElement('div');
+    moreOptions02.setAttribute('id', 'moreOptions' + i);
+    moreOptions02.classList = 'moreOptions hidden';
+    moreField.appendChild(moreOptions02);
+
+    var moreUl = document.createElement('ul');
+    moreOptions02.appendChild(moreUl);
+    var moreLi = document.createElement('li');
+    moreLi.innerHTML = 'Eliminar';
+    moreLi.setAttribute('onclick', 'showConfirm(' + client[i].id + ')');
+    moreUl.appendChild(moreLi);
+}
+
 function loadClients() {
     changeTotal();
     table.innerHTML = '';
@@ -367,111 +475,7 @@ function loadClients() {
             errors.classList.remove('hidden');
         } else {
             for (var i = 0; i < client.length; i++) {
-                //Table row
-                var row = document.createElement('div');
-                row.setAttribute('id', client[i].id);
-                row.classList.add('clientRow');
-                table.appendChild(row);
-
-                //Checkbox
-                var checkField = document.createElement('label');
-                checkField.setAttribute('id', 'rCheck01');
-                checkField.setAttribute('for', 'rCheck' + client[i].id);
-                checkField.classList = 'rCheck';
-                row.appendChild(checkField);
-
-                var checkbox = document.createElement('INPUT');
-                checkbox.setAttribute('type', 'checkbox');
-                checkbox.setAttribute('id', 'rCheck' + client[i].id);
-                checkbox.dataset.idClient = client[i].id;
-                checkField.appendChild(checkbox);
-
-                var spanCheck = document.createElement('span');
-                spanCheck.classList = 'checkmark';
-                checkField.appendChild(spanCheck);
-
-                //User
-                var userField = document.createElement('div');
-                userField.classList.add('rUserInfo');
-                userField.dataset.id = client[i].id;
-                userField.setAttribute('id', 'rUserInfo');
-                userField.setAttribute('onclick', 'showClient(this)');
-                row.appendChild(userField);
-
-                var pos = client[i].name.search(' ');
-                var firstN = client[i].name.substr(0, pos);
-                var secondN = client[i].name.substr(pos + 1, client[i].name.length);
-                pos = secondN.search(' ');
-                secondN = secondN.substr(0, pos);
-
-                var image = document.createElement('img');
-                image.setAttribute('src', 'https://ui-avatars.com/api/?name=' + firstN + '+' + secondN + '&size=40&background=a1a1a1&color=fff');
-                image.classList.add('userPic');
-                userField.appendChild(image);
-
-                var name = document.createElement('p');
-                name.setAttribute('id', 'rUser');
-                name.innerHTML = client[i].name;
-                userField.appendChild(name);
-
-                //Age
-                var ageField = document.createElement('div');
-                ageField.setAttribute('id', 'rAge');
-                row.appendChild(ageField);
-
-                var age = document.createElement('p');
-                age.innerHTML = client[i].age;
-                ageField.appendChild(age);
-
-                //Gender
-                var genderField = document.createElement('div');
-                genderField.setAttribute('id', 'rGender');
-                row.appendChild(genderField);
-
-                var gender = document.createElement('p');
-                gender.innerHTML = client[i].gender;
-                genderField.appendChild(gender);
-
-                //Phone
-                var phoneField = document.createElement('div');
-                phoneField.setAttribute('id', 'rPhone');
-                row.appendChild(phoneField);
-
-                var phone = document.createElement('p');
-                phone.innerHTML = client[i].phone;
-                phoneField.appendChild(phone);
-
-                //Date
-                var dateField = document.createElement('div');
-                dateField.setAttribute('id', 'rDate');
-                row.appendChild(dateField);
-
-                var date = document.createElement('p');
-                date.innerHTML = client[i].date;
-                dateField.appendChild(date);
-
-                //More
-                var moreField = document.createElement('div');
-                moreField.setAttribute('id', 'rMore');
-                moreField.setAttribute('onclick', 'showOptions(' + i + ')');
-                row.appendChild(moreField);
-
-                var more = document.createElement('i');
-                more.classList.add('fas');
-                more.classList.add('fa-ellipsis-h');
-                moreField.appendChild(more);
-
-                var moreOptions02 = document.createElement('div');
-                moreOptions02.setAttribute('id', 'moreOptions' + i);
-                moreOptions02.classList = 'moreOptions hidden';
-                moreField.appendChild(moreOptions02);
-
-                var moreUl = document.createElement('ul');
-                moreOptions02.appendChild(moreUl);
-                var moreLi = document.createElement('li');
-                moreLi.innerHTML = 'Eliminar';
-                moreLi.setAttribute('onclick', 'showConfirm(' + client[i].id + ')');
-                moreUl.appendChild(moreLi);
+                createClientRow(i, client);
             }
         }
     }
@@ -580,84 +584,7 @@ function orderClients(param) {
             errors.classList.remove('hidden');
         } else {
             for (var i = 0; i < client.length; i++) {
-                //Table row
-                var row = document.createElement('div');
-                row.classList.add('clientRow');
-                row.setAttribute('id', client[i].id);
-                row.setAttribute('onclick', 'showClient(this)');
-                table.appendChild(row);
-
-                //Checkbox
-                var checkField = document.createElement('div');
-                checkField.setAttribute('id', 'rCheck01');
-                row.appendChild(checkField);
-
-                var checkbox = document.createElement('INPUT');
-                checkbox.setAttribute('type', 'checkbox');
-                checkbox.setAttribute('id', 'rCheck02');
-                checkField.appendChild(checkbox);
-
-                //User
-                var userField = document.createElement('div');
-                userField.classList.add('rUserInfo');
-                userField.setAttribute('id', 'rUserInfo');
-                row.appendChild(userField);
-
-                var image = document.createElement('img');
-                image.setAttribute('src', 'img/cuervo-logo-min.png');
-                image.classList.add('userPic');
-                userField.appendChild(image);
-
-                var name = document.createElement('p');
-                name.setAttribute('id', 'rUser');
-                name.innerHTML = client[i].name;
-                userField.appendChild(name);
-
-                //Age
-                var ageField = document.createElement('div');
-                ageField.setAttribute('id', 'rAge');
-                row.appendChild(ageField);
-
-                var age = document.createElement('p');
-                age.innerHTML = client[i].age;
-                ageField.appendChild(age);
-
-                //Gender
-                var genderField = document.createElement('div');
-                genderField.setAttribute('id', 'rGender');
-                row.appendChild(genderField);
-
-                var gender = document.createElement('p');
-                gender.innerHTML = client[i].gender;
-                genderField.appendChild(gender);
-
-                //Phone
-                var phoneField = document.createElement('div');
-                phoneField.setAttribute('id', 'rPhone');
-                row.appendChild(phoneField);
-
-                var phone = document.createElement('p');
-                phone.innerHTML = client[i].phone;
-                phoneField.appendChild(phone);
-
-                //Date
-                var dateField = document.createElement('div');
-                dateField.setAttribute('id', 'rDate');
-                row.appendChild(dateField);
-
-                var date = document.createElement('p');
-                date.innerHTML = client[i].date;
-                dateField.appendChild(date);
-
-                //More
-                var moreField = document.createElement('div');
-                moreField.setAttribute('id', 'rMore');
-                row.appendChild(moreField);
-
-                var more = document.createElement('i');
-                more.classList.add('fas');
-                more.classList.add('fa-ellipsis-h');
-                moreField.appendChild(more);
+                createClientRow(i, client);
             }
         }
     }
@@ -764,84 +691,7 @@ function searchClient(word) {
             errors.classList.remove('hidden');
         } else {
             for (var i = 0; i < client.length; i++) {
-                //Table row
-                var row = document.createElement('div');
-                row.classList.add('clientRow');
-                row.setAttribute('id', client[i].id);
-                row.setAttribute('onclick', 'showClient(this)');
-                table.appendChild(row);
-
-                //Checkbox
-                var checkField = document.createElement('div');
-                checkField.setAttribute('id', 'rCheck01');
-                row.appendChild(checkField);
-
-                var checkbox = document.createElement('INPUT');
-                checkbox.setAttribute('type', 'checkbox');
-                checkbox.setAttribute('id', 'rCheck02');
-                checkField.appendChild(checkbox);
-
-                //User
-                var userField = document.createElement('div');
-                userField.classList.add('rUserInfo');
-                userField.setAttribute('id', 'rUserInfo');
-                row.appendChild(userField);
-
-                var image = document.createElement('img');
-                image.setAttribute('src', 'img/cuervo-logo-min.png');
-                image.classList.add('userPic');
-                userField.appendChild(image);
-
-                var name = document.createElement('p');
-                name.setAttribute('id', 'rUser');
-                name.innerHTML = client[i].name;
-                userField.appendChild(name);
-
-                //Age
-                var ageField = document.createElement('div');
-                ageField.setAttribute('id', 'rAge');
-                row.appendChild(ageField);
-
-                var age = document.createElement('p');
-                age.innerHTML = client[i].age;
-                ageField.appendChild(age);
-
-                //Gender
-                var genderField = document.createElement('div');
-                genderField.setAttribute('id', 'rGender');
-                row.appendChild(genderField);
-
-                var gender = document.createElement('p');
-                gender.innerHTML = client[i].gender;
-                genderField.appendChild(gender);
-
-                //Phone
-                var phoneField = document.createElement('div');
-                phoneField.setAttribute('id', 'rPhone');
-                row.appendChild(phoneField);
-
-                var phone = document.createElement('p');
-                phone.innerHTML = client[i].phone;
-                phoneField.appendChild(phone);
-
-                //Date
-                var dateField = document.createElement('div');
-                dateField.setAttribute('id', 'rDate');
-                row.appendChild(dateField);
-
-                var date = document.createElement('p');
-                date.innerHTML = client[i].date;
-                dateField.appendChild(date);
-
-                //More
-                var moreField = document.createElement('div');
-                moreField.setAttribute('id', 'rMore');
-                row.appendChild(moreField);
-
-                var more = document.createElement('i');
-                more.classList.add('fas');
-                more.classList.add('fa-ellipsis-h');
-                moreField.appendChild(more);
+                createClientRow(i, client);
             }
         }
     }
