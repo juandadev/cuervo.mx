@@ -1,9 +1,17 @@
 <?php
-require '../private/config.php';
-require '../php/database.php';
-
-$con = connection($db_config);
-$email = $_COOKIE['client'];
+if (isset($_GET['id']) || isset($_GET['edit'])) {
+    $con = connection($db_config);
+    $idMail = $_GET['id'];
+    $statement = $con->query("SELECT mail_client FROM clients WHERE id_client = '$idMail'");
+    $statement->execute();
+    $email = $statement->fetchAll();
+    $email = $email[0][0];
+} else {
+    require '../private/config.php';
+    require '../php/database.php';
+    $email = $_COOKIE['client'];
+    $con = connection($db_config);
+}
 
 $quiz = searchClientQuiz($con, $email);
 

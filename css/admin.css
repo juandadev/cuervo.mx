@@ -323,11 +323,11 @@ header .adminControl .controls ul li:hover {
 }
 
 #rMore .moreOptions {
-    transform: translate(-30px, 40px);
-    -webkit-transform: translate(-30px, 40px);
-    -moz-transform: translate(-30px, 40px);
-    -ms-transform: translate(-30px, 40px);
-    -o-transform: translate(-30px, 40px);
+    transform: translate(-30px, 70px);
+    -webkit-transform: translate(-30px, 70px);
+    -moz-transform: translate(-30px, 70px);
+    -ms-transform: translate(-30px, 70px);
+    -o-transform: translate(-30px, 70px);
 }
 
 .moreOptions {
@@ -416,6 +416,11 @@ header .adminControl .controls ul li:hover {
 
 #containerList .clientRow .rUserInfo img {
     margin-right: 20px;
+    border-radius: 500px;
+    -webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
+    -ms-border-radius: 500px;
+    -o-border-radius: 500px;
 }
 
 /** MODAL CONTAINERS **/

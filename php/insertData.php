@@ -3,7 +3,11 @@ require '../private/config.php';
 require 'database.php';
 
 $con = connection($db_config);
-$email = $_COOKIE['client'];
+if(isset($_POST['mail'])) {
+    $email = $_POST['mail'];
+} else {
+    $email = $_COOKIE['client'];
+}
 $id_client = mailExists($con, $email);
 $id_client = $id_client[0]['id_client'];
 

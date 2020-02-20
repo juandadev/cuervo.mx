@@ -1,9 +1,17 @@
 <?php
-require '../private/config.php';
-require '../php/database.php';
-
-$con = connection($db_config);
-$email = $_COOKIE['client'];
+if (isset($_GET['id']) || isset($_GET['edit'])) {
+    $con = connection($db_config);
+    $idMail = $_GET['id'];
+    $statement = $con->query("SELECT mail_client FROM clients WHERE id_client = '$idMail'");
+    $statement->execute();
+    $email = $statement->fetchAll();
+    $email = $email[0][0];
+} else {
+    require '../private/config.php';
+    require '../php/database.php';
+    $email = $_COOKIE['client'];
+    $con = connection($db_config);
+}
 
 $quiz = searchClientQuiz($con, $email);
 
@@ -28,49 +36,81 @@ array_push($q_06_opt, $q_06);
         <div class="radioOptions checkOptions">
             <label for="ch_06_01" class="input lblContainer">
                 Obesidad
-                <input type="checkbox" name="q_06" id="ch_06_01" value="obesidad" <?php for ($i = 0; $i < count($q_06_opt); $i++) { if ($q_06_opt[$i] == 'obesidad') { echo 'checked'; } } ?>>
+                <input type="checkbox" name="q_06" id="ch_06_01" value="obesidad" <?php for ($i = 0; $i < count($q_06_opt); $i++) {
+                                                                                        if ($q_06_opt[$i] == 'obesidad') {
+                                                                                            echo 'checked';
+                                                                                        }
+                                                                                    } ?>>
                 <span class="checkmark r01"></span>
             </label>
 
             <label for="ch_06_02" class="input lblContainer">
                 Diabetes
-                <input type="checkbox" name="q_06" id="ch_06_02" value="diabetes" <?php for ($i = 0; $i < count($q_06_opt); $i++) { if ($q_06_opt[$i] == 'diabetes') { echo 'checked'; } } ?>>
+                <input type="checkbox" name="q_06" id="ch_06_02" value="diabetes" <?php for ($i = 0; $i < count($q_06_opt); $i++) {
+                                                                                        if ($q_06_opt[$i] == 'diabetes') {
+                                                                                            echo 'checked';
+                                                                                        }
+                                                                                    } ?>>
                 <span class="checkmark r01"></span>
             </label>
 
             <label for="ch_06_03" class="input lblContainer">
                 HTA (Hipertensión arterial)
-                <input type="checkbox" name="q_06" id="ch_06_03" value="hta" <?php for ($i = 0; $i < count($q_06_opt); $i++) { if ($q_06_opt[$i] == 'hta') { echo 'checked'; } } ?>>
+                <input type="checkbox" name="q_06" id="ch_06_03" value="hta" <?php for ($i = 0; $i < count($q_06_opt); $i++) {
+                                                                                    if ($q_06_opt[$i] == 'hta') {
+                                                                                        echo 'checked';
+                                                                                    }
+                                                                                } ?>>
                 <span class="checkmark r01"></span>
             </label>
 
             <label for="ch_06_04" class="input lblContainer">
                 Cáncer
-                <input type="checkbox" name="q_06" id="ch_06_04" value="cancer" <?php for ($i = 0; $i < count($q_06_opt); $i++) { if ($q_06_opt[$i] == 'cancer') { echo 'checked'; } } ?>>
+                <input type="checkbox" name="q_06" id="ch_06_04" value="cancer" <?php for ($i = 0; $i < count($q_06_opt); $i++) {
+                                                                                    if ($q_06_opt[$i] == 'cancer') {
+                                                                                        echo 'checked';
+                                                                                    }
+                                                                                } ?>>
                 <span class="checkmark r01"></span>
             </label>
 
             <label for="ch_06_05" class="input lblContainer">
                 Hipercolesterolemia
-                <input type="checkbox" name="q_06" id="ch_06_05" value="hipercolesterolemia" <?php for ($i = 0; $i < count($q_06_opt); $i++) { if ($q_06_opt[$i] == 'hipercolesterolemia') { echo 'checked'; } } ?>>
+                <input type="checkbox" name="q_06" id="ch_06_05" value="hipercolesterolemia" <?php for ($i = 0; $i < count($q_06_opt); $i++) {
+                                                                                                    if ($q_06_opt[$i] == 'hipercolesterolemia') {
+                                                                                                        echo 'checked';
+                                                                                                    }
+                                                                                                } ?>>
                 <span class="checkmark r01"></span>
             </label>
 
             <label for="ch_06_06" class="input lblContainer">
                 Hipertrigliceridemia
-                <input type="checkbox" name="q_06" id="ch_06_06" value="hipertrigliceridemia" <?php for ($i = 0; $i < count($q_06_opt); $i++) { if ($q_06_opt[$i] == 'hipertrigliceridemia') { echo 'checked'; } } ?>>
+                <input type="checkbox" name="q_06" id="ch_06_06" value="hipertrigliceridemia" <?php for ($i = 0; $i < count($q_06_opt); $i++) {
+                                                                                                    if ($q_06_opt[$i] == 'hipertrigliceridemia') {
+                                                                                                        echo 'checked';
+                                                                                                    }
+                                                                                                } ?>>
                 <span class="checkmark r01"></span>
             </label>
 
             <label for="ch_06_07" class="input lblContainer">
                 Hipotiroidismo
-                <input type="checkbox" name="q_06" id="ch_06_07" value="hipotiroidismo" <?php for ($i = 0; $i < count($q_06_opt); $i++) { if ($q_06_opt[$i] == 'hipotiroidismo') { echo 'checked'; } } ?>>
+                <input type="checkbox" name="q_06" id="ch_06_07" value="hipotiroidismo" <?php for ($i = 0; $i < count($q_06_opt); $i++) {
+                                                                                            if ($q_06_opt[$i] == 'hipotiroidismo') {
+                                                                                                echo 'checked';
+                                                                                            }
+                                                                                        } ?>>
                 <span class="checkmark r01"></span>
             </label>
 
             <label for="ch_06_08" class="input lblContainer">
                 Ninguna
-                <input type="checkbox" name="q_06" id="ch_06_08" value="ninguna" <?php for ($i = 0; $i < count($q_06_opt); $i++) { if ($q_06_opt[$i] == 'ninguna') { echo 'checked'; } } ?>>
+                <input type="checkbox" name="q_06" id="ch_06_08" value="ninguna" <?php for ($i = 0; $i < count($q_06_opt); $i++) {
+                                                                                        if ($q_06_opt[$i] == 'ninguna') {
+                                                                                            echo 'checked';
+                                                                                        }
+                                                                                    } ?>>
                 <span class="checkmark r01"></span>
             </label>
         </div>

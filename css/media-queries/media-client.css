@@ -1,0 +1,70 @@
+@media screen and (max-width: 425px) {
+  body {
+    padding: 10px;
+  }
+
+  #logo {
+    width: 100px;
+  }
+
+  #back {
+    font-size: 38px;
+  }
+
+  .picProfile {
+    width: 200px;
+    height: 200px;
+  }
+
+  .profile h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .contactClient {
+    width: 250px;
+    font-size: 38px;
+    margin: 20px 0 20px 0;
+  }
+
+  #h01,
+  #h02,
+  #h03,
+  #h04 {
+    font-size: 16px;
+  }
+
+  .question,
+  .label {
+    font-size: 14px;
+    font-weight: 100;
+  }
+
+  p,
+  .container form input,
+  .container form textarea {
+    font-size: 16px;
+  }
+
+  #name {
+    width: 250px;
+  }
+
+  .container form textarea {
+    max-width: 250px;
+    min-width: 250px;
+    max-height: 200px;
+    min-height: 200px;
+  }
+
+  #wp,
+  #mail,
+  #change {
+    width: 58px;
+    height: 58px;
+  }
+
+  #change {
+    font-size: 32px;
+  }
+}
