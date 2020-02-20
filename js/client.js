@@ -86,7 +86,8 @@ function insertClientData(evt, form, i) {
         '&civil=' + civil +
         '&ocupation=' + ocupation +
         '&phone=' + phone +
-        '&q_01=' + q_01;
+        '&q_01=' + q_01 +
+        '&mail=' + clientMail;
 
     http_request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
