@@ -37,6 +37,12 @@ function searchAllData($con, $id) {
     return $result->fetchAll();
 }
 
+function searchFiles($con, $id) {
+    $result = $con->query("SELECT photo, routine, diet FROM attached WHERE fk_id_client = '$id'");
+    $result->execute();
+    return $result->fetchAll();
+}
+
 function searchClientAll($con) {
     $result = $con->query("SELECT clients.id_client, clients.name_client, clients.age_client, clients.gender_client, clients.phone_client, clients.mail_client, quiz.date_quiz FROM clients INNER JOIN quiz ON clients.id_client = quiz.fk_id_client");
     $result->execute();

@@ -5,6 +5,7 @@
 }
 
 body {
+    margin: 0;
     background-image: url(../img/trianglify-lowres.png);
     background-repeat: no-repeat;
     background-size: cover;

@@ -1,12 +1,16 @@
 var h = [document.getElementById('h01'),
 document.getElementById('h02'),
 document.getElementById('h03'),
-document.getElementById('h04')];
+document.getElementById('h04'),
+document.getElementById('h05')];
 
 var container = [document.getElementById('form01'),
 document.getElementById('form02'),
 document.getElementById('form03'),
-document.getElementById('form04')];
+document.getElementById('form04'),
+document.getElementById('form05')];
+
+var menu = [];
 
 var logo = document.getElementById('logo'),
     mail = document.getElementById('mail'),
@@ -20,10 +24,6 @@ back.addEventListener('click', function () {
     window.location = 'admin.php';
 });
 
-logo.addEventListener('click', function () {
-    window.location = 'index.php';
-});
-
 mail.addEventListener('click', function () {
     window.open('mailto:' + clientMail, '_blank');
 });
@@ -33,20 +33,40 @@ wp.addEventListener('click', function () {
 });
 
 h[0].addEventListener('click', function () {
-    container[0].classList.toggle('hidden');
+    hideForms(container, container[0], this);
 });
 
 h[1].addEventListener('click', function () {
-    container[1].classList.toggle('hidden');
+    hideForms(container, container[1], this);
 });
 
 h[2].addEventListener('click', function () {
-    container[2].classList.toggle('hidden');
+    hideForms(container, container[2], this);
 });
 
 h[3].addEventListener('click', function () {
-    container[3].classList.toggle('hidden');
+    hideForms(container, container[3], this);
 });
+
+h[4].addEventListener('click', function () {
+    hideForms(container, container[4], this);
+});
+
+function hideForms(containers, container, menu) {
+    if (container.classList.contains('hidden')) {
+        for (let i = 0; i < 5; i++) {
+            if (containers[i].classList.contains('hidden') == false) {
+                containers[i].classList.toggle('hidden');
+                h[i].classList.toggle('current');
+            }
+        }
+
+        container.classList.toggle('hidden');
+        menu.classList.toggle('current');
+    } else {
+        return true;
+    }
+}
 
 if (changeMod.classList.contains('fa-edit')) {
     changeMod.addEventListener('click', function () {
