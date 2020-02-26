@@ -166,11 +166,31 @@ main {
 p,
 .container form input,
 .container form textarea {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   border: none;
   font-size: 26px;
   font-weight: 700;
   color: #a63c3c;
+}
+
+.container form input[type="file"] {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  background-color: #fff;
+  border: none;
+  color: #000;
+  font-weight: 400;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+.container form a {
+  color: #000;
+  margin: 20px 0 20px 0;
 }
 
 .container form {

@@ -202,11 +202,31 @@ require 'views/head.view.php';
             </div>
 
             <div id="form05" class="container hidden">
-                <p>Rutina</p>
-                <embed class="files" src="<?php if ($files[0][1] != "") {echo 'docs/' . $files[0][1];} ?>"/>
+                <form action="php/uploadFiles.php" method="POST" enctype="multipart/form-data">
+                    <p>Rutina</p>
+                    <embed class="files" src="<?php if ($files[0][1] != "") {
+                                                    echo 'docs/' . $files[0][1];
+                                                } ?>" />
+                    <input type="file" name="routine" id="routine">
 
-                <p>Dieta</p>
-                <embed class="files" src="<?php if ($files[0][2] != "") {echo 'docs/' . $files[0][2];} ?>"/>
+                    <button class="roundBtn" type="submit">Guardar</button>
+
+                    <a href="<?php if ($files[0][1] != "") {
+                                    echo 'docs/' . $files[0][1];
+                                } ?>">Descargar rutina</a>
+
+                    <p>Dieta</p>
+                    <embed class="files" src="<?php if ($files[0][2] != "") {
+                                                    echo 'docs/' . $files[0][2];
+                                                } ?>" />
+                    <input type="file" name="diet" id="diet">
+
+                    <button class="roundBtn" type="submit">Guardar</button>
+
+                    <a href="<?php if ($files[0][2] != "") {
+                                    echo 'docs/' . $files[0][2];
+                                } ?>">Descargar dieta</a>
+                </form>
             </div>
         </div>
     </main>
