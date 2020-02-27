@@ -333,21 +333,27 @@ p,
   cursor: pointer;
 }
 
-.success01 {
+.success01,
+.error {
   position: fixed;
   bottom: 10%;
   padding: 10px;
-  background-color: #dff2bf;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   z-index: 2;
-}
-
-.success01 p {
   text-align: center;
   font-size: 16px;
+}
+
+.success01 {
   color: #4f8a10;
+  background-color: #dff2bf;
+}
+
+.error {
+  color: #d8000c;
+  background-color: #ffd2d2;
 }

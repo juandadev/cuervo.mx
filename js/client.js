@@ -115,6 +115,7 @@ function insertClientData(evt, form, i) {
             if (http_request.status == 200) {
                 clientName.innerHTML = name;
                 success.classList.toggle('hidden');
+                success.innerHTML = 'Cambios guardados con éxito!';
 
                 setTimeout(function () {
                     success.classList.toggle('hidden');
@@ -160,6 +161,7 @@ function insertForm2(evt, form, i) {
         if (http_request.readyState == XMLHttpRequest.DONE) {
             if (http_request.status == 200) {
                 success.classList.toggle('hidden');
+                success.innerHTML = 'Cambios guardados con éxito!';
 
                 setTimeout(function () {
                     success.classList.toggle('hidden');
@@ -205,6 +207,7 @@ function insertForm3(evt, form, i) {
         if (http_request.readyState == XMLHttpRequest.DONE) {
             if (http_request.status == 200) {
                 success.classList.toggle('hidden');
+                success.innerHTML = 'Cambios guardados con éxito!';
 
                 setTimeout(function () {
                     success.classList.toggle('hidden');
@@ -262,6 +265,7 @@ function insertForm4(evt, form, i) {
         if (http_request.readyState == XMLHttpRequest.DONE) {
             if (http_request.status == 200) {
                 success.classList.toggle('hidden');
+                success.innerHTML = 'Cambios guardados con éxito!';
 
                 setTimeout(function () {
                     success.classList.toggle('hidden');
@@ -273,4 +277,36 @@ function insertForm4(evt, form, i) {
     }
 
     http_request.send(params);
+}
+
+function insertFiles(evt, form) {
+    evt.preventDefault();
+
+    http_request = new XMLHttpRequest();
+    http_request.open('GET', urlDir1 + 'php/uploadFiles.php?client=' + form.client.value);
+
+    var formData = new FormData(form);
+
+    http_request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    http_request.onreadystatechange = function () {
+        if (http_request.readyState == XMLHttpRequest.DONE) {
+            if (http_request.status == 200) {
+                //var logs = JSON.parse(http_request.responseText);
+
+                console.log(http_request.responseText);
+
+                /*success.classList.toggle('hidden');
+                success.innerHTML = 'Cambios guardados con éxito!';
+
+                setTimeout(function () {
+                    success.classList.toggle('hidden');
+                }, 2000);*/
+            } else {
+                console.log('Hubo un error');
+            }
+        }
+    }
+
+    http_request.send(formData);
 }

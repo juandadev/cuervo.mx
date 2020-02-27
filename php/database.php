@@ -104,3 +104,13 @@ function loadImageProfile($con, $image, $admin) {
     $result = $con->query("UPDATE users SET photo = '$image' WHERE name_user = '$admin'");
     return true;
 }
+
+function loadRoutine($con, $file, $id) {
+    $result = $con->query("UPDATE attached SET routine = '$file' WHERE fk_id_client = '$id'");
+    return true;
+}
+
+function loadDiet($con, $file, $id) {
+    $result = $con->query("UPDATE attached SET diet = '$file' WHERE fk_id_client = '$id'");
+    return true;
+}

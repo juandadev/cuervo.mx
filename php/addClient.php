@@ -22,4 +22,7 @@ $newId = $newId[0][0];
 $statement = $con->query("INSERT INTO quiz(fk_id_client) VALUES ('$newId')");
 $statement->execute();
 
+$statement = $con->query("INSERT INTO attached(fk_id_client) VALUES ('$newId')");
+$statement->execute();
+
 echo $newId;

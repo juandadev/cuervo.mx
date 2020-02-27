@@ -106,9 +106,9 @@ require 'views/head.view.php';
         </div>
 
         <div class="content">
-            <div class="success01 hidden" id="success">
-                <p>Cambios guardados con éxito!</p>
-            </div>
+            <div class="success01 hidden" id="success"></div>
+
+            <div class="error hidden" id="error"></div>
 
             <div id="form01" class="container">
                 <?php if (isset($_GET['edit'])) { ?>
@@ -202,7 +202,7 @@ require 'views/head.view.php';
             </div>
 
             <div id="form05" class="container hidden">
-                <form action="php/uploadFiles.php" method="POST" enctype="multipart/form-data">
+                <form method="POST"  action="php/uploadFiles.php" enctype="multipart/form-data">
                     <p>Rutina</p>
                     <embed class="files" src="<?php if ($files[0][1] != "") {
                                                     echo 'docs/' . $files[0][1];
@@ -220,6 +220,8 @@ require 'views/head.view.php';
                                                     echo 'docs/' . $files[0][2];
                                                 } ?>" />
                     <input type="file" name="diet" id="diet">
+
+                    <input type="text" class="hidden" name="client" id="client" value="<?php echo $_GET['id']; ?>">
 
                     <button class="roundBtn" type="submit">Guardar</button>
 
