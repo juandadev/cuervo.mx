@@ -1,4 +1,9 @@
 <body>
+    <div class="subscription-details js-subscription-details hidden">
+        <i class="fas fa-info-circle"></i>
+        <pre><code class="js-subscription-json"></code></pre>
+    </div>
+
     <div id="modal" class="modal hidden">
         <div class="modalCont hidden" id="changePassModal">
             <h2>Cambiar contraseña</h2>
@@ -108,6 +113,8 @@
         <button id="update" class="update">Actualizar</button>
 
         <button id="incomplete" class="update">Clientes incompletos</button>
+
+        <button id="pushButton" class="update"></button>
 
         <div id="errors" class="errors hidden">
             <p>Se ha producido un error</p>
