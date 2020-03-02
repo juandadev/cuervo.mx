@@ -83,7 +83,7 @@ function insertClientData(evt, form, i) {
     evt.preventDefault();
 
     http_request = new XMLHttpRequest();
-    http_request.open('POST', urlDir1 + 'php/insertData.php');
+    http_request.open('POST', 'php/insertData.php');
 
     var name = form.name.value.trim().toUpperCase();
     var age = parseInt(form.age.value.trim());
@@ -133,7 +133,7 @@ function insertForm2(evt, form, i) {
     evt.preventDefault();
 
     http_request = new XMLHttpRequest();
-    http_request.open('POST', urlDir1 + 'php/insertData.php');
+    http_request.open('POST', 'php/insertData.php');
 
     var q_02 = parseInt(form.q_02.value);
     var q_02_01 = form.q_02_01.value.trim();
@@ -179,7 +179,7 @@ function insertForm3(evt, form, i) {
     evt.preventDefault();
 
     http_request = new XMLHttpRequest();
-    http_request.open('POST', urlDir1 + 'php/insertData.php');
+    http_request.open('POST', 'php/insertData.php');
 
     var q_0601 = form.q_06[0].checked == true ? form.q_06[0].value : '';
     var q_0602 = form.q_06[1].checked == true ? form.q_06[1].value : '';
@@ -225,7 +225,7 @@ function insertForm4(evt, form, i) {
     evt.preventDefault();
 
     http_request = new XMLHttpRequest();
-    http_request.open('POST', urlDir1 + 'php/insertData.php');
+    http_request.open('POST', 'php/insertData.php');
 
     var q_07 = form.q_07.value.trim();
     var q_08 = form.q_08.value.trim();
@@ -283,7 +283,7 @@ function insertFiles(evt, form) {
     evt.preventDefault();
 
     http_request = new XMLHttpRequest();
-    http_request.open('GET', urlDir1 + 'php/uploadFiles.php?client=' + form.client.value);
+    http_request.open('GET', 'php/uploadFiles.php?client=' + form.client.value);
 
     var formData = new FormData(form);
 

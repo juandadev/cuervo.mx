@@ -55,7 +55,7 @@ btn[6].addEventListener('click', function () {
 
     btn[7].addEventListener('click', function () {
         deleteCookie('client');
-        window.location = urlDir1 + 'index.php';
+        window.location = 'index.php';
     });
 
     btn[8].addEventListener('click', function () {
@@ -75,7 +75,7 @@ if (checkCookie('client') == true) {
 
 btn[0].addEventListener('click', function () {
     setTimeout(function () {
-        AJAXpetition(urlDir1, 'datos-personales.view.php');
+        AJAXpetition('datos-personales.view.php');
     }, 500);
 
     cont[0].classList.add('current');
@@ -122,7 +122,7 @@ btn[0].addEventListener('click', function () {
 
 btn[1].addEventListener('click', function () {
     setTimeout(function () {
-        AJAXpetition(urlDir1, 'antecedentes-salud.view.php');
+        AJAXpetition('antecedentes-salud.view.php');
     }, 500);
 
     cont[0].classList.remove('current');
@@ -170,7 +170,7 @@ btn[1].addEventListener('click', function () {
 
 btn[2].addEventListener('click', function () {
     setTimeout(function () {
-        AJAXpetition(urlDir1, 'antecedentes-familiares.view.php');
+        AJAXpetition('antecedentes-familiares.view.php');
     }, 500);
 
     cont[0].classList.remove('current');
@@ -218,7 +218,7 @@ btn[2].addEventListener('click', function () {
 
 btn[3].addEventListener('click', function () {
     setTimeout(function () {
-        AJAXpetition(urlDir1, 'alimentos-deportes.view.php');
+        AJAXpetition('alimentos-deportes.view.php');
     }, 500);
 
     cont[0].classList.remove('current');
@@ -363,7 +363,7 @@ function subMenu(menu) {
 
     switch (menu.getAttribute('id')) {
         case 'item01':
-            AJAXpetition(urlDir1, 'datos-personales.view.php');
+            AJAXpetition('datos-personales.view.php');
 
             subNavigation(0, 1, 2, 3, 'BLACK');
 
@@ -377,7 +377,7 @@ function subMenu(menu) {
             break;
 
         case 'item02':
-            AJAXpetition(urlDir1, 'antecedentes-salud.view.php');
+            AJAXpetition('antecedentes-salud.view.php');
 
             subNavigation(1, 0, 2, 3, 'WHITE');
 
@@ -391,7 +391,7 @@ function subMenu(menu) {
             break;
 
         case 'item03':
-            AJAXpetition(urlDir1, 'antecedentes-familiares.view.php');
+            AJAXpetition('antecedentes-familiares.view.php');
 
             subNavigation(2, 1, 0, 3, 'WHITE');
 
@@ -405,7 +405,7 @@ function subMenu(menu) {
             break;
 
         case 'item04':
-            AJAXpetition(urlDir1, 'alimentos-deportes.view.php');
+            AJAXpetition('alimentos-deportes.view.php');
 
             subNavigation(3, 2, 1, 0, 'WHITE');
 
@@ -439,11 +439,11 @@ function submitButtons() {
     }
 }
 
-function AJAXpetition(url1, url2) {
+function AJAXpetition(url2) {
     http_request = new XMLHttpRequest();
     http_request.onreadystatechange = changeStateRequest;
 
-    http_request.open('POST', url1 + 'views/' + url2);
+    http_request.open('POST', 'views/' + url2);
     http_request.send();
 }
 
@@ -538,7 +538,7 @@ function insertClientData(evt, form, i) {
     evt.preventDefault();
 
     http_request = new XMLHttpRequest();
-    http_request.open('POST', urlDir1 + 'php/insertData.php');
+    http_request.open('POST', 'php/insertData.php');
 
     var name = form.name.value.trim().toUpperCase();
     var age = parseInt(form.age.value.trim());
@@ -582,7 +582,7 @@ function insertForm2(evt, form, i) {
     evt.preventDefault();
 
     http_request = new XMLHttpRequest();
-    http_request.open('POST', urlDir1 + 'php/insertData.php');
+    http_request.open('POST', 'php/insertData.php');
 
     var q_02 = parseInt(form.q_02.value);
     var q_02_01 = form.q_02_01.value.trim();
@@ -624,7 +624,7 @@ function insertForm3(evt, form, i) {
     evt.preventDefault();
 
     http_request = new XMLHttpRequest();
-    http_request.open('POST', urlDir1 + 'php/insertData.php');
+    http_request.open('POST', 'php/insertData.php');
 
     var q_0601 = form.q_06[0].checked == true ? form.q_06[0].value : '';
     var q_0602 = form.q_06[1].checked == true ? form.q_06[1].value : '';
@@ -666,7 +666,7 @@ function insertForm4(evt, form, i) {
     evt.preventDefault();
 
     http_request = new XMLHttpRequest();
-    http_request.open('POST', urlDir1 + 'php/insertData.php');
+    http_request.open('POST', 'php/insertData.php');
 
     var q_07 = form.q_07.value.trim();
     var q_08 = form.q_08.value.trim();

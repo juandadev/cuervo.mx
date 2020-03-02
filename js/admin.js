@@ -80,7 +80,7 @@ incomplete.addEventListener('click', function () {
 
 addUserB.addEventListener('click', function () {
     http_request = new XMLHttpRequest();
-    http_request.open('POST', urlDir1 + 'php/addClient.php');
+    http_request.open('POST', 'php/addClient.php');
 
     http_request.onreadystatechange = function () {
         if (http_request.readyState == XMLHttpRequest.DONE) {
@@ -166,7 +166,7 @@ function deleteClients() {
         if (rows[i].firstElementChild.firstElementChild.checked) {
             var http_request = new XMLHttpRequest();
 
-            http_request.open('GET', urlDir1 + 'php/deleteClient.php?id=' + rows[i].firstElementChild.firstElementChild.dataset.idClient);
+            http_request.open('GET', 'php/deleteClient.php?id=' + rows[i].firstElementChild.firstElementChild.dataset.idClient);
 
             http_request.onreadystatechange = function () {
                 if (http_request.readyState == XMLHttpRequest.DONE) {
@@ -193,7 +193,7 @@ function deleteClients() {
 function getPic() {
     var http_request = new XMLHttpRequest();
 
-    http_request.open('GET', urlDir1 + 'php/getPhoto.php?admin=' + adminSession);
+    http_request.open('GET', 'php/getPhoto.php?admin=' + adminSession);
 
     http_request.onreadystatechange = function () {
         if (http_request.readyState == XMLHttpRequest.DONE) {
@@ -224,7 +224,7 @@ function addUserAdmin() {
 
     var http_request = new XMLHttpRequest();
 
-    http_request.open('GET', urlDir1 + 'php/addUser.php?n=' + newU + '&pass=' + newP + '&admin=' + admin);
+    http_request.open('GET', 'php/addUser.php?n=' + newU + '&pass=' + newP + '&admin=' + admin);
 
     http_request.onload = function () {
 
@@ -261,7 +261,7 @@ function changeName() {
 
     var http_request = new XMLHttpRequest();
 
-    http_request.open('GET', urlDir1 + 'php/changeName.php?n=' + newN + '&admin=' + admin);
+    http_request.open('GET', 'php/changeName.php?n=' + newN + '&admin=' + admin);
 
     http_request.onload = function () {
 
@@ -287,7 +287,7 @@ function changePassConf() {
 
     var http_request = new XMLHttpRequest();
 
-    http_request.open('GET', urlDir1 + 'php/changePass.php?n=' + newP + '&c=' + confirmP + '&admin=' + admin);
+    http_request.open('GET', 'php/changePass.php?n=' + newP + '&c=' + confirmP + '&admin=' + admin);
 
     http_request.onload = function () {
 
@@ -324,7 +324,7 @@ function changePassConf() {
 }
 
 logout.addEventListener('click', function () {
-    window.location = urlDir1 + 'php/logout.php';
+    window.location = 'php/logout.php';
 });
 
 update.addEventListener('click', function () {
@@ -492,7 +492,7 @@ function loadClients(stat, caps) {
 
     var http_request = new XMLHttpRequest();
 
-    http_request.open('GET', urlDir1 + 'php/readData.php?' + stat);
+    http_request.open('GET', 'php/readData.php?' + stat);
 
     //Ejecutar rueda de cargando
 
@@ -541,7 +541,7 @@ function modifyClient(id) {
 function deleteClientsIndividual(id) {
     var http_request = new XMLHttpRequest();
 
-    http_request.open('GET', urlDir1 + 'php/deleteClient.php?id=' + id);
+    http_request.open('GET', 'php/deleteClient.php?id=' + id);
 
     http_request.onreadystatechange = function () {
         if (http_request.readyState == XMLHttpRequest.DONE) {
@@ -605,7 +605,7 @@ function orderClients(param) {
 
     var http_request = new XMLHttpRequest();
 
-    http_request.open('GET', urlDir1 + 'php/sortData.php?opt=' + param);
+    http_request.open('GET', 'php/sortData.php?opt=' + param);
 
     //Ejecutar rueda de cargando
 
@@ -711,7 +711,7 @@ function searchClient(word) {
 
     var http_request = new XMLHttpRequest();
 
-    http_request.open('GET', urlDir1 + 'php/searchClient.php?w=' + word);
+    http_request.open('GET', 'php/searchClient.php?w=' + word);
 
     //Ejecutar rueda de cargando
 
