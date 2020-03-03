@@ -104,7 +104,7 @@ function updateBtn() {
         pushButton.style.backgroundColor = '#a1a1a1';
         pushButton.style.color = '#f2f2f2'
 
-        updateSubscriptionOnServer(null);
+        updateSubscriptionOnServer(null, null);
         return;
     }
 
@@ -126,7 +126,7 @@ function subscribeUser() {
         .then(function (subscription) {
             console.log('User is subscribed:', subscription);
 
-            updateSubscriptionOnServer(subscription);
+            updateSubscriptionOnServer(subscription, 'POST');
 
             isSubscribed = true;
 
@@ -149,7 +149,7 @@ function unsubscribeUser() {
             console.log('Error unsubscribing', error);
         })
         .then(function () {
-            updateSubscriptionOnServer(null);
+            updateSubscriptionOnServer(null, 'DETELE');
 
             console.log('User is unsubscribed.');
             isSubscribed = false;
@@ -173,9 +173,7 @@ function urlB64ToUint8Array(base64String) {
     return outputArray;
 }
 
-function updateSubscriptionOnServer(subscription) {
-    // TODO: Send subscription to application server
-
+function updateSubscriptionOnServer(subscription, method) {
     const subscriptionJson = document.querySelector('.js-subscription-json');
     const subscriptionDetails =
         document.querySelector('.js-subscription-details');
@@ -195,6 +193,20 @@ function updateSubscriptionOnServer(subscription) {
             subscriptionDetails.classList.toggle('hidden');
         }, 3000);
     }
+
+    const key = subscription.getKey('p256dh');
+    const token = subscription.getKey('auth');
+    const contentEncoding = (PushManager.supportedContentEncodings || ['aesgcm'])[0];
+
+    return fetch('php/storePushSubscription.php', {
+        method,
+        body: JSON.stringify({
+            endpoint: subscription.endpoint,
+            publicKey: key ? btoa(String.fromCharCode.apply(null, new Uint8Array(key))) : null,
+            authToken: token ? btoa(String.fromCharCode.apply(null, new Uint8Array(token))) : null,
+            contentEncoding,
+        }),
+    }).then(() => subscription);
 }
 /* END PUSH NOTIFICATIONS */
 
