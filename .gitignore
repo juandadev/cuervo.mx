@@ -35,3 +35,4 @@ img/tyler-nix-Y1drF0Y3Oe0-unsplash.jpg
 *.sql
 img/users/*
 docs/*.*
+keys/*.*
