@@ -63,3 +63,17 @@ var bars = document.getElementById('navBar');
 bars.addEventListener('click', function () {
     menu.classList.toggle('hidden');
 });
+
+http_request = new XMLHttpRequest();
+http_request.open('POST', 'php/sendPushNotification.php');
+
+http_request.onreadystatechange = function () {
+    if (http_request.readyState == XMLHttpRequest.DONE) {
+        if (http_request.status == 200) {
+        } else {
+            console.log('Hubo un error');
+        }
+    }
+}
+
+http_request.send();
