@@ -10,7 +10,7 @@ use Minishlink\WebPush\Subscription;
 // but in reality, you'll get this information in your database
 // because you already stored it (cf. push_subscription.php)
 $con = connection($db_config);
-$statement = $con->query("SELECT endpoint_user FROM users WHERE name_user = 'yered'");
+$statement = $con->query("SELECT endpoint_user FROM users WHERE name_user = 'anahis'");
 $statement->execute();
 $result = $statement->fetchAll();
 $endp = [

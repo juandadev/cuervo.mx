@@ -34,7 +34,8 @@ var update = document.getElementById('update'),
     deleteNo = document.getElementById('deleteNo'),
     addUserB = document.getElementById('addUser'),
     incomplete = document.getElementById('incomplete'),
-    pushButton = document.getElementById('pushButton');
+    pushButton = document.getElementById('pushButton'),
+    sendNoti = document.getElementById('sendNoti');
 
 var id_client,
     name_client,
@@ -42,6 +43,13 @@ var id_client,
     gender_client,
     phone_client,
     date_quiz;
+
+
+if (adminSession == 'juanda') {
+    sendNoti.addEventListener('click', function () {
+        window.location = 'php/sendPushNotification.php'
+    });
+}
 
 /* PUSH NOTIFICATIONS */
 const applicationServerPublicKey = 'BHsC-32jEV4-lyxZlGJcUODJvS7MJx2wUInQPsQ1yBZFqZ9rEMwEP-fdDdPUbFYL-M5kUhyi2B5DUUCZ9DiIxgI';
