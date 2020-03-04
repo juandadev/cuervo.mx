@@ -10,39 +10,43 @@ use Minishlink\WebPush\Subscription;
 // but in reality, you'll get this information in your database
 // because you already stored it (cf. push_subscription.php)
 $con = connection($db_config);
-$statement = $con->query("SELECT endpoint_user FROM users WHERE name_user = 'yered'");
+$statement = $con->query("SELECT endpoint_user FROM users WHERE endpoint_user != ''");
 $statement->execute();
 $result = $statement->fetchAll();
-$endp = [
-    'endpoint' => $result[0][0],
-    'contentEncoding' => 'aesgcm'
-];
+$endp = [];
 
-$subscription = Subscription::create($endp);
+for ($i = 0; $i < count($result); $i++) {
+    $endp = [
+        'endpoint' => $result[$i][0],
+        'contentEncoding' => 'aesgcm'
+    ];
 
-$auth = array(
-    'VAPID' => array(
-        'subject' => 'http://localhost/cuervo-nut/',
-        'publicKey' => file_get_contents(__DIR__ . '/../keys/public_key.txt'), // don't forget that your public key also lives in app.js
-        'privateKey' => file_get_contents(__DIR__ . '/../keys/private_key.txt'), // in the real world, this would be in a secret file
-    ),
-);
+    $subscription = Subscription::create($endp);
 
-$webPush = new WebPush($auth);
+    $auth = array(
+        'VAPID' => array(
+            'subject' => 'http://localhost/cuervo-nut/',
+            'publicKey' => file_get_contents(__DIR__ . '/../keys/public_key.txt'), // don't forget that your public key also lives in app.js
+            'privateKey' => file_get_contents(__DIR__ . '/../keys/private_key.txt'), // in the real world, this would be in a secret file
+        ),
+    );
 
-$res = $webPush->sendNotification(
-    //TODO: Fix the problem with data.text in the service worker file
-    $subscription,
-    "Hola Juanito"
-);
+    $webPush = new WebPush($auth);
 
-// handle eventual errors here, and remove the subscription from your server if it is expired
-foreach ($webPush->flush() as $report) {
-    $endpoint = $report->getRequest()->getUri()->__toString();
+    $res = $webPush->sendNotification(
+        //TODO: Fix the problem with data.text in the service worker file
+        $subscription,
+        "Hola Juanito"
+    );
 
-    if ($report->isSuccess()) {
-        echo "[v] Message sent successfully for subscription {$endpoint}.";
-    } else {
-        echo "[x] Message failed to sent for subscription {$endpoint}: {$report->getReason()}";
+    // handle eventual errors here, and remove the subscription from your server if it is expired
+    foreach ($webPush->flush() as $report) {
+        $endpoint = $report->getRequest()->getUri()->__toString();
+
+        if ($report->isSuccess()) {
+            echo "[v] Message sent successfully for subscription {$endpoint}.";
+        } else {
+            echo "[x] Message failed to sent for subscription {$endpoint}: {$report->getReason()}";
+        }
     }
 }

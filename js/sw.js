@@ -4,8 +4,9 @@ self.addEventListener('push', function (event) {
 
     const title = 'Cuervo Nutrition';
     const options = {
-        body: 'Yay it works.',
+        body: 'Nuevo cliente registrado',
         icon: '../img/cuervo-logo-min.png',
+        badge: '../img/cuervo-logo-min.png'
     };
 
     event.waitUntil(self.registration.showNotification(title, options));
