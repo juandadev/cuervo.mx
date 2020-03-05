@@ -116,6 +116,10 @@
 
         <button id="pushButton" class="update"></button>
 
+        <?php if ($_SESSION['admin'] == 'juanda'): ?>
+            <button id="sendNoti" class="update">Mandar notificación</button>
+        <?php endif; ?>
+
         <div id="errors" class="errors hidden">
             <p>Se ha producido un error</p>
         </div>
