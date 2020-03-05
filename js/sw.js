@@ -18,6 +18,6 @@ self.addEventListener('notificationclick', function (event) {
     event.notification.close();
 
     event.waitUntil(
-        clients.openWindow('https://cuervonutrition.com/admin.php');
+        clients.openWindow('https://cuervonutrition.com/admin.php')
     );
 });
