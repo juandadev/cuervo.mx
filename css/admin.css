@@ -139,6 +139,17 @@ header .adminControl .controls ul li:hover {
   cursor: pointer;
 }
 
+#payPath {
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+  transform: translateX(-100px);
+  -webkit-transform: translateX(-100px);
+  -moz-transform: translateX(-100px);
+  -ms-transform: translateX(-100px);
+  -o-transform: translateX(-100px);
+}
+
 .errors {
   color: #d8000c;
   background-color: #ffd2d2;

@@ -125,6 +125,10 @@
     -ms-transform: translate(-20px, 50px);
     -o-transform: translate(-20px, 50px);
   }
+
+  .update {
+    margin: 5px;
+  }
 }
 
 @media screen and (max-width: 375px) {

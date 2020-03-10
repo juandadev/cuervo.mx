@@ -35,7 +35,9 @@ var update = document.getElementById('update'),
     addUserB = document.getElementById('addUser'),
     incomplete = document.getElementById('incomplete'),
     pushButton = document.getElementById('pushButton'),
-    sendNoti = document.getElementById('sendNoti');
+    sendNoti = document.getElementById('sendNoti'),
+    payPath = document.getElementById('payPath'),
+    copyPay = document.getElementById('copyPay');
 
 var id_client,
     name_client,
@@ -50,6 +52,11 @@ if (adminSession == 'juanda') {
         window.location = 'php/sendPushNotification.php'
     });
 }
+
+copyPay.addEventListener('click', function () {
+    payPath.select();
+    document.execCommand('copy');
+});
 
 /* PUSH NOTIFICATIONS */
 const applicationServerPublicKey = 'BHsC-32jEV4-lyxZlGJcUODJvS7MJx2wUInQPsQ1yBZFqZ9rEMwEP-fdDdPUbFYL-M5kUhyi2B5DUUCZ9DiIxgI';

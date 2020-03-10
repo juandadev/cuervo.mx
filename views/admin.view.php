@@ -116,9 +116,15 @@
 
         <button id="pushButton" class="update"></button>
 
-        <?php if ($_SESSION['admin'] == 'juanda'): ?>
+        <?php if ($_SESSION['admin'] == 'juanda') : ?>
             <button id="sendNoti" class="update">Mandar notificación</button>
         <?php endif; ?>
+
+        <button id="copyPay" class="update">
+            <i class="far fa-copy"></i>
+        </button>
+
+        <textarea name="payPath" id="payPath" cols="30" rows="10" readonly>https://cuervonutrition.com/payment.php</textarea>
 
         <div id="errors" class="errors hidden">
             <p>Se ha producido un error</p>

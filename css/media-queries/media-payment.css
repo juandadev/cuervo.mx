@@ -1,11 +1,6 @@
 @media screen and (max-width: 768px) {
     .paymentPlan {
         margin: 50px 0px;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .paymentPlan {
         flex-direction: column;
     }
 
