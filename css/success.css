@@ -1,268 +1,345 @@
 * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    font-family: 'Open Sans';
-    margin: 0;
-    padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+  margin: 0;
+  padding: 0;
 }
 
 .show {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 body {
-    background-image: url(../img/trianglify-lowres.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 0px 10%;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  background-image: url(../img/trianglify-lowres.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0px 10%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* HEADER */
 
 header {
-    margin-top: 25px;
-    height: 80px;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+  margin-top: 25px;
+  height: 80px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .navBar {
-    display: none;
-    color: #FFFFFF;
-    font-size: 40px;
+  display: none;
+  color: #ffffff;
+  font-size: 40px;
 }
 
 header img {
-    height: 100%;
-    cursor: pointer;
+  height: 100%;
+  cursor: pointer;
 }
 
 header nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 500px;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 500px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #ffffff;
 }
 
 header nav p {
-    cursor: pointer;
-    padding: 10px 40px;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+  cursor: pointer;
+  padding: 10px 40px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 header nav p:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 /* MAIN CONTENT */
 
 main {
-    margin-top: 70px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    color: #FFFFFF;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+  margin-top: 70px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  color: #ffffff;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 main h2 {
-    font-size: 46px;
-    font-weight: 700;
-    margin-bottom: 20px;
+  font-size: 46px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 main p {
-    font-size: 24px;
-    font-weight: 200;
-    margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 200;
+  margin-bottom: 20px;
 }
 
 /* CONTACT OPTIONS */
 
 .contactOptions {
-    width: 100%;
-    margin-top: 80px;
+  width: 100%;
+  margin-top: 80px;
 }
 
 .contactOptions .whatsapp,
 .contactOptions .facebook,
-.contactOptions .gmail {
-    margin: 0px 10px 50px 10px;
-    padding: 80px 5% 2% 5%;
-    height: auto;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background-color: #FFFFFF;
-    text-align: center;
-    cursor: pointer;
-    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+.contactOptions .gmail,
+.paymentPlan .plan {
+  margin: 0px 10px 50px 10px;
+  padding: 80px 5% 2% 5%;
+  height: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .contactOptions .facebook {
-    margin-left: 37%;
+  margin-left: 37%;
 }
 
 .contactOptions .whatsapp {
-    position: absolute;
-    width: 25%;
-    margin-left: 3%;
-    height: auto;
+  position: absolute;
+  width: 25%;
+  margin-left: 3%;
+  height: auto;
 }
 
 .contactOptions .whatsapp .addition p {
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .contactOptions .whatsapp .addition p:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .contactOptions .whatsapp:hover .textContact,
 .contactOptions .facebook:hover .textContact,
 .contactOptions .gmail:hover .textContact {
-    color: #212121;
+  color: #212121;
 }
 
 .iconContact {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    font-size: 50px;
-    border-radius: 100px;
-    margin-top: -120px;
-    background-color: #FFFFFF;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 50px;
+  border-radius: 100px;
+  margin-top: -120px;
+  background-color: #ffffff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
 }
 
 .contactOptions .whatsapp:hover .iconContact,
 .contactOptions .facebook:hover .iconContact,
 .contactOptions .gmail:hover .iconContact {
-    width: 105px;
-    height: 105px;
+  width: 105px;
+  height: 105px;
 }
 
 .whatsapp .iconContact {
-    color: #25d366;
+  color: #25d366;
 }
 
 .facebook .iconContact {
-    color: #0084ff;
+  color: #0084ff;
 }
 
 .gmail .iconContact {
-    color: #dd4b39;
+  color: #dd4b39;
 }
 
 .titleContact {
-    color: #212121;
-    font-weight: 400;
+  color: #212121;
+  font-weight: 400;
 }
 
 .textContact,
 .addition p {
-    color: #707070;
-    font-size: 20px;
+  color: #707070;
+  font-size: 20px;
 }
 
 .contactOptions .whatsapp .textContact {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .textContact i {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 /* INSTAGRAM */
 
 .hashtag {
-    font-size: 40px;
-    font-weight: 700;
+  font-size: 40px;
+  font-weight: 700;
 }
 
 .insta {
-    width: 100px;
-    height: 100px;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    border-radius: 100px;
-    background-color: #FFFFFF;
-    cursor: pointer;
-    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+  width: 100px;
+  height: 100px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 100px;
+  background-color: #ffffff;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .insta:hover {
-    opacity: 0.8;
+  opacity: 0.8;
+}
+
+/* PRICING */
+.paymentPlan {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.paymentPlan .plan {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 355px;
+  height: 450px;
+  padding: 10px;
+  color: #000;
+  cursor: default;
+}
+
+.paymentPlan p {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.paymentPlan .titleP,
+.paymentPlan h3 strong {
+  font-size: 38px;
+}
+
+.paymentPlan .pricing {
+  margin-bottom: 50px;
+}
+
+.paymentPlan ul li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.paymentPlan ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.paymentPlan button {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: none;
+  color: #fff;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  cursor: pointer;
+}
+
+.paymentPlan .lite h3,
+.paymentPlan .lite i {
+  color: #402e31;
+}
+
+.paymentPlan .lite button {
+  background-color: #402e31;
+}
+
+.paymentPlan .pro h3,
+.paymentPlan .pro i {
+  color: #a63c3c;
+}
+
+.paymentPlan .pro button {
+  background-color: #a63c3c;
 }
 
 .fa-instagram {
-    font-size: 50px;
-    color: #c13584;
+  font-size: 50px;
+  color: #c13584;
 }
 
 /* FOOTER */
 
 footer {
-    margin-top: 50px;
-    color: #FFFFFF;
-    padding: 20px;
+  margin-top: 50px;
+  color: #ffffff;
+  padding: 20px;
 }
 
 footer a {
-    color: #FFFFFF;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 footer a:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }

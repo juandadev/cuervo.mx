@@ -19,7 +19,59 @@
         <main class="show">
             <h2>Gracias por contestar el cuestionario!</h2>
 
-            <p>Contacta con nuestros asesores para ver los planes que tenemos para ti.</p>
+            <p>Tenemos los mejores planes para ti</p>
+
+            <div class="paymentPlan">
+                <div class="plan lite">
+                    <div class="headP">
+                        <p>Paquete Cuervo</p>
+    
+                        <h3 class="titleP">Lite</h3>
+    
+                        <h3 class="pricing"><strong>$399.00</strong> / mensual</h3>
+                    </div>
+
+                    <ul>
+                        <li>
+                            <i class="fas fa-check"></i> Plan alimenticio
+                        </li>
+
+                        <li>
+                            <i class="fas fa-check"></i> Supervisión online
+                        </li>
+                    </ul>
+
+                    <a href="payment.php"><button>Más información</button></a>
+                </div>
+
+                <div class="plan pro">
+                    <div class="headP">
+                        <p>Paquete Cuervo</p>
+    
+                        <h3 class="titleP">Pro</h3>
+    
+                        <h3 class="pricing"><strong>$499.00</strong> / mensual</h3>
+                    </div>
+
+                    <ul>
+                        <li>
+                            <i class="fas fa-check"></i> Plan alimenticio
+                        </li>
+
+                        <li>
+                            <i class="fas fa-check"></i> Plan de entrenamiento
+                        </li>
+
+                        <li>
+                            <i class="fas fa-check"></i> Supervisión online
+                        </li>
+                    </ul>
+
+                    <a href="payment.php"><button>Más información</button></a>
+                </div>
+            </div>
+
+            <p>Contacta con nuestros asesores para más información</p>
 
             <div class="contactOptions show">
                 <div class="whatsapp show" id="whatsapp">
