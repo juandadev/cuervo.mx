@@ -25,9 +25,9 @@
                 <div class="plan lite">
                     <div class="headP">
                         <p>Paquete Cuervo</p>
-    
+
                         <h3 class="titleP">Lite</h3>
-    
+
                         <h3 class="pricing"><strong>$399.00</strong> / mensual</h3>
                     </div>
 
@@ -47,9 +47,9 @@
                 <div class="plan pro">
                     <div class="headP">
                         <p>Paquete Cuervo</p>
-    
+
                         <h3 class="titleP">Pro</h3>
-    
+
                         <h3 class="pricing"><strong>$499.00</strong> / mensual</h3>
                     </div>
 

@@ -1,0 +1,31 @@
+@media screen and (max-width: 768px) {
+    .paymentPlan {
+        margin: 50px 0px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .paymentPlan {
+        flex-direction: column;
+    }
+
+    .paymentPlan .plan {
+        width: 100%;
+        box-shadow: none;
+        margin: 0;
+    }
+
+    .paymentPlan .plan:hover {
+        box-shadow: none;
+        width: 100%;
+        height: auto;
+    }
+
+    .description {
+        padding: 50px 20px;
+    }
+
+    .description h2 {
+        font-size: 28px;
+    }
+}

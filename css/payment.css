@@ -1,0 +1,143 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  margin: 20px;
+  height: 100px;
+}
+
+header img {
+  height: 100%;
+}
+
+.paymentPlan .plan {
+  margin: 0px 10px 50px 10px;
+  padding: 80px 5% 2% 5%;
+  height: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.paymentPlan .plan:hover {
+  box-shadow: 3px 3px 50px 10px rgba(0, 0, 0, 0.2);
+  width: 360px;
+  height: 455px;
+}
+
+.paymentPlan {
+  margin: 50px 20px 0px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.paymentPlan .plan {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 355px;
+  height: 450px;
+  padding: 10px;
+  color: #000;
+  cursor: default;
+}
+
+.paymentPlan p {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.paymentPlan .titleP,
+.paymentPlan h3 strong {
+  font-size: 38px;
+}
+
+.paymentPlan .pricing {
+  margin-bottom: 50px;
+}
+
+.paymentPlan ul li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.paymentPlan ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.paymentPlan button {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: none;
+  color: #fff;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  cursor: pointer;
+}
+
+.paymentPlan .lite h3,
+.paymentPlan .lite i {
+  color: #402e31;
+}
+
+.paymentPlan .lite button {
+  background-color: #402e31;
+}
+
+.paymentPlan .pro h3,
+.paymentPlan .pro i {
+  color: #a63c3c;
+}
+
+.paymentPlan .pro button {
+  background-color: #a63c3c;
+}
+
+.description {
+  width: 100%;
+  padding: 100px 200px;
+}
+
+.description h2 {
+  font-size: 38px;
+  margin-bottom: 30px;
+}
+
+.red {
+  background-color: #a63c3c;
+  color: #fff;
+}
+
+.brown {
+  background-color: #402e31;
+  color: #fff;
+}
+
+.success {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  padding: 30px;
+  text-align: center;
+}
